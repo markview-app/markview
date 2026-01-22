@@ -43,8 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Scroll to top button
   - Raw markdown view toggle
 
-- **Export**
-  - HTML export (up to 500 words)
+- **Print**
   - Print optimization
 
 - **Technical Features**

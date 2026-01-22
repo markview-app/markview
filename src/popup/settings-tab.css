@@ -1,0 +1,221 @@
+/**
+ * Settings Tab Styles
+ * Uses shared design tokens from tokens.css
+ * All styles scoped to #tab-settings to avoid affecting other components
+ */
+
+/* Settings Container */
+#tab-settings .settings-scroll {
+  padding: var(--space-md);
+}
+
+/* Section Headers */
+#tab-settings section h2 {
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semibold);
+  color: var(--brand-primary);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid rgba(102, 126, 234, 0.15);
+}
+
+/* Setting Cards */
+#tab-settings .card {
+  transition: all var(--transition-base);
+}
+
+#tab-settings .card:hover {
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+/* Setting Labels */
+#tab-settings label {
+  user-select: none;
+}
+
+#tab-settings .font-medium {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+/* Icon Styling */
+#tab-settings .icon-base {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--brand-primary);
+  stroke-width: 2;
+}
+
+#tab-settings .icon-base path,
+#tab-settings .icon-base circle,
+#tab-settings .icon-base rect,
+#tab-settings .icon-base line,
+#tab-settings .icon-base polyline,
+#tab-settings .icon-base polygon {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Toggle Switch */
+#tab-settings .toggle-switch {
+  position: relative;
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  background: #ccc;
+  border-radius: var(--radius-lg);
+  outline: none;
+  cursor: pointer;
+  transition: background var(--transition-slow);
+  flex-shrink: 0;
+}
+
+#tab-settings .toggle-switch::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform var(--transition-slow);
+  box-shadow: var(--shadow-sm);
+}
+
+#tab-settings .toggle-switch:checked {
+  background: var(--brand-primary);
+}
+
+#tab-settings .toggle-switch:checked::before {
+  transform: translateX(20px);
+}
+
+/* Select Dropdown */
+#tab-settings .setting-select {
+  width: auto;
+  min-width: 120px;
+  padding: 6px var(--space-sm);
+  border: var(--input-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  background: var(--color-bg-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+#tab-settings .setting-select:hover {
+  border-color: var(--input-border-focus);
+  background: #f8f9ff;
+}
+
+#tab-settings .setting-select:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+/* Range Slider */
+#tab-settings .slider {
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-sm);
+  background: var(--color-border-secondary);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+#tab-settings .slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--brand-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base);
+}
+
+#tab-settings .slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+#tab-settings .slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+}
+
+#tab-settings .slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--brand-primary);
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base);
+}
+
+#tab-settings .slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+#tab-settings .slider::-moz-range-thumb:active {
+  transform: scale(0.95);
+}
+
+/* Setting Value Display */
+#tab-settings .setting-value {
+  min-width: 50px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--brand-primary);
+  text-align: right;
+  font-size: var(--font-size-sm);
+  flex-shrink: 0;
+}
+
+/* Text Description */
+#tab-settings .text-muted {
+  color: #6b7280;
+  font-size: var(--font-size-xs);
+}
+
+/* Reset Button */
+#tab-settings #reset-settings {
+  transition: all var(--transition-base);
+}
+
+#tab-settings #reset-settings:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+#tab-settings #reset-settings:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  #tab-settings .settings-scroll {
+    padding: var(--space-sm);
+  }
+
+  #tab-settings section h2 {
+    font-size: 10px;
+  }
+
+  #tab-settings .icon-base {
+    width: 18px;
+    height: 18px;
+  }
+
+  #tab-settings .setting-select {
+    min-width: 100px;
+    font-size: var(--font-size-xs);
+  }
+}

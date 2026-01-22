@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarkView Settings</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+
+<body>
+  <div class="popup-container flex flex-col h-full">
+    <header class="popup-header">
+      <h1 class="text-2xl font-bold" data-i18n="appName">⚡ MarkView</h1>
+      <p class="text-sm opacity-75" data-i18n="appDescription">Modern Markdown Viewer</p>
+      <div class="header-links">
+        <div class="header-version"></div>
+        <div class="header-links-row">
+          <a href="https://www.youtube.com/watch?v=DVsQg_OBTHs" target="_blank" class="header-link"
+            data-i18n="watchDemo">Watch Demo</a>
+          <span class="header-separator">•</span>
+          <a href="https://getmarkview.com/whats-new" target="_blank" class="header-link" data-i18n="whatsNew">What's
+            New</a>
+          <span class="header-separator">•</span>
+          <a href="https://getmarkview.com/support" target="_blank" class="header-link" data-i18n="reportIssue">Report
+            Issue</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="popup-tabs">
+      <button class="popup-tab hidden" id="permission-tab-btn" data-tab="permission" data-i18n="permissionTab">Setup
+        Required</button>
+      <button class="popup-tab active" data-tab="recent" data-i18n="recentDocuments">Recent Documents</button>
+      <button class="popup-tab" data-tab="settings" data-i18n="settingsTab">Settings</button>
+    </nav>
+
+    <main class="popup-content flex-1">
+      <!-- Permission Tab -->
+      <div id="tab-permission" class="tab-panel" style="display: none;">
+        <div class="p-4">
+          <div class="permission-warning-content"
+            style="background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%); border: 2px solid #ffc107; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(255, 193, 7, 0.2);">
+            <div class="flex items-start gap-3">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                style="flex-shrink: 0; margin-top: 4px;">
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" fill="#ffd93d"
+                  opacity="0.2" />
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" stroke="#f59e0b"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 8v4m0 4h.01" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+              <div style="flex: 1;">
+                <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #856404;">⚠️ <span
+                    data-i18n="permissionTitle">File Access Required</span></h2>
+                <p style="font-size: 14px; line-height: 1.6; margin-bottom: 16px; color: #856404;"
+                  data-i18n="permissionText">To browse local markdown files, enable file access:</p>
+                <ol style="font-size: 13px; line-height: 1.8; margin-bottom: 20px; padding-left: 24px; color: #856404;">
+                  <li style="margin-bottom: 8px;"><span data-i18n="permissionStep1">Go to</span> <code
+                      id="extension-management-url"
+                      style="background: rgba(255, 255, 255, 0.7); padding: 3px 8px; border-radius: 4px; font-family: monospace; color: #856404; border: 1px solid rgba(133, 100, 4, 0.2); font-size: 12px;"></code>
+                  </li>
+                  <li style="margin-bottom: 8px;" data-i18n="permissionStep2">Find MarkView and click "Details"</li>
+                  <li style="margin-bottom: 8px;" data-i18n="permissionStep3">Enable "Allow access to file URLs"</li>
+                  <li data-i18n="permissionStep4">Refresh this page</li>
+                </ol>
+                <button id="open-extension-settings-tab" style="
+                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                  color: white; 
+                  border: none; 
+                  padding: 12px 24px; 
+                  border-radius: 8px; 
+                  font-size: 14px; 
+                  font-weight: 600; 
+                  cursor: pointer;
+                  transition: all 0.2s;
+                  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+                  width: 100%;
+                ">
+                  🔧 <span data-i18n="openExtensionSettings">Open Extension Settings</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Documents Tab -->
+      <div id="tab-recent" class="tab-panel active">
+        <div class="recent-files-container">
+          <!-- Search Bar -->
+          <div class="recent-search-container">
+            <input type="text" id="recent-search" class="popup-search" placeholder="Search documents..."
+              data-i18n-attr="placeholder:recent_search">
+          </div>
+
+          <!-- Info Banner -->
+          <div class="recent-info-banner">
+            <p class="recent-info-text" data-i18n="recent_infoText">
+              Only URLs pasted in the browser address bar are saved here
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="popup-actions">
+            <button id="refresh-recent" class="btn btn-secondary btn-sm" data-i18n="recent_refresh">Refresh</button>
+            <button id="clear-recent" class="btn btn-secondary btn-sm" data-i18n="recent_clearAll">Clear All</button>
+          </div>
+
+          <!-- Empty State -->
+          <div class="popup-empty-state hidden">
+            <svg class="popup-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <h3 class="popup-empty-title" data-i18n="recentEmptyTitle">No Recent Files</h3>
+            <p class="popup-empty-text" data-i18n="recentEmptyText">Open markdown files to see them here</p>
+          </div>
+
+          <!-- Recent Files List -->
+          <ul id="recent-files-list" class="recent-files-list"></ul>
+        </div>
+      </div>
+
+      <!-- Settings Tab -->
+      <div id="tab-settings" class="tab-panel" style="display: none;">
+        <div class="settings-scroll p-4">
+          <!-- General Settings -->
+          <section class="mb-6">
+            <h2 class="text-xs font-semibold uppercase text-primary mb-3 pb-2 border-b" data-i18n="generalSettings">
+              General
+            </h2>
+
+            <div class="card p-3 mb-2">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span data-i18n="extensionEnabled">Extension Enabled</span>
+                </span>
+                <input type="checkbox" id="enabled" class="toggle-switch">
+              </label>
+            </div>
+
+            <div class="card p-3 mb-2">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                  </svg>
+                  <span data-i18n="language">Language</span>
+                </span>
+                <select id="language" class="setting-select">
+                  <option value="auto">Auto</option>
+                  <option value="en">English</option>
+                  <option value="vi">Tiếng Việt</option>
+                  <option value="ja">日本語</option>
+                  <option value="ko">한국어</option>
+                  <option value="zh_CN">简体中文</option>
+                  <option value="zh_TW">繁體中文</option>
+                  <option value="es">Español</option>
+                  <option value="fr">Français</option>
+                  <option value="pt_BR">Português (Brasil)</option>
+                  <option value="id">Bahasa Indonesia</option>
+                  <option value="de">Deutsch</option>
+                  <option value="ru">Русский</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="card p-3 mb-2">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
+                  <span data-i18n="theme">Theme</span>
+                </span>
+                <select id="theme" class="setting-select">
+                  <option value="light" data-i18n="themeLight">Light</option>
+                  <option value="dark" data-i18n="themeDark">Dark</option>
+                  <option value="auto" data-i18n="themeAuto">Auto</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="card p-3">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 20l4-16m4 16l4-16M9 12h6" />
+                  </svg>
+                  <span data-i18n="fontFamily">Font Family</span>
+                </span>
+                <select id="fontFamily" class="setting-select">
+                  <option value="default" data-i18n="fontDefault">Default</option>
+                  <option value="Inter">Inter</option>
+                  <option value="Merriweather">Merriweather</option>
+                  <option value="Merriweather Sans">Merriweather Sans</option>
+                  <option value="Noto Sans">Noto Sans</option>
+                  <option value="Noto Serif SC">Noto Serif SC</option>
+                  <option value="Open Sans">Open Sans</option>
+                  <option value="Roboto">Roboto</option>
+                  <option value="Source Sans 3">Source Sans 3</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- Layout Settings -->
+          <section class="mb-6">
+            <h2 class="text-xs font-semibold uppercase text-primary mb-3 pb-2 border-b" data-i18n="layoutSettings">
+              Layout
+            </h2>
+
+            <div class="card p-3 mb-2">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 6h16M7 12h10M9 18h6" />
+                  </svg>
+                  <span data-i18n="centeredLayout">Centered Layout</span>
+                </span>
+                <input type="checkbox" id="centered" class="toggle-switch">
+              </label>
+            </div>
+
+            <div class="card p-3 mb-2">
+              <label class="flex flex-col gap-2">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" />
+                    <path d="M3 7h18M3 17h18" />
+                  </svg>
+                  <span data-i18n="maxWidth">Max Width</span>
+                </span>
+                <div class="flex items-center gap-3 mt-2">
+                  <input type="range" id="maxWidth" min="600" max="1400" step="50" class="slider flex-1">
+                  <span id="maxWidth-value" class="setting-value">1000px</span>
+                </div>
+              </label>
+              <p class="text-xs text-muted mt-2" data-i18n="maxWidthDescription">
+                Limit content width for better readability. Works with both centered and full-width layouts.
+              </p>
+            </div>
+
+            <div class="card p-3 mb-2">
+              <label class="flex flex-col gap-2">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 7V4h16v3M9 20h6M12 4v16" />
+                  </svg>
+                  <span data-i18n="fontSize">Font Size</span>
+                </span>
+                <div class="flex items-center gap-3 mt-2">
+                  <input type="range" id="fontSize" min="12" max="24" step="1" class="slider flex-1">
+                  <span id="fontSize-value" class="setting-value">16px</span>
+                </div>
+              </label>
+            </div>
+
+            <div class="card p-3 mb-2">
+              <label class="flex flex-col gap-2">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 6h11M10 12h11M10 18h11M4 6l2-2m0 0l2 2M6 4v16m0 0l-2-2m2 2l2-2" />
+                  </svg>
+                  <span data-i18n="lineHeight">Line Height</span>
+                </span>
+                <div class="flex items-center gap-3 mt-2">
+                  <input type="range" id="lineHeight" min="1.2" max="2.0" step="0.1" class="slider flex-1">
+                  <span id="lineHeight-value" class="setting-value">1.6</span>
+                </div>
+              </label>
+            </div>
+          </section>
+
+          <!-- Features -->
+          <section class="mb-6">
+            <h2 class="text-xs font-semibold uppercase text-primary mb-3 pb-2 border-b" data-i18n="featuresSettings">
+              Features</h2>
+
+            <div class="card p-3 mb-2">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+                  </svg>
+                  <span data-i18n="syntaxTheme">Syntax Theme</span>
+                </span>
+                <select id="syntaxTheme" class="setting-select">
+                  <option value="custom" data-i18n="syntaxTheme_markview">MarkView (Default)</option>
+                  <option disabled>───────────</option>
+                  <option value="github">GitHub</option>
+                  <option value="vs">Visual Studio</option>
+                  <option value="atom-one-light">Atom One Light</option>
+                  <option value="tokyo-night-light">Tokyo Night Light</option>
+                  <option disabled>───────────</option>
+                  <option value="github-dark">GitHub Dark</option>
+                  <option value="github-dark-dimmed">GitHub Dark Dimmed</option>
+                  <option value="vs2015">Visual Studio 2015</option>
+                  <option value="atom-one-dark">Atom One Dark</option>
+                  <option value="monokai">Monokai</option>
+                  <option value="monokai-sublime">Monokai Sublime</option>
+                  <option value="tokyo-night-dark">Tokyo Night Dark</option>
+                  <option value="nord">Nord</option>
+                  <option value="night-owl">Night Owl</option>
+                </select>
+              </label>
+              <p class="text-xs text-muted mt-2" data-i18n="syntaxThemeDescription">
+                Color theme for code blocks. MarkView theme auto-adapts to light/dark mode.
+              </p>
+            </div>
+
+            <div class="card p-3 mb-2">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 6h16M4 12h16M4 18h7" />
+                  </svg>
+                  <span data-i18n="codeBlockDisplay">Code Block Display</span>
+                </span>
+                <select id="codeBlockDisplay" class="setting-select">
+                  <option value="scroll" data-i18n="codeBlockDisplayScroll">Scroll (preserve formatting)</option>
+                  <option value="wrap" data-i18n="codeBlockDisplayWrap">Wrap (break long lines)</option>
+                </select>
+              </label>
+              <p class="text-xs text-muted mt-2" data-i18n="codeBlockDisplayDescription">
+                How to handle long lines in code blocks. Scroll preserves formatting with a horizontal scrollbar, while
+                Wrap breaks long lines for easier reading.
+              </p>
+            </div>
+          </section>
+
+          <!-- Productivity -->
+          <section class="mb-6">
+            <h2 class="text-xs font-semibold uppercase text-primary mb-3 pb-2 border-b"
+              data-i18n="productivitySettings">
+              PRODUCTIVITY</h2>
+
+            <div class="card p-3">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  <span data-i18n="autoRefresh">Auto-Refresh</span>
+                </span>
+                <input type="checkbox" id="autoRefresh" class="toggle-switch">
+              </label>
+              <p class="text-xs text-muted mt-2" data-i18n="autoRefreshDescription">
+                Automatically reload when file changes (every 2 seconds)
+              </p>
+            </div>
+
+          </section>
+
+          <!-- Sidebars -->
+          <section class="mb-6">
+            <h2 class="text-xs font-semibold uppercase text-primary mb-3 pb-2 border-b" data-i18n="sidebarsSettings">
+              SIDEBARS</h2>
+
+            <div class="card p-3">
+              <label class="flex items-center justify-between cursor-pointer">
+                <span class="flex items-center gap-2 font-medium">
+                  <svg class="icon-base" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <span data-i18n="tableOfContents">Table of Contents</span>
+                </span>
+                <input type="checkbox" id="tocVisible" class="toggle-switch">
+              </label>
+            </div>
+          </section>
+
+          <!-- Footer Actions -->
+          <section class="mb-6">
+            <button id="clear-cache" class="btn btn-secondary w-full flex items-center justify-center gap-2 mb-3"
+              title="" data-i18n-attr="title:clearCacheHint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                <line x1="10" y1="11" x2="10" y2="17" />
+                <line x1="14" y1="11" x2="14" y2="17" />
+              </svg>
+              <span data-i18n="clearCache">Clear Cache</span>
+            </button>
+            <button id="reset-settings" class="btn btn-secondary w-full flex items-center justify-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              </svg>
+              <span data-i18n="resetToDefaults">Reset to Defaults</span>
+            </button>
+          </section>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/popup.js"></script>
+</body>
+
+</html>

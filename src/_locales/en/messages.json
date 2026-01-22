@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "Modern Markdown Viewer"
+  },
+  "recentDocuments": {
+    "message": "Recent Documents"
+  },
+  "settingsTab": {
+    "message": "Settings"
+  },
+  "permissionTab": {
+    "message": "Setup Required"
+  },
+  "recentEmptyTitle": {
+    "message": "No Recent Files"
+  },
+  "recentEmptyText": {
+    "message": "Open markdown files to see them here"
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "extensionEnabled": {
+    "message": "Extension Enabled"
+  },
+  "language": {
+    "message": "Language"
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeLight": {
+    "message": "Light"
+  },
+  "themeDark": {
+    "message": "Dark"
+  },
+  "themeAuto": {
+    "message": "Auto"
+  },
+  "layoutSettings": {
+    "message": "Layout"
+  },
+  "centeredLayout": {
+    "message": "Centered Layout"
+  },
+  "maxWidth": {
+    "message": "Max Width"
+  },
+  "maxWidthDescription": {
+    "message": "Limit content width for better readability. Only applies to centered layout mode."
+  },
+  "fontSize": {
+    "message": "Font Size"
+  },
+  "lineHeight": {
+    "message": "Line Height"
+  },
+  "fontFamily": {
+    "message": "Font Family"
+  },
+  "fontDefault": {
+    "message": "Default"
+  },
+  "featuresSettings": {
+    "message": "Features"
+  },
+  "configurePlugins": {
+    "message": "Configure Plugins"
+  },
+  "syntaxTheme": {
+    "message": "Syntax Theme"
+  },
+  "syntaxThemeDescription": {
+    "message": "Color theme for code blocks. MarkView theme auto-adapts to light/dark mode."
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "Auto (Light/Dark)"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "Light Themes"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "Dark Themes"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView (Default)"
+  },
+  "syntaxHighlighting": {
+    "message": "Syntax Highlighting"
+  },
+  "taskLists": {
+    "message": "Task Lists"
+  },
+  "tables": {
+    "message": "Tables"
+  },
+  "productivitySettings": {
+    "message": "Productivity"
+  },
+  "autoRefresh": {
+    "message": "Auto-Refresh"
+  },
+  "autoRefreshDescription": {
+    "message": "Automatically reload when file changes (every 2 seconds)"
+  },
+  "sidebarsSettings": {
+    "message": "Sidebars"
+  },
+  "folderBrowser": {
+    "message": "Folder Browser"
+  },
+  "tableOfContents": {
+    "message": "Table of Contents"
+  },
+  "resetToDefaults": {
+    "message": "Reset to Defaults"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 This feature is not available in RAW mode"
+  },
+  "clearCache": {
+    "message": "Clear Cache"
+  },
+  "clearCacheHint": {
+    "message": "Clears temporary cached data including file handles, directory tree, URL metadata, and in-memory caches. This will clear file access permissions and may require re-selecting folders. Settings, bookmarks, and history metadata are preserved."
+  },
+  "watchDemo": {
+    "message": "Watch Demo"
+  },
+  "whatsNew": {
+    "message": "What's New"
+  },
+  "actions": {
+    "message": "Actions"
+  },
+  "print": {
+    "message": "Print (Save PDF)"
+  },
+  "reportIssue": {
+    "message": "Report Issue"
+  },
+  "actions_previousSlide": {
+    "message": "Previous slide"
+  },
+  "actions_nextSlide": {
+    "message": "Next slide"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "Toggle auto-play"
+  },
+  "actions_autoPlay": {
+    "message": "Auto-play (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "Pause auto-play"
+  },
+  "actions_startAutoPlay": {
+    "message": "Start auto-play"
+  },
+  "actions_toggleFullscreen": {
+    "message": "Toggle fullscreen"
+  },
+  "notification_noMarkdownFound": {
+    "message": "No markdown content found"
+  },
+  "notification_renderFailed": {
+    "message": "Failed to render markdown"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkView loaded successfully!"
+  },
+  "notification_loadedWithFilename": {
+    "message": "Loaded"
+  },
+  "notification_renderError": {
+    "message": "Error rendering markdown"
+  },
+  "notification_contentUpdated": {
+    "message": "Content updated"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "Auto-refresh unavailable: File is outside selected folder. Please select the parent folder containing this file."
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "This folder is already open"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "Auto-refresh paused. Click a file in the sidebar to resume."
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 MarkView extension updated. Reloading page..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 This feature is not supported in sandboxed contexts (external URLs)."
+  },
+  "ui_toggleRaw": {
+    "message": "View Raw Data"
+  },
+  "ui_rawView": {
+    "message": "📝 Raw Markdown View"
+  },
+  "ui_renderedView": {
+    "message": "✨ Rendered View"
+  },
+  "ui_scrollTopTitle": {
+    "message": "Scroll to top (Home key)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ Scrolled to top"
+  },
+  "sidebar_title": {
+    "message": "Files"
+  },
+  "sidebar_changeFolder": {
+    "message": "Change Folder"
+  },
+  "sidebar_refresh": {
+    "message": "Refresh"
+  },
+  "sidebar_expandCollapse": {
+    "message": "Expand/Collapse All"
+  },
+  "sidebar_hide": {
+    "message": "Hide Sidebar"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "Search files..."
+  },
+  "sidebar_scanning": {
+    "message": "Scanning directory..."
+  },
+  "sidebar_bookmarks": {
+    "message": "Bookmarks"
+  },
+  "sidebar_addBookmark": {
+    "message": "Add Bookmark"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "Delete"
+  },
+  "sidebar_renameBookmark": {
+    "message": "Rename"
+  },
+  "sidebar_lastAccess": {
+    "message": "Last access"
+  },
+  "permissionTitle": {
+    "message": "File Access Required"
+  },
+  "permissionText": {
+    "message": "To browse local markdown files, enable file access:"
+  },
+  "permissionStep1": {
+    "message": "Go to"
+  },
+  "permissionStep2": {
+    "message": "Find MarkView and click \"Details\""
+  },
+  "permissionStep3": {
+    "message": "Enable \"Allow access to file URLs\""
+  },
+  "permissionStep4": {
+    "message": "Refresh this page"
+  },
+  "openExtensionSettings": {
+    "message": "Open Extension Settings"
+  },
+  "sidebar_emptyTitle": {
+    "message": "Browse Markdown Files"
+  },
+  "sidebar_emptyText": {
+    "message": "Select the folder containing your markdown files to enable navigation."
+  },
+  "sidebar_selectFolder": {
+    "message": "Select Folder"
+  },
+  "sidebar_close": {
+    "message": "Close Sidebar"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 Once selected, this folder will be remembered"
+  },
+  "sidebar_externalTitle": {
+    "message": "External File Mode"
+  },
+  "sidebar_externalText": {
+    "message": "File browsing is not supported for external files (HTTP/HTTPS URLs)."
+  },
+  "sidebar_externalHint": {
+    "message": "💡 This feature is only available for local files (file:// protocol)"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "Different Folder"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "Currently showing:"
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "This file appears to be in a different location. Select a new folder to browse files here."
+  },
+  "sidebar_selectNewFolder": {
+    "message": "Select New Folder"
+  },
+  "sidebar_errorTitle": {
+    "message": "Error"
+  },
+  "sidebar_errorText": {
+    "message": "Failed to scan directory:"
+  },
+  "sidebar_retry": {
+    "message": "Retry"
+  },
+  "sidebar_noFiles": {
+    "message": "No markdown files found in this directory."
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "Permission Needed"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "Browser permission to access this folder has expired. Click below to restore access."
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "Tip: Your browser may show multiple folders in the permission prompt. Select \"Allow on every visit\" to restore access to all of them."
+  },
+  "sidebar_restoreAccess": {
+    "message": "Restore Access"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ Settings saved!"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ Cache cleared!"
+  },
+  "popup_clearCacheTitle": {
+    "message": "Clear Cache?"
+  },
+  "popup_clearCache": {
+    "message": "Clear Cache"
+  },
+  "popup_resetTitle": {
+    "message": "Reset Settings?"
+  },
+  "popup_resetText": {
+    "message": "This will reset all settings to their default values. This action cannot be undone."
+  },
+  "popup_cancel": {
+    "message": "Cancel"
+  },
+  "popup_reset": {
+    "message": "Reset"
+  },
+  "toc_title": {
+    "message": "Table of Contents"
+  },
+  "toc_collapseAll": {
+    "message": "Collapse All"
+  },
+  "toc_expandAll": {
+    "message": "Expand All"
+  },
+  "toc_close": {
+    "message": "Close TOC"
+  },
+  "toc_collapse": {
+    "message": "Collapse"
+  },
+  "toc_expand": {
+    "message": "Expand"
+  },
+  "toc_noHeadings": {
+    "message": "No headings found"
+  },
+  "toc_rawModeTitle": {
+    "message": "Raw Markdown Mode"
+  },
+  "toc_rawModeMessage": {
+    "message": "Table of Contents is not available in raw markdown view."
+  },
+  "toc_toggleButtonTitle": {
+    "message": "Toggle Table of Contents sidebar - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "Toggle theme (Light/Dark/Auto) - Ctrl+Shift+D"
+  },
+  "theme_light": {
+    "message": "⚪ Light Theme"
+  },
+  "theme_dark": {
+    "message": "⚫ Dark Theme"
+  },
+  "theme_auto": {
+    "message": "⚙️ Auto Theme"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "Toggle layout (Wide/Centered) - Ctrl+Shift+C"
+  },
+  "centered_centered": {
+    "message": "📄 Centered Layout"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ Full-Width Layout"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "Toggle Folder Browser sidebar - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "Clear all recent documents?"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "This will remove all recent documents from the list. This action cannot be undone."
+  },
+  "recent_clearSuccess": {
+    "message": "Recent documents cleared"
+  },
+  "recent_clearFailed": {
+    "message": "Failed to clear recent documents"
+  },
+  "recent_loadFailed": {
+    "message": "Failed to load recent documents"
+  },
+  "recent_openFailed": {
+    "message": "This file cannot be reopened from history. Please use 'Change Folder' to browse for it again."
+  },
+  "recent_clearAll": {
+    "message": "Clear All"
+  },
+  "recent_refresh": {
+    "message": "Refresh"
+  },
+  "recent_search": {
+    "message": "Search documents..."
+  },
+  "recent_infoText": {
+    "message": "Only URLs pasted in the browser address bar are saved here"
+  },
+  "recent_noResults": {
+    "message": "No documents match your search"
+  },
+  "recent_accessed": {
+    "message": "Accessed"
+  },
+  "recent_removeItem": {
+    "message": "Remove from list"
+  },
+  "recent_copyUrl": {
+    "message": "Copy URL"
+  },
+  "recent_urlCopied": {
+    "message": "URL copied to clipboard"
+  },
+  "recent_clickToOpen": {
+    "message": "Click to open in current tab, Shift+Click for new tab"
+  },
+  "recent_cannotReopen": {
+    "message": "File System API files cannot be reopened from history"
+  },
+  "recent_localFiles": {
+    "message": "Local Files"
+  },
+  "recent_externalFiles": {
+    "message": "External Files"
+  },
+  "recent_otherFiles": {
+    "message": "Other Files"
+  },
+  "recent_showMoreFiles": {
+    "message": "Show {0} more files"
+  },
+  "recent_refreshed": {
+    "message": "Recent documents refreshed"
+  },
+  "recent_removed": {
+    "message": "Document removed from list"
+  },
+  "recent_filenameCopied": {
+    "message": "Filename copied"
+  },
+  "recent_fileHandleLost": {
+    "message": "File access lost. Use 'Change Folder' to browse for the file again."
+  },
+  "recent_permissionDenied": {
+    "message": "Permission denied. Cannot open file."
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "keyboardHelp_title": {
+    "message": "Keyboard Shortcuts"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "Quick access to all features"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "Display"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "Toggle theme (Light/Dark/Auto)"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "View raw data"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "Toggle layout (Wide/Centered)"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "Toggle Table of Contents sidebar"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "Toggle Folder Browser sidebar"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "Open Quick Settings modal"
+  },
+  "keyboardHelp_navigation": {
+    "message": "Navigation"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "Search in folder"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "Scroll to top of page"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "Close any open modal"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "Image Gallery"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "Previous image"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "Next image"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "Close image viewer"
+  },
+  "keyboardHelp_macNote": {
+    "message": "On macOS, use ⌘ (Cmd) instead of Ctrl"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "On macOS, replace Ctrl with ⌘ (Cmd)"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "Keyboard Shortcuts"
+  },
+  "actions_quickSettings": {
+    "message": "Quick Settings"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "Adjust frequently-used settings"
+  },
+  "actions_configurePlugins": {
+    "message": "Configure Plugins"
+  },
+  "actions_extensionInfo": {
+    "message": "About MarkView"
+  },
+  "pluginConfig_title": {
+    "message": "Plugin Configuration"
+  },
+  "pluginConfig_subtitle": {
+    "message": "Enable or disable markdown rendering plugins"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "Reset to Defaults"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "Reset all plugins to default settings?"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "Core Rendering"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "Content & Media"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "Text Formatting"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "Extended Syntax"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "Advanced Features"
+  },
+  "common_close": {
+    "message": "Close"
+  },
+  "common_cancel": {
+    "message": "Cancel"
+  },
+  "common_confirm": {
+    "message": "OK"
+  },
+  "codeBlockDisplay": {
+    "message": "Code Block Display"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "How to handle long lines in code blocks. Scroll preserves formatting with a horizontal scrollbar, while Wrap breaks long lines for easier reading."
+  },
+  "codeBlockDisplayScroll": {
+    "message": "Scroll (preserve formatting)"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "Wrap (break long lines)"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "Quick Links"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "Rate Extension"
+  },
+  "extensionInfo_about": {
+    "message": "About MarkView"
+  },
+  "extensionInfo_description": {
+    "message": "MarkView is a modern, feature-rich Markdown viewer for Chromium browsers (Chrome, Edge, Brave, Opera, etc.). Transform your Markdown files into beautiful, interactive documents with syntax highlighting, diagrams, math equations, and more."
+  },
+  "extensionInfo_website": {
+    "message": "Official Website"
+  },
+  "extensionInfo_madeWith": {
+    "message": "Made with"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "for developers and writers"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "All rights reserved"
+  }
+}

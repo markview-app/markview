@@ -1,0 +1,207 @@
+/* Notification Banner Styles */
+
+/* Notification Container */
+.markview-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  color: white;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  max-width: 400px;
+  word-wrap: break-word;
+  /* Start hidden, animate via JS adding .show class */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease-in,
+    transform 0.3s ease-in;
+}
+
+/* Show state - triggered by JS adding .show class */
+.markview-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Notification Types */
+.markview-notification-success {
+  background-color: #43a047;
+}
+
+.markview-notification-error {
+  background-color: #e53935;
+}
+
+.markview-notification-info {
+  background-color: #1976d2;
+}
+
+.markview-notification-action {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transform: translateX(100%);
+  animation: none; /* Override default fade-in */
+}
+
+.markview-notification-action.show {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Fade Out state (applied via JS) */
+.markview-notification.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.markview-notification-action.fade-out {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* Keyframes kept for legacy compatibility */
+@keyframes markview-fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes markview-fadeout {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Dark theme support */
+.markview-dark .markview-notification {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ================================
+   Instant Show (skip animation when replacing)
+   ================================ */
+
+.markview-notification--instant {
+  /* Skip transition animation for instant show */
+  transition: none !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* For action type */
+.markview-notification-action.markview-notification--instant {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition: none !important;
+}
+
+/* For scoped notifications */
+.markview-notification--scoped.markview-notification--instant {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: none !important;
+}
+
+.markview-notification--top-center.markview-notification--instant {
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+/* ================================
+   Scoped Notifications (for modals/containers)
+   ================================ */
+
+.markview-notification--scoped {
+  position: absolute;
+  z-index: 1;
+  animation: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.markview-notification--scoped.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.markview-notification--scoped.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: none;
+}
+
+/* Scoped position variants */
+.markview-notification--top-right {
+  top: 20px;
+  right: 20px;
+  left: auto;
+}
+
+.markview-notification--top-left {
+  top: 20px;
+  left: 20px;
+  right: auto;
+}
+
+.markview-notification--top-center {
+  top: 20px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.markview-notification--top-center.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+.markview-notification--top-center.fade-out {
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* ================================
+   Badge Style (compact notifications)
+   ================================ */
+
+.markview-notification--badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  max-width: none;
+}
+
+/* Print - hide notifications */
+@media print {
+  .markview-notification {
+    display: none !important;
+  }
+}

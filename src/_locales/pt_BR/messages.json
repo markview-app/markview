@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "Visualizador de Markdown Moderno"
+  },
+  "recentDocuments": {
+    "message": "Documentos Recentes"
+  },
+  "settingsTab": {
+    "message": "Configurações"
+  },
+  "recentEmptyTitle": {
+    "message": "Sem Arquivos Recentes"
+  },
+  "recentEmptyText": {
+    "message": "Abra arquivos markdown para vê-los aqui"
+  },
+  "generalSettings": {
+    "message": "Geral"
+  },
+  "extensionEnabled": {
+    "message": "Extensão Ativada"
+  },
+  "language": {
+    "message": "Idioma"
+  },
+  "theme": {
+    "message": "Tema"
+  },
+  "themeLight": {
+    "message": "Claro"
+  },
+  "themeDark": {
+    "message": "Escuro"
+  },
+  "themeAuto": {
+    "message": "Auto"
+  },
+  "layoutSettings": {
+    "message": "Layout"
+  },
+  "centeredLayout": {
+    "message": "Layout Centralizado"
+  },
+  "maxWidth": {
+    "message": "Largura Máxima"
+  },
+  "maxWidthDescription": {
+    "message": "Limite a largura do conteúdo para melhor legibilidade. Aplica-se apenas ao modo de layout centralizado."
+  },
+  "fontSize": {
+    "message": "Tamanho da Fonte"
+  },
+  "lineHeight": {
+    "message": "Altura da Linha"
+  },
+  "fontFamily": {
+    "message": "Família da Fonte"
+  },
+  "fontDefault": {
+    "message": "Padrão"
+  },
+  "featuresSettings": {
+    "message": "Funcionalidades"
+  },
+  "configurePlugins": {
+    "message": "Configurar Plugins"
+  },
+  "syntaxTheme": {
+    "message": "Tema de Sintaxe"
+  },
+  "syntaxThemeDescription": {
+    "message": "Tema de cores para blocos de código. O tema MarkView se adapta automaticamente ao modo claro/escuro."
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "Auto (Claro/Escuro)"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "Temas Claros"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "Temas Escuros"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView (Padrão)"
+  },
+  "syntaxHighlighting": {
+    "message": "Realce de Sintaxe"
+  },
+  "taskLists": {
+    "message": "Listas de Tarefas"
+  },
+  "tables": {
+    "message": "Tabelas"
+  },
+  "productivitySettings": {
+    "message": "Produtividade"
+  },
+  "autoRefresh": {
+    "message": "Atualização Automática"
+  },
+  "autoRefreshDescription": {
+    "message": "Recarregar automaticamente quando o arquivo mudar (a cada 2 segundos)"
+  },
+  "sidebarsSettings": {
+    "message": "Barras Laterais"
+  },
+  "folderBrowser": {
+    "message": "Navegador de Pastas"
+  },
+  "tableOfContents": {
+    "message": "Índice"
+  },
+  "resetToDefaults": {
+    "message": "Restaurar Padrões"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 Este recurso não está disponível no modo RAW"
+  },
+  "clearCache": {
+    "message": "Limpar cache"
+  },
+  "clearCacheHint": {
+    "message": "Limpa dados de cache temporários, incluindo identificadores de arquivos, árvore de diretórios, metadados de URL e caches em memória. Isso limpará as permissões de acesso a arquivos e pode exigir a resseleção de pastas. Configurações, favoritos e metadados de histórico são preservados."
+  },
+  "watchDemo": {
+    "message": "Ver Demo"
+  },
+  "whatsNew": {
+    "message": "Novidades"
+  },
+  "actions": {
+    "message": "Ações"
+  },
+  "print": {
+    "message": "Imprimir (Salvar PDF)"
+  },
+  "reportIssue": {
+    "message": "Relatar problema"
+  },
+  "actions_previousSlide": {
+    "message": "Slide anterior"
+  },
+  "actions_nextSlide": {
+    "message": "Próximo slide"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "Alternar reprodução automática"
+  },
+  "actions_autoPlay": {
+    "message": "Reprodução automática (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "Pausar reprodução automática"
+  },
+  "actions_startAutoPlay": {
+    "message": "Iniciar reprodução automática"
+  },
+  "actions_toggleFullscreen": {
+    "message": "Alternar tela cheia"
+  },
+  "notification_noMarkdownFound": {
+    "message": "Nenhum conteúdo markdown encontrado"
+  },
+  "notification_renderFailed": {
+    "message": "Falha ao renderizar markdown"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkView carregado com sucesso!"
+  },
+  "notification_loadedWithFilename": {
+    "message": "Carregado"
+  },
+  "notification_renderError": {
+    "message": "Erro ao renderizar markdown"
+  },
+  "notification_contentUpdated": {
+    "message": "Conteúdo atualizado"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "Atualização automática indisponível: O arquivo está fora da pasta selecionada. Por favor, selecione a pasta pai contendo este arquivo."
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "Esta pasta já está aberta"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "Atualização automática pausada. Clique em um arquivo na barra lateral para retomar."
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 Extensão MarkView atualizada. Recarregando página..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 Este recurso não é suportado em contextos isolados (URLs externas)."
+  },
+  "ui_toggleRaw": {
+    "message": "Ver Dados Originais"
+  },
+  "ui_rawView": {
+    "message": "📝 Visualização Markdown Bruta"
+  },
+  "ui_renderedView": {
+    "message": "✨ Visualização Renderizada"
+  },
+  "ui_scrollTopTitle": {
+    "message": "Rolar para o topo (Tecla Home)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ Rolado para o topo"
+  },
+  "sidebar_title": {
+    "message": "Arquivos"
+  },
+  "sidebar_changeFolder": {
+    "message": "Alterar Pasta"
+  },
+  "sidebar_refresh": {
+    "message": "Atualizar"
+  },
+  "sidebar_expandCollapse": {
+    "message": "Expandir/Recolher Tudo"
+  },
+  "sidebar_hide": {
+    "message": "Ocultar Barra Lateral"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "Pesquisar arquivos..."
+  },
+  "sidebar_scanning": {
+    "message": "Escaneando diretório..."
+  },
+  "sidebar_bookmarks": {
+    "message": "Marcadores"
+  },
+  "sidebar_addBookmark": {
+    "message": "Adicionar marcador"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "Excluir"
+  },
+  "sidebar_renameBookmark": {
+    "message": "Renomear"
+  },
+  "sidebar_lastAccess": {
+    "message": "Último acesso"
+  },
+  "permissionTitle": {
+    "message": "Acesso a Arquivos Necessário"
+  },
+  "permissionText": {
+    "message": "Para navegar em arquivos markdown locais, ative o acesso a arquivos:"
+  },
+  "permissionStep1": {
+    "message": "Vá para"
+  },
+  "permissionStep2": {
+    "message": "Encontre MarkView e clique em \"Detalhes\""
+  },
+  "permissionStep3": {
+    "message": "Ative \"Permitir acesso a URLs de arquivo\""
+  },
+  "permissionStep4": {
+    "message": "Atualizar esta página"
+  },
+  "openExtensionSettings": {
+    "message": "Abrir Configurações da Extensão"
+  },
+  "sidebar_emptyTitle": {
+    "message": "Navegar Arquivos Markdown"
+  },
+  "sidebar_emptyText": {
+    "message": "Selecione a pasta contendo seus arquivos markdown para ativar a navegação."
+  },
+  "sidebar_selectFolder": {
+    "message": "Selecionar Pasta"
+  },
+  "sidebar_close": {
+    "message": "Fechar Barra Lateral"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 Uma vez selecionada, esta pasta será lembrada"
+  },
+  "sidebar_externalTitle": {
+    "message": "Modo Arquivo Externo"
+  },
+  "sidebar_externalText": {
+    "message": "Navegação de arquivos não é suportada para arquivos externos (URLs HTTP/HTTPS)."
+  },
+  "sidebar_externalHint": {
+    "message": "💡 Este recurso está disponível apenas para arquivos locais (protocolo file://)"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "Pasta Diferente"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "Exibindo atualmente:"
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "Este arquivo parece estar em um local diferente. Selecione uma nova pasta para navegar pelos arquivos aqui."
+  },
+  "sidebar_selectNewFolder": {
+    "message": "Selecionar Nova Pasta"
+  },
+  "sidebar_errorTitle": {
+    "message": "Erro"
+  },
+  "sidebar_errorText": {
+    "message": "Falha ao escanear diretório:"
+  },
+  "sidebar_retry": {
+    "message": "Tentar Novamente"
+  },
+  "sidebar_noFiles": {
+    "message": "Nenhum arquivo markdown encontrado neste diretório."
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "Permissão Necessária"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "A permissão do navegador para acessar esta pasta expirou. Clique abaixo para restaurar o acesso."
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "Dica: Seu navegador pode mostrar várias pastas no prompt de permissão. Selecione \"Permitir em cada visita\" para restaurar o acesso a todas."
+  },
+  "sidebar_restoreAccess": {
+    "message": "Restaurar acesso"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ Configurações salvas!"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ Cache limpo!"
+  },
+  "popup_clearCacheTitle": {
+    "message": "Limpar cache?"
+  },
+  "popup_clearCache": {
+    "message": "Limpar cache"
+  },
+  "popup_resetTitle": {
+    "message": "Redefinir Configurações?"
+  },
+  "popup_resetText": {
+    "message": "Isso redefinirá todas as configurações para seus valores padrão. Esta ação não pode ser desfeita."
+  },
+  "popup_cancel": {
+    "message": "Cancelar"
+  },
+  "popup_reset": {
+    "message": "Redefinir"
+  },
+  "toc_title": {
+    "message": "Índice"
+  },
+  "toc_collapseAll": {
+    "message": "Recolher Tudo"
+  },
+  "toc_expandAll": {
+    "message": "Expandir Tudo"
+  },
+  "toc_close": {
+    "message": "Fechar Índice"
+  },
+  "toc_collapse": {
+    "message": "Recolher"
+  },
+  "toc_expand": {
+    "message": "Expandir"
+  },
+  "toc_noHeadings": {
+    "message": "Nenhum título encontrado"
+  },
+  "toc_rawModeTitle": {
+    "message": "Modo Markdown Bruto"
+  },
+  "toc_rawModeMessage": {
+    "message": "O índice não está disponível na visualização markdown bruta."
+  },
+  "toc_toggleButtonTitle": {
+    "message": "Alternar barra lateral de índice - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "Alternar tema (Claro/Escuro/Auto) - Ctrl+Shift+D"
+  },
+  "theme_light": {
+    "message": "⚪ Tema Claro"
+  },
+  "theme_dark": {
+    "message": "⚫ Tema Escuro"
+  },
+  "theme_auto": {
+    "message": "⚙️ Tema Auto"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "Alternar layout (Largo/Centralizado) - Ctrl+Shift+C"
+  },
+  "centered_centered": {
+    "message": "📄 Layout Centralizado"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ Layout Largura Total"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "Alternar barra lateral de navegação de pastas - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "Limpar todos os documentos recentes?"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "Isso removerá todos os documentos recentes da lista. Esta ação não pode ser desfeita."
+  },
+  "recent_clearSuccess": {
+    "message": "Documentos recentes limpos"
+  },
+  "recent_clearFailed": {
+    "message": "Falha ao limpar documentos recentes"
+  },
+  "recent_loadFailed": {
+    "message": "Falha ao carregar documentos recentes"
+  },
+  "recent_openFailed": {
+    "message": "Este arquivo não pode ser reaberto do histórico. Use 'Alterar Pasta' para procurá-lo novamente."
+  },
+  "recent_clearAll": {
+    "message": "Limpar Tudo"
+  },
+  "recent_refresh": {
+    "message": "Atualizar"
+  },
+  "recent_search": {
+    "message": "Pesquisar documentos..."
+  },
+  "recent_infoText": {
+    "message": "Apenas URLs colados na barra de endereços do navegador são salvos aqui"
+  },
+  "recent_noResults": {
+    "message": "Nenhum documento corresponde à sua pesquisa"
+  },
+  "recent_accessed": {
+    "message": "Acessado"
+  },
+  "recent_removeItem": {
+    "message": "Remover da lista"
+  },
+  "recent_copyUrl": {
+    "message": "Copiar URL"
+  },
+  "recent_urlCopied": {
+    "message": "URL copiado para a área de transferência"
+  },
+  "recent_clickToOpen": {
+    "message": "Clique para abrir na aba atual, Shift+Clique para nova aba"
+  },
+  "recent_cannotReopen": {
+    "message": "Arquivos da File System API não podem ser reabertos do histórico"
+  },
+  "recent_localFiles": {
+    "message": "Arquivos locais"
+  },
+  "recent_externalFiles": {
+    "message": "Arquivos externos"
+  },
+  "recent_otherFiles": {
+    "message": "Outros arquivos"
+  },
+  "recent_showMoreFiles": {
+    "message": "Mostrar mais {0} arquivos"
+  },
+  "recent_refreshed": {
+    "message": "Documentos recentes atualizados"
+  },
+  "recent_removed": {
+    "message": "Documento removido da lista"
+  },
+  "recent_filenameCopied": {
+    "message": "Nome do arquivo copiado"
+  },
+  "recent_fileHandleLost": {
+    "message": "Acesso ao arquivo perdido. Use 'Alterar pasta' para procurar o arquivo novamente."
+  },
+  "recent_permissionDenied": {
+    "message": "Permissão negada. Não é possível abrir o arquivo."
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "permissionTab": {
+    "message": "Configuração necessária"
+  },
+  "keyboardHelp_title": {
+    "message": "Atalhos de teclado"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "Acesso rápido a todos os recursos"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "Exibição"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "Alternar tema (Claro/Escuro/Auto)"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "Ver dados originais"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "Alternar layout (Largo/Centralizado)"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "Alternar barra lateral de índice"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "Alternar barra lateral de navegação de pastas"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "Abrir configurações rápidas"
+  },
+  "keyboardHelp_navigation": {
+    "message": "Navegação"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "Pesquisar na pasta"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "Rolar para o topo da página"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "Fechar qualquer modal aberto"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "Galeria de imagens"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "Imagem anterior"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "Próxima imagem"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "Fechar visualizador de imagens"
+  },
+  "keyboardHelp_macNote": {
+    "message": "No macOS, use ⌘ (Cmd) em vez de Ctrl"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "No macOS, substitua Ctrl por ⌘ (Cmd)"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "Atalhos de teclado"
+  },
+  "actions_configurePlugins": {
+    "message": "Configurar Plugins"
+  },
+  "actions_extensionInfo": {
+    "message": "Sobre o MarkView"
+  },
+  "actions_quickSettings": {
+    "message": "Configurações Rápidas"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "Ajustar configurações usadas frequentemente"
+  },
+  "pluginConfig_title": {
+    "message": "Configuração de Plugins"
+  },
+  "pluginConfig_subtitle": {
+    "message": "Habilitar ou desabilitar plugins de renderização markdown"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "Redefinir para padrões"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "Redefinir todos os plugins para as configurações padrão?"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "Renderização principal"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "Conteúdo e mídia"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "Formatação de texto"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "Sintaxe estendida"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "Recursos avançados"
+  },
+  "common_close": {
+    "message": "Fechar"
+  },
+  "common_cancel": {
+    "message": "Cancelar"
+  },
+  "common_confirm": {
+    "message": "OK"
+  },
+  "codeBlockDisplay": {
+    "message": "Exibição de blocos de código"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "Como lidar com linhas longas em blocos de código. Rolar preserva a formatação com uma barra de rolagem horizontal, enquanto Quebrar divide linhas longas para facilitar a leitura."
+  },
+  "codeBlockDisplayScroll": {
+    "message": "Rolar (preservar formatação)"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "Quebrar (dividir linhas longas)"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "Links rápidos"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "Avaliar extensão"
+  },
+  "extensionInfo_about": {
+    "message": "Sobre o MarkView"
+  },
+  "extensionInfo_description": {
+    "message": "MarkView é um visualizador de Markdown moderno e rico em recursos para navegadores Chromium (Chrome, Edge, Brave, Opera, etc.). Transforme seus arquivos Markdown em documentos interativos bonitos com destaque de sintaxe, diagramas, equações matemáticas e muito mais."
+  },
+  "extensionInfo_website": {
+    "message": "Site oficial"
+  },
+  "extensionInfo_madeWith": {
+    "message": "Feito com"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "para desenvolvedores e escritores"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "Todos os direitos reservados"
+  }
+}

@@ -1,0 +1,232 @@
+/* Print styles - optimized layout for printing */
+@media print {
+  /* Hide all UI elements - target by ID and class */
+  #markview-action-buttons,
+  #markview-scroll-top,
+  .markview-toc-sidebar,
+  .markview-toc-toggle,
+  .markview-theme-toggle,
+  .markview-centered-toggle,
+  .markview-scroll-top,
+  .markview-notification,
+  .markview-copy-button,
+  button[id*='markview-'],
+  button[class*='markview-'],
+  div[class*='markview-'][style*='position: fixed'],
+  div[class*='markview-'][style*='position:fixed'] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* Reset body styles for printing */
+  html.markview-active body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+    overflow: visible !important;
+  }
+
+  /* Reset container for printing */
+  #markview-container {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 15px !important;
+    background: white;
+    color: black;
+    min-height: auto;
+    overflow: visible !important;
+  }
+
+  /* Remove effects and prevent breaks */
+  #markview-container * {
+    box-shadow: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Ensure images fit on page */
+  #markview-container img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* Table styles for printing */
+  #markview-container table {
+    display: table !important;
+    table-layout: auto !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: none !important;
+    page-break-inside: auto;
+  }
+
+  /* Keep table header with first row */
+  #markview-container table thead {
+    page-break-after: avoid;
+  }
+
+  /* Avoid breaking table rows */
+  #markview-container table tr {
+    page-break-inside: avoid;
+  }
+
+  /* Restore table elements display in print */
+  #markview-container table thead,
+  #markview-container table tbody,
+  #markview-container table tfoot {
+    display: table-row-group !important;
+  }
+
+  #markview-container table tr {
+    display: table-row !important;
+  }
+
+  #markview-container table th,
+  #markview-container table td {
+    display: table-cell !important;
+    /* Adjust cell sizing for print */
+    padding: 4px 6px !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    /* Flexible width for print - no hard max-width to allow tables to scale */
+    width: auto !important;
+    max-width: none !important;
+    min-width: 30px !important;
+  }
+
+  /* Smaller fonts for table headers in print */
+  #markview-container table th {
+    font-size: 9px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Break long URLs in table cells */
+  #markview-container table td a,
+  #markview-container table th a {
+    word-break: break-all !important;
+    font-size: 9px !important;
+  }
+
+  /* Special handling for wide tables (many columns) */
+  /* Detect tables with many columns and scale them down */
+  #markview-container table:has(thead tr th:nth-child(6)),
+  #markview-container table:has(tbody tr td:nth-child(6)) {
+    font-size: 8px !important;
+  }
+
+  #markview-container table:has(thead tr th:nth-child(6)) th,
+  #markview-container table:has(tbody tr td:nth-child(6)) td {
+    padding: 3px 4px !important;
+    font-size: 8px !important;
+    line-height: 1.2 !important;
+  }
+
+  #markview-container table:has(thead tr th:nth-child(6)) th {
+    font-size: 7px !important;
+  }
+
+  /* Extra small for tables with 10+ columns */
+  #markview-container table:has(thead tr th:nth-child(10)),
+  #markview-container table:has(tbody tr td:nth-child(10)) {
+    font-size: 6px !important;
+  }
+
+  #markview-container table:has(thead tr th:nth-child(10)) th,
+  #markview-container table:has(tbody tr td:nth-child(10)) td {
+    padding: 2px 3px !important;
+    font-size: 6px !important;
+    line-height: 1.1 !important;
+  }
+
+  #markview-container table:has(thead tr th:nth-child(10)) th {
+    font-size: 5.5px !important;
+  }
+
+  /* Preserve custom link colors */
+  #markview-container a {
+    color: var(--brand-primary) !important;
+    text-decoration: none !important;
+  }
+
+  /* Code block wrapper - constrain and scale to fit */
+  #markview-container .markview-code-block-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    page-break-inside: avoid;
+    margin: 10px 0 !important;
+  }
+
+  /* Keep language label visible */
+  #markview-container .markview-language-label {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 9px !important;
+    margin-top: 8px !important;
+    color: #666 !important;
+  }
+
+  /* Print-friendly code blocks - allow page breaks for long content */
+  #markview-container pre {
+    border: 1px solid #e1e4e8 !important;
+    background: #f6f8fa !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    padding: 8px !important;
+    margin: 10px 0 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    /* Allow page breaks inside long code blocks */
+    page-break-inside: auto;
+    overflow: visible !important;
+  }
+
+  /* Print-friendly code blocks - always force wrap mode regardless of user setting */
+  /* Override both scroll and wrap mode classes with higher specificity */
+  #markview-container pre code,
+  #markview-container.code-block-scroll pre code,
+  #markview-container.code-block-wrap pre code {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    display: block !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    overflow-x: visible !important;
+  }
+
+  /* Border for table cells in print */
+  #markview-container table th,
+  #markview-container table td {
+    border: 1px solid #e1e4e8 !important;
+  }
+
+  /* Page setup for A4 with proper margins */
+  @page {
+    size: A4;
+    margin: 15mm 10mm;
+  }
+
+  /* Ensure container doesn't exceed page width */
+  #markview-container {
+    max-width: 190mm !important;
+  }
+
+  /* Mermaid diagrams - ensure they fit */
+  #markview-container .mermaid-container {
+    page-break-inside: auto;
+    max-width: 100%;
+  }
+
+  #markview-container .mermaid-container svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}

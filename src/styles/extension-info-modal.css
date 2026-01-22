@@ -1,0 +1,416 @@
+/**
+ * Extension Info Modal Styles
+ * Follows MarkView brand design system
+ */
+
+/* ===================================
+   Modal Overlay
+   =================================== */
+
+.markview-extension-info-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+/* ===================================
+   Modal Container
+   =================================== */
+
+.markview-extension-info-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===================================
+   Modal Header (Fixed)
+   =================================== */
+
+.markview-extension-info-header {
+  position: relative;
+  padding: 40px 32px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.markview-extension-info-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.markview-extension-info-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.markview-extension-info-close:active {
+  transform: scale(0.95);
+}
+
+.markview-extension-info-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.markview-extension-info-logo {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.markview-extension-info-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.markview-extension-info-version {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.markview-extension-info-tagline {
+  font-size: 15px;
+  margin: 0;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+/* ===================================
+   Modal Body (Scrollable)
+   =================================== */
+
+.markview-extension-info-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0;
+}
+
+/* Custom Scrollbar */
+.markview-extension-info-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.markview-extension-info-body::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+.markview-extension-info-body::-webkit-scrollbar-thumb {
+  background: #d1d5da;
+  border-radius: 4px;
+}
+
+.markview-extension-info-body::-webkit-scrollbar-thumb:hover {
+  background: #959da5;
+}
+
+.markview-extension-info-content {
+  padding: 32px;
+}
+
+/* ===================================
+   Sections
+   =================================== */
+
+.markview-extension-info-section {
+  margin-bottom: 32px;
+}
+
+.markview-extension-info-section:last-child {
+  margin-bottom: 0;
+}
+
+.markview-extension-info-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.markview-extension-info-section-title svg {
+  color: #667eea;
+}
+
+/* ===================================
+   Quick Links
+   =================================== */
+
+.markview-extension-info-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.markview-extension-info-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.markview-extension-info-link:hover {
+  background: #f0f2ff;
+  border-color: #667eea;
+  transform: translateX(4px);
+}
+
+.markview-extension-info-link:active {
+  transform: translateX(2px);
+}
+
+.markview-extension-info-link-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.markview-extension-info-link-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.markview-extension-info-link-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.markview-extension-info-link-subtitle {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.markview-extension-info-link-arrow {
+  color: #adb5bd;
+  transition: all 0.2s ease;
+}
+
+.markview-extension-info-link:hover .markview-extension-info-link-arrow {
+  color: #667eea;
+  transform: translateX(4px);
+}
+
+/* ===================================
+   About Section
+   =================================== */
+
+.markview-extension-info-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #495057;
+  margin: 0 0 20px 0;
+}
+
+.markview-extension-info-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.markview-extension-info-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #495057;
+}
+
+.markview-extension-info-feature svg {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+.markview-extension-info-footer {
+  text-align: center;
+  padding: 24px 32px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  margin: 0;
+}
+
+.markview-extension-info-footer p {
+  margin: 0;
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.markview-extension-info-copyright {
+  margin-top: 4px !important;
+  font-size: 12px !important;
+  opacity: 0.7;
+}
+
+/* ===================================
+   Dark Theme
+   =================================== */
+
+.markview-dark .markview-extension-info-modal {
+  background: #1a1d23;
+  color: #e9ecef;
+}
+
+.markview-dark .markview-extension-info-section-title {
+  color: #e9ecef;
+}
+
+.markview-dark .markview-extension-info-link {
+  background: #252932;
+  border-color: #3a3f4b;
+  color: #e9ecef;
+}
+
+.markview-dark .markview-extension-info-link:hover {
+  background: #2d3142;
+  border-color: #667eea;
+}
+
+.markview-dark .markview-extension-info-link-title {
+  color: #e9ecef;
+}
+
+.markview-dark .markview-extension-info-link-subtitle {
+  color: #adb5bd;
+}
+
+.markview-dark .markview-extension-info-description {
+  color: #ced4da;
+}
+
+.markview-dark .markview-extension-info-feature {
+  color: #ced4da;
+}
+
+.markview-dark .markview-extension-info-footer {
+  background: #13161a;
+  border-top-color: #3a3f4b;
+}
+
+.markview-dark .markview-extension-info-footer p {
+  color: #adb5bd;
+}
+
+/* Dark Mode Scrollbar */
+html.markview-active.markview-dark .markview-extension-info-body::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+html.markview-active.markview-dark .markview-extension-info-body::-webkit-scrollbar-thumb {
+  background: #30363d;
+}
+
+html.markview-active.markview-dark .markview-extension-info-body::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 640px) {
+  .markview-extension-info-overlay {
+    padding: 0;
+  }
+
+  .markview-extension-info-modal {
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .markview-extension-info-header {
+    padding: 32px 24px 24px;
+  }
+
+  .markview-extension-info-content {
+    padding: 24px;
+  }
+
+  .markview-extension-info-title {
+    font-size: 24px;
+  }
+
+  .markview-extension-info-features {
+    grid-template-columns: 1fr;
+  }
+
+  .markview-extension-info-footer {
+    padding: 20px 24px;
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+  .markview-extension-info-overlay {
+    display: none !important;
+  }
+}

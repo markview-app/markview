@@ -1,0 +1,113 @@
+/* Table styles - scoped to MarkView container */
+
+/* Tables */
+#markview-container table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  /* Prevent table from growing beyond container */
+  max-width: 100%;
+  /* Enable horizontal scroll when content overflows */
+  display: block;
+  overflow-x: auto;
+}
+
+/* Restore table display for inner elements */
+#markview-container table thead,
+#markview-container table tbody,
+#markview-container table tfoot {
+  display: table-row-group;
+}
+
+#markview-container table tr {
+  display: table-row;
+}
+
+#markview-container table th,
+#markview-container table td {
+  display: table-cell;
+}
+
+#markview-container table:first-child {
+  margin-top: 0;
+}
+
+/* Custom scrollbar for tables */
+#markview-container table::-webkit-scrollbar {
+  height: 8px;
+}
+
+#markview-container table::-webkit-scrollbar-track {
+  background: var(--markview-table-stripe-bg);
+  border-radius: 4px;
+}
+
+#markview-container table::-webkit-scrollbar-thumb {
+  background: var(--markview-border);
+  border-radius: 4px;
+}
+
+#markview-container table::-webkit-scrollbar-thumb:hover {
+  background: var(--markview-text);
+  opacity: 0.7;
+}
+
+table th,
+#markview-container table td {
+  padding: 6px 13px;
+  border: 1px solid var(--markview-border);
+  vertical-align: top;
+}
+
+#markview-container table th {
+  font-weight: 600;
+  background: var(--markview-table-header-bg);
+}
+
+#markview-container table tr:nth-child(2n) {
+  background: var(--markview-table-stripe-bg);
+}
+
+/* Lists inside table cells */
+table td ul,
+table td ol,
+table th ul,
+#markview-container table th ol {
+  margin: 0;
+  padding-left: 1.5em;
+  list-style-position: outside;
+}
+
+table td ul ul,
+table td ol ol,
+table td ul ol,
+#markview-container table td ol ul {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+table td li,
+#markview-container table th li {
+  margin: 0.25em 0;
+}
+
+table td p,
+#markview-container table th p {
+  margin: 0.5em 0;
+}
+
+table td p:first-child,
+#markview-container table th p:first-child {
+  margin-top: 0;
+}
+
+table td p:last-child,
+#markview-container table th p:last-child {
+  margin-bottom: 0;
+}
+
+table td li > p,
+#markview-container table th li > p {
+  margin: 0;
+}

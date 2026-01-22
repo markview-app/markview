@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "Trình xem Markdown hiện đại"
+  },
+  "recentDocuments": {
+    "message": "Tài liệu gần đây"
+  },
+  "settingsTab": {
+    "message": "Cài đặt"
+  },
+  "recentEmptyTitle": {
+    "message": "Không có tệp gần đây"
+  },
+  "recentEmptyText": {
+    "message": "Mở tệp markdown để xem chúng ở đây"
+  },
+  "generalSettings": {
+    "message": "Chung"
+  },
+  "extensionEnabled": {
+    "message": "Bật tiện ích"
+  },
+  "language": {
+    "message": "Ngôn ngữ"
+  },
+  "theme": {
+    "message": "Giao diện"
+  },
+  "themeLight": {
+    "message": "Sáng"
+  },
+  "themeDark": {
+    "message": "Tối"
+  },
+  "themeAuto": {
+    "message": "Tự động"
+  },
+  "layoutSettings": {
+    "message": "Bố cục"
+  },
+  "centeredLayout": {
+    "message": "Căn giữa"
+  },
+  "maxWidth": {
+    "message": "Chiều rộng tối đa"
+  },
+  "maxWidthDescription": {
+    "message": "Giới hạn độ rộng nội dung để dễ đọc hơn. Chỉ áp dụng cho chế độ bố cục canh giữa."
+  },
+  "fontSize": {
+    "message": "Cỡ chữ"
+  },
+  "lineHeight": {
+    "message": "Chiều cao dòng"
+  },
+  "fontFamily": {
+    "message": "Phông chữ"
+  },
+  "fontDefault": {
+    "message": "Mặc định"
+  },
+  "featuresSettings": {
+    "message": "Tính năng"
+  },
+  "configurePlugins": {
+    "message": "Cấu hình Plugin"
+  },
+  "syntaxTheme": {
+    "message": "Giao diện Code"
+  },
+  "syntaxThemeDescription": {
+    "message": "Màu sắc cho khối code. Giao diện MarkView tự động thích ứng với chế độ sáng/tối."
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "Tự động (Sáng/Tối)"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "Giao diện Sáng"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "Giao diện Tối"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView (Mặc định)"
+  },
+  "syntaxHighlighting": {
+    "message": "Tô màu cú pháp"
+  },
+  "taskLists": {
+    "message": "Danh sách công việc"
+  },
+  "tables": {
+    "message": "Bảng"
+  },
+  "productivitySettings": {
+    "message": "Năng suất"
+  },
+  "autoRefresh": {
+    "message": "Tự động làm mới"
+  },
+  "autoRefreshDescription": {
+    "message": "Tự động tải lại khi tệp thay đổi (mỗi 2 giây)"
+  },
+  "sidebarsSettings": {
+    "message": "Thanh bên"
+  },
+  "folderBrowser": {
+    "message": "Duyệt thư mục"
+  },
+  "tableOfContents": {
+    "message": "Mục lục"
+  },
+  "resetToDefaults": {
+    "message": "Khôi phục mặc định"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 Tính năng này không khả dụng trong chế độ RAW"
+  },
+  "clearCache": {
+    "message": "Xóa bộ nhớ cache"
+  },
+  "clearCacheHint": {
+    "message": "Xóa dữ liệu cache tạm thời bao gồm file handle, cache cây thư mục, URL metadata và cache trong bộ nhớ. Điều này sẽ xóa quyền truy cập file và có thể yêu cầu chọn lại thư mục. Cài đặt, bookmark và metadata lịch sử được giữ nguyên."
+  },
+  "watchDemo": {
+    "message": "Xem Demo"
+  },
+  "whatsNew": {
+    "message": "Có gì mới"
+  },
+  "actions": {
+    "message": "Hành động"
+  },
+  "print": {
+    "message": "In (Lưu PDF)"
+  },
+  "reportIssue": {
+    "message": "Báo cáo sự cố"
+  },
+  "actions_previousSlide": {
+    "message": "Slide trước"
+  },
+  "actions_nextSlide": {
+    "message": "Slide tiếp theo"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "Bật/tắt tự động phát"
+  },
+  "actions_autoPlay": {
+    "message": "Tự động phát (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "Tạm dừng tự động phát"
+  },
+  "actions_startAutoPlay": {
+    "message": "Bắt đầu tự động phát"
+  },
+  "actions_toggleFullscreen": {
+    "message": "Bật/tắt toàn màn hình"
+  },
+  "notification_noMarkdownFound": {
+    "message": "Không tìm thấy nội dung markdown"
+  },
+  "notification_renderFailed": {
+    "message": "Không thể hiển thị markdown"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkView đã tải thành công!"
+  },
+  "notification_loadedWithFilename": {
+    "message": "Đã tải"
+  },
+  "notification_renderError": {
+    "message": "Lỗi hiển thị markdown"
+  },
+  "notification_contentUpdated": {
+    "message": "Nội dung đã được cập nhật"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "Tự động làm mới không khả dụng: Tệp nằm ngoài thư mục đã chọn. Vui lòng chọn thư mục cha chứa tệp này."
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "Thư mục này đã được mở"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "Tự động làm mới đã tạm dừng. Nhấp vào một tệp trong thanh bên để tiếp tục."
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 MarkView đã được cập nhật. Đang tải lại trang..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 Tính năng này không được hỗ trợ trong ngữ cảnh sandbox (URL bên ngoài)."
+  },
+  "ui_toggleRaw": {
+    "message": "Xem Dữ Liệu Gốc"
+  },
+  "ui_rawView": {
+    "message": "📝 Xem Markdown thô"
+  },
+  "ui_renderedView": {
+    "message": "✨ Xem hiển thị"
+  },
+  "ui_scrollTopTitle": {
+    "message": "Cuộn lên đầu trang (Phím Home)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ Đã cuộn lên đầu trang"
+  },
+  "sidebar_title": {
+    "message": "Tệp tin"
+  },
+  "sidebar_changeFolder": {
+    "message": "Đổi thư mục"
+  },
+  "sidebar_refresh": {
+    "message": "Làm mới"
+  },
+  "sidebar_expandCollapse": {
+    "message": "Mở rộng/Thu gọn tất cả"
+  },
+  "sidebar_hide": {
+    "message": "Ẩn thanh bên"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "Tìm kiếm tệp..."
+  },
+  "sidebar_scanning": {
+    "message": "Đang quét thư mục..."
+  },
+  "sidebar_bookmarks": {
+    "message": "Dấu trang"
+  },
+  "sidebar_addBookmark": {
+    "message": "Thêm dấu trang"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "Xóa"
+  },
+  "sidebar_renameBookmark": {
+    "message": "Đổi tên"
+  },
+  "sidebar_lastAccess": {
+    "message": "Truy cập lần cuối"
+  },
+  "permissionTitle": {
+    "message": "Yêu cầu truy cập tệp"
+  },
+  "permissionText": {
+    "message": "Để duyệt các tệp markdown cục bộ, hãy bật quyền truy cập tệp:"
+  },
+  "permissionStep1": {
+    "message": "Đi tới"
+  },
+  "permissionStep2": {
+    "message": "Tìm MarkView và nhấp vào \"Chi tiết\""
+  },
+  "permissionStep3": {
+    "message": "Bật \"Cho phép truy cập vào các URL tệp\""
+  },
+  "permissionStep4": {
+    "message": "Làm mới trang này"
+  },
+  "openExtensionSettings": {
+    "message": "Mở Cài đặt Tiện ích"
+  },
+  "sidebar_emptyTitle": {
+    "message": "Duyệt tệp Markdown"
+  },
+  "sidebar_emptyText": {
+    "message": "Chọn thư mục chứa các tệp markdown của bạn để bật điều hướng."
+  },
+  "sidebar_selectFolder": {
+    "message": "Chọn thư mục"
+  },
+  "sidebar_close": {
+    "message": "Đóng thanh bên"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 Sau khi chọn, thư mục này sẽ được ghi nhớ"
+  },
+  "sidebar_externalTitle": {
+    "message": "Chế độ tệp bên ngoài"
+  },
+  "sidebar_externalText": {
+    "message": "Duyệt tệp không được hỗ trợ cho các tệp bên ngoài (URL HTTP/HTTPS)."
+  },
+  "sidebar_externalHint": {
+    "message": "💡 Tính năng này chỉ khả dụng cho các tệp cục bộ (giao thức file://)"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "Thư mục khác"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "Đang hiển thị:"
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "Tệp này dường như ở một vị trí khác. Chọn một thư mục mới để duyệt các tệp tại đây."
+  },
+  "sidebar_selectNewFolder": {
+    "message": "Chọn thư mục mới"
+  },
+  "sidebar_errorTitle": {
+    "message": "Lỗi"
+  },
+  "sidebar_errorText": {
+    "message": "Không thể quét thư mục:"
+  },
+  "sidebar_retry": {
+    "message": "Thử lại"
+  },
+  "sidebar_noFiles": {
+    "message": "Không tìm thấy tệp markdown nào trong thư mục này."
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "Cần Cấp Quyền"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "Quyền truy cập thư mục này đã hết hạn. Nhấn nút bên dưới để khôi phục quyền truy cập."
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "Mẹo: Trình duyệt của bạn có thể hiển thị nhiều thư mục trong lời nhắc quyền. Chọn \"Cho phép mỗi lần truy cập\" để khôi phục quyền truy cập cho tất cả."
+  },
+  "sidebar_restoreAccess": {
+    "message": "Khôi phục quyền truy cập"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ Đã lưu cài đặt!"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ Đã xóa bộ nhớ cache!"
+  },
+  "popup_clearCacheTitle": {
+    "message": "Xóa bộ nhớ cache?"
+  },
+  "popup_clearCache": {
+    "message": "Xóa cache"
+  },
+  "popup_resetTitle": {
+    "message": "Đặt lại cài đặt?"
+  },
+  "popup_resetText": {
+    "message": "Thao tác này sẽ đặt lại tất cả cài đặt về giá trị mặc định. Hành động này không thể hoàn tác."
+  },
+  "popup_cancel": {
+    "message": "Hủy"
+  },
+  "popup_reset": {
+    "message": "Đặt lại"
+  },
+  "toc_title": {
+    "message": "Mục lục"
+  },
+  "toc_collapseAll": {
+    "message": "Thu gọn tất cả"
+  },
+  "toc_expandAll": {
+    "message": "Mở rộng tất cả"
+  },
+  "toc_close": {
+    "message": "Đóng mục lục"
+  },
+  "toc_collapse": {
+    "message": "Thu gọn"
+  },
+  "toc_expand": {
+    "message": "Mở rộng"
+  },
+  "toc_noHeadings": {
+    "message": "Không tìm thấy tiêu đề"
+  },
+  "toc_rawModeTitle": {
+    "message": "Chế độ Markdown thô"
+  },
+  "toc_rawModeMessage": {
+    "message": "Mục lục không khả dụng trong chế độ xem markdown thô."
+  },
+  "toc_toggleButtonTitle": {
+    "message": "Chuyển đổi thanh bên mục lục - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "Chuyển đổi giao diện (Ctrl+Shift+T)"
+  },
+  "theme_light": {
+    "message": "⚪ Giao diện sáng"
+  },
+  "theme_dark": {
+    "message": "⚫ Giao diện tối"
+  },
+  "theme_auto": {
+    "message": "⚙️ Tự động"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "Chuyển đổi bố cục (Rộng/Căn giữa) - Ctrl+Shift+C"
+  },
+  "centered_centered": {
+    "message": "📄 Căn giữa"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ Toàn bộ chiều rộng"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "Chuyển đổi thanh bên trình duyệt thư mục - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "Xóa tất cả tài liệu gần đây?"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "Điều này sẽ xóa tất cả tài liệu gần đây khỏi danh sách. Hành động này không thể hoàn tác."
+  },
+  "recent_clearSuccess": {
+    "message": "Đã xóa tài liệu gần đây"
+  },
+  "recent_clearFailed": {
+    "message": "Không thể xóa tài liệu gần đây"
+  },
+  "recent_loadFailed": {
+    "message": "Không thể tải tài liệu gần đây"
+  },
+  "recent_openFailed": {
+    "message": "Tệp này không thể mở lại từ lịch sử. Vui lòng sử dụng 'Đổi Thư mục' để tìm lại."
+  },
+  "recent_clearAll": {
+    "message": "Xóa Tất cả"
+  },
+  "recent_refresh": {
+    "message": "Làm mới"
+  },
+  "recent_search": {
+    "message": "Tìm kiếm tài liệu..."
+  },
+  "recent_infoText": {
+    "message": "Chỉ các URL được dán vào thanh địa chỉ trình duyệt mới được lưu ở đây"
+  },
+  "recent_noResults": {
+    "message": "Không có tài liệu nào phù hợp với tìm kiếm của bạn"
+  },
+  "recent_accessed": {
+    "message": "Đã truy cập"
+  },
+  "recent_removeItem": {
+    "message": "Xóa khỏi danh sách"
+  },
+  "recent_copyUrl": {
+    "message": "Sao chép URL"
+  },
+  "recent_urlCopied": {
+    "message": "Đã sao chép URL vào clipboard"
+  },
+  "recent_clickToOpen": {
+    "message": "Nhấp để mở trong tab hiện tại, Shift+Nhấp cho tab mới"
+  },
+  "recent_cannotReopen": {
+    "message": "Tệp File System API không thể mở lại từ lịch sử"
+  },
+  "recent_localFiles": {
+    "message": "Tệp cục bộ"
+  },
+  "recent_externalFiles": {
+    "message": "Tệp bên ngoài"
+  },
+  "recent_otherFiles": {
+    "message": "Tệp khác"
+  },
+  "recent_showMoreFiles": {
+    "message": "Hiện thêm {0} tệp"
+  },
+  "recent_refreshed": {
+    "message": "Đã làm mới tài liệu gần đây"
+  },
+  "recent_removed": {
+    "message": "Đã xóa tài liệu khỏi danh sách"
+  },
+  "recent_filenameCopied": {
+    "message": "Đã sao chép tên tệp"
+  },
+  "recent_fileHandleLost": {
+    "message": "Mất quyền truy cập tệp. Sử dụng 'Thay đổi thư mục' để duyệt lại tệp."
+  },
+  "recent_permissionDenied": {
+    "message": "Quyền bị từ chối. Không thể mở tệp."
+  },
+  "cancel": {
+    "message": "Hủy"
+  },
+  "permissionTab": {
+    "message": "Cần thiết lập"
+  },
+  "keyboardHelp_title": {
+    "message": "Phím tắt"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "Truy cập nhanh tất cả tính năng"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "Hiển thị"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "Chuyển đổi giao diện (Sáng/Tối/Tự động)"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "Xem dữ liệu gốc"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "Chuyển đổi bố cục (Rộng/Căn giữa)"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "Chuyển đổi thanh bên mục lục"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "Chuyển đổi thanh bên trình duyệt thư mục"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "Mở cài đặt nhanh"
+  },
+  "keyboardHelp_navigation": {
+    "message": "Điều hướng"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "Tìm kiếm trong thư mục"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "Cuộn lên đầu trang"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "Đóng cửa sổ bật lên đang mở"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "Thư viện ảnh"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "Ảnh trước"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "Ảnh tiếp theo"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "Đóng trình xem ảnh"
+  },
+  "keyboardHelp_macNote": {
+    "message": "Trên macOS, sử dụng ⌘ (Cmd) thay vì Ctrl"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "Trên macOS, thay thế Ctrl bằng ⌘ (Cmd)"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "Phím tắt"
+  },
+  "actions_configurePlugins": {
+    "message": "Cấu hình Plugin"
+  },
+  "actions_extensionInfo": {
+    "message": "Về MarkView"
+  },
+  "actions_quickSettings": {
+    "message": "Cài Đặt Nhanh"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "Điều chỉnh các cài đặt thường dùng"
+  },
+  "pluginConfig_title": {
+    "message": "Cấu hình Plugin"
+  },
+  "pluginConfig_subtitle": {
+    "message": "Bật hoặc tắt các plugin markdown"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "Đặt lại mặc định"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "Đặt lại tất cả plugin về mặc định?"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "Hiển thị cốt lõi"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "Nội dung & Đa phương tiện"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "Định dạng văn bản"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "Cú pháp mở rộng"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "Tính năng nâng cao"
+  },
+  "common_close": {
+    "message": "Đóng"
+  },
+  "common_cancel": {
+    "message": "Hủy"
+  },
+  "common_confirm": {
+    "message": "OK"
+  },
+  "codeBlockDisplay": {
+    "message": "Hiển thị khối mã"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "Cách xử lý các dòng dài trong khối mã. Cuộn giữ nguyên định dạng với thanh cuộn ngang, trong khi Ngắt dòng chia các dòng dài để dễ đọc hơn."
+  },
+  "codeBlockDisplayScroll": {
+    "message": "Cuộn (giữ định dạng)"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "Ngắt dòng (chia dòng dài)"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "Liên kết nhanh"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "Đánh giá tiện ích"
+  },
+  "extensionInfo_about": {
+    "message": "Về MarkView"
+  },
+  "extensionInfo_description": {
+    "message": "MarkView là trình xem Markdown hiện đại, giàu tính năng cho trình duyệt Chromium (Chrome, Edge, Brave, Opera, v.v.). Chuyển đổi các tệp Markdown của bạn thành tài liệu tương tác đẹp mắt với tô sáng cú pháp, biểu đồ, phương trình toán học và nhiều hơn nữa."
+  },
+  "extensionInfo_website": {
+    "message": "Trang web chính thức"
+  },
+  "extensionInfo_madeWith": {
+    "message": "Được tạo với"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "dành cho lập trình viên và người viết"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "Mọi quyền được bảo lưu"
+  }
+}

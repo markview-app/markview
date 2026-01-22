@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "Penampil Markdown Modern"
+  },
+  "recentDocuments": {
+    "message": "Dokumen Terkini"
+  },
+  "settingsTab": {
+    "message": "Pengaturan"
+  },
+  "recentEmptyTitle": {
+    "message": "Tidak Ada File Terkini"
+  },
+  "recentEmptyText": {
+    "message": "Buka file markdown untuk melihatnya di sini"
+  },
+  "generalSettings": {
+    "message": "Umum"
+  },
+  "extensionEnabled": {
+    "message": "Ekstensi Diaktifkan"
+  },
+  "language": {
+    "message": "Bahasa"
+  },
+  "theme": {
+    "message": "Tema"
+  },
+  "themeLight": {
+    "message": "Terang"
+  },
+  "themeDark": {
+    "message": "Gelap"
+  },
+  "themeAuto": {
+    "message": "Otomatis"
+  },
+  "layoutSettings": {
+    "message": "Tata Letak"
+  },
+  "centeredLayout": {
+    "message": "Tata Letak Tengah"
+  },
+  "maxWidth": {
+    "message": "Lebar Maksimum"
+  },
+  "maxWidthDescription": {
+    "message": "Batasi lebar konten untuk keterbacaan yang lebih baik. Hanya berlaku untuk mode tata letak terpusat."
+  },
+  "fontSize": {
+    "message": "Ukuran Font"
+  },
+  "lineHeight": {
+    "message": "Tinggi Baris"
+  },
+  "fontFamily": {
+    "message": "Keluarga Font"
+  },
+  "fontDefault": {
+    "message": "Default"
+  },
+  "featuresSettings": {
+    "message": "Fitur"
+  },
+  "configurePlugins": {
+    "message": "Konfigurasi Plugin"
+  },
+  "syntaxTheme": {
+    "message": "Tema Sintaks"
+  },
+  "syntaxThemeDescription": {
+    "message": "Tema warna untuk blok kode. Tema MarkView menyesuaikan otomatis dengan mode terang/gelap."
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "Otomatis (Terang/Gelap)"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "Tema Terang"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "Tema Gelap"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView (Default)"
+  },
+  "syntaxHighlighting": {
+    "message": "Penyorotan Sintaks"
+  },
+  "taskLists": {
+    "message": "Daftar Tugas"
+  },
+  "tables": {
+    "message": "Tabel"
+  },
+  "productivitySettings": {
+    "message": "Produktivitas"
+  },
+  "autoRefresh": {
+    "message": "Penyegaran Otomatis"
+  },
+  "autoRefreshDescription": {
+    "message": "Muat ulang otomatis saat file berubah (setiap 2 detik)"
+  },
+  "sidebarsSettings": {
+    "message": "Bilah Sisi"
+  },
+  "folderBrowser": {
+    "message": "Peramban Folder"
+  },
+  "tableOfContents": {
+    "message": "Daftar Isi"
+  },
+  "resetToDefaults": {
+    "message": "Atur Ulang ke Default"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 Fitur ini tidak tersedia dalam mode RAW"
+  },
+  "clearCache": {
+    "message": "Hapus cache"
+  },
+  "clearCacheHint": {
+    "message": "Menghapus data cache sementara termasuk file handle, pohon direktori, metadata URL, dan cache dalam memori. Ini akan menghapus izin akses file dan mungkin memerlukan pemilihan ulang folder. Pengaturan, bookmark, dan metadata riwayat tetap dipertahankan."
+  },
+  "watchDemo": {
+    "message": "Tonton Demo"
+  },
+  "whatsNew": {
+    "message": "Apa yang Baru"
+  },
+  "actions": {
+    "message": "Tindakan"
+  },
+  "print": {
+    "message": "Cetak (Simpan PDF)"
+  },
+  "reportIssue": {
+    "message": "Laporkan Masalah"
+  },
+  "actions_previousSlide": {
+    "message": "Slide sebelumnya"
+  },
+  "actions_nextSlide": {
+    "message": "Slide berikutnya"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "Beralih putar otomatis"
+  },
+  "actions_autoPlay": {
+    "message": "Putar otomatis (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "Jeda putar otomatis"
+  },
+  "actions_startAutoPlay": {
+    "message": "Mulai putar otomatis"
+  },
+  "actions_toggleFullscreen": {
+    "message": "Beralih layar penuh"
+  },
+  "notification_noMarkdownFound": {
+    "message": "Tidak ada konten markdown ditemukan"
+  },
+  "notification_renderFailed": {
+    "message": "Gagal merender markdown"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkView berhasil dimuat!"
+  },
+  "notification_loadedWithFilename": {
+    "message": "Dimuat"
+  },
+  "notification_renderError": {
+    "message": "Kesalahan merender markdown"
+  },
+  "notification_contentUpdated": {
+    "message": "Konten diperbarui"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "Penyegaran otomatis tidak tersedia: File berada di luar folder yang dipilih. Silakan pilih folder induk yang berisi file ini."
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "Folder ini sudah terbuka"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "Penyegaran otomatis dijeda. Klik file di sidebar untuk melanjutkan."
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 Ekstensi MarkView diperbarui. Memuat ulang halaman..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 Fitur ini tidak didukung dalam konteks terisolasi (URL eksternal)."
+  },
+  "ui_toggleRaw": {
+    "message": "Lihat Data Asli"
+  },
+  "ui_rawView": {
+    "message": "📝 Tampilan Markdown Mentah"
+  },
+  "ui_renderedView": {
+    "message": "✨ Tampilan Dirender"
+  },
+  "ui_scrollTopTitle": {
+    "message": "Gulir ke atas (Tombol Home)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ Digulir ke atas"
+  },
+  "sidebar_title": {
+    "message": "File"
+  },
+  "sidebar_changeFolder": {
+    "message": "Ganti Folder"
+  },
+  "sidebar_refresh": {
+    "message": "Segarkan"
+  },
+  "sidebar_expandCollapse": {
+    "message": "Perluas/Ciutkan Semua"
+  },
+  "sidebar_hide": {
+    "message": "Sembunyikan Bilah Sisi"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "Cari file..."
+  },
+  "sidebar_scanning": {
+    "message": "Memindai direktori..."
+  },
+  "sidebar_bookmarks": {
+    "message": "Penanda Halaman"
+  },
+  "sidebar_addBookmark": {
+    "message": "Tambah Penanda"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "Hapus"
+  },
+  "sidebar_renameBookmark": {
+    "message": "Ganti Nama"
+  },
+  "sidebar_lastAccess": {
+    "message": "Akses terakhir"
+  },
+  "permissionTitle": {
+    "message": "Akses File Diperlukan"
+  },
+  "permissionText": {
+    "message": "Untuk menelusuri file markdown lokal, aktifkan akses file:"
+  },
+  "permissionStep1": {
+    "message": "Pergi ke"
+  },
+  "permissionStep2": {
+    "message": "Temukan MarkView dan klik \"Detail\""
+  },
+  "permissionStep3": {
+    "message": "Aktifkan \"Izinkan akses ke URL file\""
+  },
+  "permissionStep4": {
+    "message": "Segarkan halaman ini"
+  },
+  "openExtensionSettings": {
+    "message": "Buka Pengaturan Ekstensi"
+  },
+  "sidebar_emptyTitle": {
+    "message": "Telusuri File Markdown"
+  },
+  "sidebar_emptyText": {
+    "message": "Pilih folder yang berisi file markdown Anda untuk mengaktifkan navigasi."
+  },
+  "sidebar_selectFolder": {
+    "message": "Pilih Folder"
+  },
+  "sidebar_close": {
+    "message": "Tutup Bilah Sisi"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 Setelah dipilih, folder ini akan diingat"
+  },
+  "sidebar_externalTitle": {
+    "message": "Mode File Eksternal"
+  },
+  "sidebar_externalText": {
+    "message": "Penelusuran file tidak didukung untuk file eksternal (URL HTTP/HTTPS)."
+  },
+  "sidebar_externalHint": {
+    "message": "💡 Fitur ini hanya tersedia untuk file lokal (protokol file://)"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "Folder Berbeda"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "Saat ini menampilkan:"
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "File ini tampaknya berada di lokasi yang berbeda. Pilih folder baru untuk menelusuri file di sini."
+  },
+  "sidebar_selectNewFolder": {
+    "message": "Pilih Folder Baru"
+  },
+  "sidebar_errorTitle": {
+    "message": "Kesalahan"
+  },
+  "sidebar_errorText": {
+    "message": "Gagal memindai direktori:"
+  },
+  "sidebar_retry": {
+    "message": "Coba Lagi"
+  },
+  "sidebar_noFiles": {
+    "message": "Tidak ada file markdown ditemukan di direktori ini."
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "Izin Diperlukan"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "Izin browser untuk mengakses folder ini telah kedaluwarsa. Klik di bawah untuk memulihkan akses."
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "Tips: Browser Anda mungkin menampilkan beberapa folder dalam prompt izin. Pilih \"Izinkan setiap kunjungan\" untuk memulihkan akses ke semuanya."
+  },
+  "sidebar_restoreAccess": {
+    "message": "Pulihkan akses"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ Pengaturan disimpan!"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ Cache dibersihkan!"
+  },
+  "popup_clearCacheTitle": {
+    "message": "Bersihkan cache?"
+  },
+  "popup_clearCache": {
+    "message": "Bersihkan cache"
+  },
+  "popup_resetTitle": {
+    "message": "Atur Ulang Pengaturan?"
+  },
+  "popup_resetText": {
+    "message": "Ini akan mengatur ulang semua pengaturan ke nilai defaultnya. Tindakan ini tidak dapat dibatalkan."
+  },
+  "popup_cancel": {
+    "message": "Batal"
+  },
+  "popup_reset": {
+    "message": "Atur Ulang"
+  },
+  "toc_title": {
+    "message": "Daftar Isi"
+  },
+  "toc_collapseAll": {
+    "message": "Ciutkan Semua"
+  },
+  "toc_expandAll": {
+    "message": "Perluas Semua"
+  },
+  "toc_close": {
+    "message": "Tutup Daftar Isi"
+  },
+  "toc_collapse": {
+    "message": "Ciutkan"
+  },
+  "toc_expand": {
+    "message": "Perluas"
+  },
+  "toc_noHeadings": {
+    "message": "Tidak ada judul ditemukan"
+  },
+  "toc_rawModeTitle": {
+    "message": "Mode Markdown Mentah"
+  },
+  "toc_rawModeMessage": {
+    "message": "Daftar Isi tidak tersedia dalam tampilan markdown mentah."
+  },
+  "toc_toggleButtonTitle": {
+    "message": "Beralih sidebar daftar isi - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "Beralih tema (Terang/Gelap/Otomatis) - Ctrl+Shift+D"
+  },
+  "theme_light": {
+    "message": "⚪ Tema Terang"
+  },
+  "theme_dark": {
+    "message": "⚫ Tema Gelap"
+  },
+  "theme_auto": {
+    "message": "⚙️ Tema Otomatis"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "Beralih tata letak tengah (Ctrl+Shift+C)"
+  },
+  "centered_centered": {
+    "message": "📄 Tata Letak Tengah"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ Tata Letak Lebar Penuh"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "Beralih sidebar penjelajah folder - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "Hapus semua dokumen terkini?"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "Ini akan menghapus semua dokumen terkini dari daftar. Tindakan ini tidak dapat dibatalkan."
+  },
+  "recent_clearSuccess": {
+    "message": "Dokumen terkini dihapus"
+  },
+  "recent_clearFailed": {
+    "message": "Gagal menghapus dokumen terkini"
+  },
+  "recent_loadFailed": {
+    "message": "Gagal memuat dokumen terkini"
+  },
+  "recent_openFailed": {
+    "message": "File ini tidak dapat dibuka kembali dari riwayat. Silakan gunakan 'Ubah Folder' untuk mencarinya lagi."
+  },
+  "recent_clearAll": {
+    "message": "Hapus Semua"
+  },
+  "recent_refresh": {
+    "message": "Segarkan"
+  },
+  "recent_search": {
+    "message": "Cari dokumen..."
+  },
+  "recent_infoText": {
+    "message": "Hanya URL yang ditempelkan di bilah alamat browser yang disimpan di sini"
+  },
+  "recent_noResults": {
+    "message": "Tidak ada dokumen yang cocok dengan pencarian Anda"
+  },
+  "recent_accessed": {
+    "message": "Diakses"
+  },
+  "recent_removeItem": {
+    "message": "Hapus dari daftar"
+  },
+  "recent_copyUrl": {
+    "message": "Salin URL"
+  },
+  "recent_urlCopied": {
+    "message": "URL disalin ke clipboard"
+  },
+  "recent_clickToOpen": {
+    "message": "Klik untuk membuka di tab saat ini, Shift+Klik untuk tab baru"
+  },
+  "recent_cannotReopen": {
+    "message": "File File System API tidak dapat dibuka kembali dari riwayat"
+  },
+  "recent_localFiles": {
+    "message": "File lokal"
+  },
+  "recent_externalFiles": {
+    "message": "File eksternal"
+  },
+  "recent_otherFiles": {
+    "message": "File lainnya"
+  },
+  "recent_showMoreFiles": {
+    "message": "Tampilkan {0} file lagi"
+  },
+  "recent_refreshed": {
+    "message": "Dokumen terkini disegarkan"
+  },
+  "recent_removed": {
+    "message": "Dokumen dihapus dari daftar"
+  },
+  "recent_filenameCopied": {
+    "message": "Nama file disalin"
+  },
+  "recent_fileHandleLost": {
+    "message": "Akses file hilang. Gunakan 'Ubah folder' untuk menelusuri file lagi."
+  },
+  "recent_permissionDenied": {
+    "message": "Izin ditolak. Tidak dapat membuka file."
+  },
+  "cancel": {
+    "message": "Batal"
+  },
+  "permissionTab": {
+    "message": "Pengaturan diperlukan"
+  },
+  "keyboardHelp_title": {
+    "message": "Pintasan keyboard"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "Akses cepat ke semua fitur"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "Tampilan"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "Beralih tema (Terang/Gelap/Otomatis)"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "Lihat data asli"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "Beralih tata letak (Lebar/Terpusat)"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "Beralih sidebar daftar isi"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "Beralih sidebar penjelajah folder"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "Buka pengaturan cepat"
+  },
+  "keyboardHelp_navigation": {
+    "message": "Navigasi"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "Cari di folder"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "Gulir ke atas halaman"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "Tutup modal yang terbuka"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "Galeri gambar"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "Gambar sebelumnya"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "Gambar berikutnya"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "Tutup penampil gambar"
+  },
+  "keyboardHelp_macNote": {
+    "message": "Di macOS, gunakan ⌘ (Cmd) sebagai pengganti Ctrl"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "Di macOS, ganti Ctrl dengan ⌘ (Cmd)"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "Pintasan keyboard"
+  },
+  "actions_configurePlugins": {
+    "message": "Konfigurasi Plugin"
+  },
+  "actions_extensionInfo": {
+    "message": "Tentang MarkView"
+  },
+  "actions_quickSettings": {
+    "message": "Pengaturan Cepat"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "Sesuaikan pengaturan yang sering digunakan"
+  },
+  "pluginConfig_title": {
+    "message": "Konfigurasi Plugin"
+  },
+  "pluginConfig_subtitle": {
+    "message": "Aktifkan atau nonaktifkan plugin rendering markdown"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "Atur ulang ke Default"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "Atur ulang semua plugin ke pengaturan default?"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "Rendering Inti"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "Konten & Media"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "Pemformatan Teks"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "Sintaks Diperluas"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "Fitur Lanjutan"
+  },
+  "common_close": {
+    "message": "Tutup"
+  },
+  "common_cancel": {
+    "message": "Batal"
+  },
+  "common_confirm": {
+    "message": "OK"
+  },
+  "codeBlockDisplay": {
+    "message": "Tampilan Blok Kode"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "Cara menangani baris panjang dalam blok kode. Gulir mempertahankan format dengan scrollbar horizontal, sementara Bungkus memecah baris panjang untuk memudahkan membaca."
+  },
+  "codeBlockDisplayScroll": {
+    "message": "Gulir (pertahankan format)"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "Bungkus (pecah baris panjang)"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "Tautan Cepat"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "Beri Nilai Ekstensi"
+  },
+  "extensionInfo_about": {
+    "message": "Tentang MarkView"
+  },
+  "extensionInfo_description": {
+    "message": "MarkView adalah penampil Markdown modern yang kaya fitur untuk peramban Chromium (Chrome, Edge, Brave, Opera, dll.). Ubah file Markdown Anda menjadi dokumen interaktif yang indah dengan penyorotan sintaks, diagram, persamaan matematika, dan banyak lagi."
+  },
+  "extensionInfo_website": {
+    "message": "Situs Web Resmi"
+  },
+  "extensionInfo_madeWith": {
+    "message": "Dibuat dengan"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "untuk pengembang dan penulis"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "Hak cipta dilindungi"
+  }
+}

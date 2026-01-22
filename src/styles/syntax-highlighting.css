@@ -1,0 +1,243 @@
+/* MarkView Custom Syntax Highlighting Theme */
+/* Professional developer color palette inspired by VS Code and GitHub themes */
+/* Scoped to #markview-container to prevent conflicts with host page */
+
+/* When using external highlight.js themes, reset custom theme styles to unset */
+/* This allows external theme CSS (injected dynamically) to take precedence */
+/* External themes are injected AFTER this stylesheet, so they naturally have higher cascade priority */
+.markview-external-syntax-theme #markview-container .hljs,
+.markview-external-syntax-theme #markview-container .hljs-comment,
+.markview-external-syntax-theme #markview-container .hljs-quote,
+.markview-external-syntax-theme #markview-container .hljs-keyword,
+.markview-external-syntax-theme #markview-container .hljs-built_in,
+.markview-external-syntax-theme #markview-container .hljs-selector-tag,
+.markview-external-syntax-theme #markview-container .hljs-type,
+.markview-external-syntax-theme #markview-container .hljs-class,
+.markview-external-syntax-theme #markview-container .hljs-string,
+.markview-external-syntax-theme #markview-container .hljs-attribute,
+.markview-external-syntax-theme #markview-container .hljs-template-tag,
+.markview-external-syntax-theme #markview-container .hljs-template-variable,
+.markview-external-syntax-theme #markview-container .hljs-subst,
+.markview-external-syntax-theme #markview-container .hljs-number,
+.markview-external-syntax-theme #markview-container .hljs-literal,
+.markview-external-syntax-theme #markview-container .hljs-function,
+.markview-external-syntax-theme #markview-container .hljs-title,
+.markview-external-syntax-theme #markview-container .hljs-property,
+.markview-external-syntax-theme #markview-container .hljs-attr,
+.markview-external-syntax-theme #markview-container .hljs-variable,
+.markview-external-syntax-theme #markview-container .hljs-params,
+.markview-external-syntax-theme #markview-container .hljs-operator,
+.markview-external-syntax-theme #markview-container .hljs-punctuation,
+.markview-external-syntax-theme #markview-container .hljs-symbol,
+.markview-external-syntax-theme #markview-container .hljs-bullet,
+.markview-external-syntax-theme #markview-container .hljs-tag,
+.markview-external-syntax-theme #markview-container .hljs-name,
+.markview-external-syntax-theme #markview-container .hljs-section,
+.markview-external-syntax-theme #markview-container .hljs-link,
+.markview-external-syntax-theme #markview-container .hljs-regexp,
+.markview-external-syntax-theme #markview-container .hljs-selector-attr,
+.markview-external-syntax-theme #markview-container .hljs-selector-pseudo,
+.markview-external-syntax-theme #markview-container .hljs-meta,
+.markview-external-syntax-theme #markview-container .hljs-doctag,
+.markview-external-syntax-theme #markview-container .hljs-addition,
+.markview-external-syntax-theme #markview-container .hljs-deletion,
+.markview-external-syntax-theme #markview-container .hljs-emphasis,
+.markview-external-syntax-theme #markview-container .hljs-strong {
+  /* Reset all custom theme properties to unset */
+  /* This removes our custom theme styles, allowing external themes to apply */
+  color: unset;
+  background-color: unset;
+  font-style: unset;
+  font-weight: unset;
+}
+
+/* Color palette - sophisticated and professional */
+:root {
+  --syntax-purple: #6f42c1; /* Keywords - professional purple */
+  --syntax-blue: #0366d6; /* Functions & methods - GitHub blue */
+  --syntax-cyan: #005cc5; /* Types & classes - deep blue */
+  --syntax-teal: #22863a; /* Numbers & constants - muted green */
+  --syntax-orange: #d73a49; /* Strings - GitHub red-orange */
+  --syntax-brown: #6f42c1; /* Built-ins - purple variant */
+  --syntax-red: #d73a49; /* Special values - red */
+  --syntax-gray: #6a737d; /* Comments - muted gray */
+  --syntax-property: #005cc5; /* Properties - blue */
+}
+
+.markview-dark {
+  --syntax-purple: #c678dd; /* Keywords - soft purple */
+  --syntax-blue: #61afef; /* Functions - soft blue */
+  --syntax-cyan: #56b6c2; /* Types & classes - cyan */
+  --syntax-teal: #98c379; /* Numbers - soft green */
+  --syntax-orange: #e5c07b; /* Strings - soft gold */
+  --syntax-brown: #d19a66; /* Built-ins - orange-brown */
+  --syntax-red: #e06c75; /* Special values - soft red */
+  --syntax-gray: #5c6370; /* Comments - muted gray */
+  --syntax-property: #61afef; /* Properties - blue */
+}
+
+/* Base styles - scoped to MarkView container */
+#markview-container .hljs {
+  display: block;
+  overflow-x: auto;
+  color: var(--markview-text);
+}
+
+/* Comments */
+#markview-container .hljs-comment,
+#markview-container .hljs-quote {
+  color: var(--syntax-gray);
+  font-style: italic;
+}
+
+/* Keywords (if, else, for, while, return, etc.) */
+#markview-container .hljs-keyword {
+  color: var(--syntax-purple);
+}
+
+/* Special keywords (new, this, async, await, class) */
+#markview-container .hljs-built_in,
+#markview-container .hljs-selector-tag {
+  color: var(--syntax-brown);
+}
+
+/* Language types (boolean, number, string, void) */
+#markview-container .hljs-type,
+#markview-container .hljs-class {
+  color: var(--syntax-cyan);
+}
+
+/* Strings */
+#markview-container .hljs-string,
+#markview-container .hljs-attribute {
+  color: var(--syntax-orange);
+}
+
+/* Template strings and variables */
+#markview-container .hljs-template-tag,
+#markview-container .hljs-template-variable,
+#markview-container .hljs-subst {
+  color: var(--syntax-orange);
+}
+
+/* Numbers and constants */
+#markview-container .hljs-number,
+#markview-container .hljs-literal {
+  color: var(--syntax-teal);
+}
+
+/* Special values (true, false, null, undefined) */
+#markview-container .hljs-literal[class*='true'],
+#markview-container .hljs-literal[class*='false'],
+#markview-container .hljs-literal[class*='null'],
+#markview-container .hljs-literal[class*='undefined'] {
+  color: var(--syntax-red);
+}
+
+/* Functions and methods */
+#markview-container .hljs-function,
+#markview-container .hljs-title.function_,
+#markview-container .hljs-title.function {
+  color: var(--syntax-blue);
+}
+
+/* Class names */
+#markview-container .hljs-title.class_,
+#markview-container .hljs-class .hljs-title {
+  color: var(--syntax-cyan);
+}
+
+/* Properties and attributes */
+#markview-container .hljs-property,
+#markview-container .hljs-attr {
+  color: var(--syntax-cyan);
+}
+
+/* Variables and parameters */
+#markview-container .hljs-variable,
+#markview-container .hljs-params {
+  color: var(--markview-text);
+}
+
+/* Special variables (this, self, super) */
+#markview-container .hljs-variable.language_,
+#markview-container .hljs-built_in[class*='this'] {
+  color: var(--syntax-purple);
+}
+
+/* Operators */
+#markview-container .hljs-operator {
+  color: var(--syntax-purple);
+}
+
+/* Punctuation */
+#markview-container .hljs-punctuation {
+  color: var(--markview-text);
+}
+
+/* Symbols and bullets */
+#markview-container .hljs-symbol,
+#markview-container .hljs-bullet {
+  color: var(--syntax-blue);
+}
+
+/* Tags (HTML/XML) */
+#markview-container .hljs-tag,
+#markview-container .hljs-name {
+  color: var(--syntax-blue);
+}
+
+/* Sections and titles */
+#markview-container .hljs-title,
+#markview-container .hljs-section {
+  color: var(--syntax-blue);
+}
+
+/* Links */
+#markview-container .hljs-link {
+  color: var(--syntax-cyan);
+  text-decoration: underline;
+}
+
+/* Regex */
+#markview-container .hljs-regexp,
+#markview-container .hljs-selector-attr,
+#markview-container .hljs-selector-pseudo {
+  color: var(--syntax-orange);
+}
+
+/* Meta and annotations (decorators, pragmas) */
+#markview-container .hljs-meta,
+#markview-container .hljs-meta .hljs-keyword {
+  color: var(--syntax-brown);
+}
+
+#markview-container .hljs-meta .hljs-string {
+  color: var(--syntax-orange);
+}
+
+/* Doctags and documentation */
+#markview-container .hljs-doctag {
+  color: var(--syntax-cyan);
+}
+
+/* Additions (diff) */
+#markview-container .hljs-addition {
+  background-color: rgba(34, 134, 58, 0.15);
+  color: var(--syntax-teal);
+}
+
+/* Deletions (diff) */
+#markview-container .hljs-deletion {
+  background-color: rgba(215, 58, 73, 0.15);
+  color: var(--syntax-red);
+}
+
+/* Emphasis and strong */
+#markview-container .hljs-emphasis {
+  font-style: italic;
+}
+
+#markview-container .hljs-strong {
+  font-weight: var(--font-weight-bold);
+}

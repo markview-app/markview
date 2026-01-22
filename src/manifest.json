@@ -1,0 +1,85 @@
+{
+  "manifest_version": 3,
+  "name": "MarkView (Open-Source Edition)",
+  "short_name": "MarkView OSS",
+  "version": "1.0.0",
+  "default_locale": "en",
+  "description": "Lightweight markdown viewer with GFM support, syntax highlighting, Mermaid diagrams, and KaTeX math rendering.",
+  "author": "MarkView Team",
+  "homepage_url": "https://github.com/markview-app/markview",
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["file:///*", "*://*/*"],
+  "background": {
+    "service_worker": "js/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file://*/*.md",
+        "file://*/*.markdown",
+        "file://*/*.mkd",
+        "file://*/*.mdx",
+        "file://*/*.MD",
+        "file://*/*.MARKDOWN",
+        "file://*/*.MKD",
+        "file://*/*.MDX",
+        "*://*/*.md",
+        "*://*/*.markdown",
+        "*://*/*.mkd",
+        "*://*/*.mdx",
+        "*://*/*.MD",
+        "*://*/*.MARKDOWN",
+        "*://*/*.MKD",
+        "*://*/*.MDX",
+        "*://*/*.md?*",
+        "*://*/*.markdown?*",
+        "*://*/*.mkd?*",
+        "*://*/*.mdx?*",
+        "*://*/*.MD?*",
+        "*://*/*.MARKDOWN?*",
+        "*://*/*.MKD?*",
+        "*://*/*.MDX?*",
+        "file://*/*.md?*",
+        "file://*/*.markdown?*",
+        "file://*/*.mkd?*",
+        "file://*/*.mdx?*",
+        "file://*/*.MD?*",
+        "file://*/*.MARKDOWN?*",
+        "file://*/*.MKD?*",
+        "file://*/*.MDX?*"
+      ],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*",
+        "css/*",
+        "js/*.js",
+        "node_modules/highlight.js/styles/*.css",
+        "node_modules/katex/dist/katex.min.css",
+        "node_modules/katex/dist/fonts/*"
+      ],
+      "matches": ["file:///*", "*://*/*"]
+    }
+  ]
+}

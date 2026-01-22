@@ -1,0 +1,364 @@
+/* MarkView Action Buttons Styles */
+
+/* Container */
+#markview-action-buttons {
+  position: fixed;
+  bottom: 188px;
+  right: 20px;
+  z-index: 10001;
+}
+
+/* Main Toggle Button */
+#markview-actions-toggle {
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 4px 12px rgba(96, 125, 139, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#markview-actions-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(96, 125, 139, 0.4);
+}
+
+/* Actions Menu */
+.markview-actions-menu {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+}
+
+.markview-actions-menu.menu-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Menu Items */
+.markview-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.15s ease;
+  text-align: left;
+  font-family: inherit;
+  opacity: 1;
+}
+
+.markview-menu-item[data-disabled='true'] {
+  cursor: not-allowed;
+  color: #aaa;
+  opacity: 0.65;
+}
+
+.markview-menu-item:hover:not([data-disabled='true']) {
+  background: #f5f5f5;
+}
+
+.markview-menu-item-label {
+  flex: 1;
+}
+
+/* PRO Badge */
+.pro-badge {
+  margin-left: auto;
+  display: inline-block;
+  font-size: 10px;
+  background: linear-gradient(135deg, #7c63f8 0%, #8b5cf6 100%);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Export Progress Modal */
+.markview-export-progress-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+}
+
+.markview-export-progress-content {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  min-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.markview-export-progress-title {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.markview-export-progress-bar-container {
+  background: #f0f0f0;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.markview-export-progress-bar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.markview-export-progress-message {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Export Warnings Modal (Generic - for all export types) */
+.markview-export-warnings-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+}
+
+.markview-export-warnings-content {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+}
+
+.markview-warnings-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.markview-warnings-icon {
+  font-size: 36px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.markview-warnings-title {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #d32f2f;
+}
+
+.markview-warnings-description {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.markview-warnings-list-container {
+  background: #fff8e1;
+  border-left: 4px solid #ffa726;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.markview-warning-item {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ffe0b2;
+}
+
+.markview-warning-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.markview-warning-type {
+  display: inline-block;
+  background: #ff9800;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.markview-warning-message {
+  color: #e65100;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.markview-warning-suggestion {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+  padding-left: 20px;
+  position: relative;
+}
+
+.markview-warnings-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.markview-warnings-cancel {
+  padding: 10px 24px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.markview-warnings-cancel:hover {
+  background: #f5f5f5;
+  border-color: #bbb;
+}
+
+.markview-warnings-continue {
+  padding: 10px 24px;
+  border: none;
+  background: #667eea;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.markview-warnings-continue:hover {
+  background: #5568d3;
+}
+
+/* Dark mode support */
+.markview-dark .markview-actions-menu {
+  background: #2a2a2a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.markview-dark .markview-menu-item {
+  color: #e0e0e0;
+}
+
+.markview-dark .markview-menu-item:hover:not([data-disabled='true']) {
+  background: #3a3a3a;
+}
+
+.markview-dark .markview-menu-item[data-disabled='true'] {
+  color: #666;
+  opacity: 0.65;
+}
+
+.markview-dark .markview-export-progress-content {
+  background: #2a2a2a;
+}
+
+.markview-dark .markview-export-progress-title {
+  color: #e0e0e0;
+}
+
+.markview-dark .markview-export-progress-message {
+  color: #aaa;
+}
+
+/* Dark mode - Export Warnings Modal */
+.markview-dark .markview-export-warnings-content {
+  background: #2a2a2a;
+}
+
+.markview-dark .markview-warnings-title {
+  color: #ff6b6b;
+}
+
+.markview-dark .markview-warnings-description {
+  color: #aaa;
+}
+
+.markview-dark .markview-warnings-list-container {
+  background: rgba(255, 152, 0, 0.15);
+  border-left-color: #ffa726;
+}
+
+.markview-dark .markview-warning-item {
+  border-bottom-color: rgba(255, 224, 178, 0.2);
+}
+
+.markview-dark .markview-warning-message {
+  color: #ffb74d;
+}
+
+.markview-dark .markview-warning-suggestion {
+  color: #aaa;
+}
+
+.markview-dark .markview-warnings-cancel {
+  background: #1a1a1a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+.markview-dark .markview-warnings-cancel:hover {
+  background: #333;
+  border-color: #666;
+}
+
+/* Print - Hide action buttons */
+@media print {
+  #markview-action-buttons {
+    display: none !important;
+  }
+}

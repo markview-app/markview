@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "モダンなMarkdownビューア"
+  },
+  "recentDocuments": {
+    "message": "最近のドキュメント"
+  },
+  "settingsTab": {
+    "message": "設定"
+  },
+  "recentEmptyTitle": {
+    "message": "最近のファイルがありません"
+  },
+  "recentEmptyText": {
+    "message": "ここに表示するにはMarkdownファイルを開いてください"
+  },
+  "generalSettings": {
+    "message": "一般"
+  },
+  "extensionEnabled": {
+    "message": "拡張機能を有効化"
+  },
+  "language": {
+    "message": "言語"
+  },
+  "theme": {
+    "message": "テーマ"
+  },
+  "themeLight": {
+    "message": "ライト"
+  },
+  "themeDark": {
+    "message": "ダーク"
+  },
+  "themeAuto": {
+    "message": "自動"
+  },
+  "layoutSettings": {
+    "message": "レイアウト"
+  },
+  "centeredLayout": {
+    "message": "中央揃え"
+  },
+  "maxWidth": {
+    "message": "最大幅"
+  },
+  "maxWidthDescription": {
+    "message": "読みやすさを向上させるためにコンテンツ幅を制限します。中央揃えレイアウトモードにのみ適用されます。"
+  },
+  "fontSize": {
+    "message": "フォントサイズ"
+  },
+  "lineHeight": {
+    "message": "行の高さ"
+  },
+  "fontFamily": {
+    "message": "フォントファミリー"
+  },
+  "fontDefault": {
+    "message": "デフォルト"
+  },
+  "featuresSettings": {
+    "message": "機能"
+  },
+  "configurePlugins": {
+    "message": "プラグインを設定"
+  },
+  "syntaxTheme": {
+    "message": "シンタックステーマ"
+  },
+  "syntaxThemeDescription": {
+    "message": "コードブロックの配色テーマ。MarkViewテーマはライト/ダークモードに自動適応します。"
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "自動（ライト/ダーク）"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "ライトテーマ"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "ダークテーマ"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView（デフォルト）"
+  },
+  "syntaxHighlighting": {
+    "message": "シンタックスハイライト"
+  },
+  "taskLists": {
+    "message": "タスクリスト"
+  },
+  "tables": {
+    "message": "テーブル"
+  },
+  "productivitySettings": {
+    "message": "生産性"
+  },
+  "autoRefresh": {
+    "message": "自動更新"
+  },
+  "autoRefreshDescription": {
+    "message": "ファイル変更時に自動的にリロード（2秒ごと）"
+  },
+  "sidebarsSettings": {
+    "message": "サイドバー"
+  },
+  "folderBrowser": {
+    "message": "フォルダブラウザ"
+  },
+  "tableOfContents": {
+    "message": "目次"
+  },
+  "resetToDefaults": {
+    "message": "デフォルトに戻す"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 この機能はRAWモードでは利用できません"
+  },
+  "clearCache": {
+    "message": "キャッシュをクリア"
+  },
+  "clearCacheHint": {
+    "message": "ファイルハンドル、ディレクトリツリー、URLメタデータ、メモリ内キャッシュを含む一時的なキャッシュデータをクリアします。これによりファイルアクセス許可がクリアされ、フォルダの再選択が必要になる場合があります。設定、ブックマーク、履歴メタデータは保持されます。"
+  },
+  "watchDemo": {
+    "message": "デモを見る"
+  },
+  "whatsNew": {
+    "message": "新機能"
+  },
+  "actions": {
+    "message": "アクション"
+  },
+  "print": {
+    "message": "印刷 (PDF保存)"
+  },
+  "reportIssue": {
+    "message": "問題を報告"
+  },
+  "actions_previousSlide": {
+    "message": "前のスライド"
+  },
+  "actions_nextSlide": {
+    "message": "次のスライド"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "自動再生の切り替え"
+  },
+  "actions_autoPlay": {
+    "message": "自動再生 (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "自動再生を一時停止"
+  },
+  "actions_startAutoPlay": {
+    "message": "自動再生を開始"
+  },
+  "actions_toggleFullscreen": {
+    "message": "全画面表示の切り替え"
+  },
+  "notification_noMarkdownFound": {
+    "message": "Markdownコンテンツが見つかりません"
+  },
+  "notification_renderFailed": {
+    "message": "Markdownのレンダリングに失敗しました"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkViewの読み込みが完了しました！"
+  },
+  "notification_loadedWithFilename": {
+    "message": "読み込み完了"
+  },
+  "notification_renderError": {
+    "message": "Markdownレンダリングエラー"
+  },
+  "notification_contentUpdated": {
+    "message": "コンテンツが更新されました"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "自動更新は利用できません：ファイルが選択されたフォルダ外にあります。このファイルを含む親フォルダを選択してください。"
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "このフォルダは既に開いています"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "自動更新が一時停止しました。再開するにはサイドバーのファイルをクリックしてください。"
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 MarkView拡張機能が更新されました。ページをリロードしています..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 この機能はサンドボックス化されたコンテキスト（外部URL）ではサポートされていません。"
+  },
+  "ui_toggleRaw": {
+    "message": "元データを表示"
+  },
+  "ui_rawView": {
+    "message": "📝 生のMarkdown表示"
+  },
+  "ui_renderedView": {
+    "message": "✨ レンダリング表示"
+  },
+  "ui_scrollTopTitle": {
+    "message": "トップへスクロール (Homeキー)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ トップへスクロールしました"
+  },
+  "sidebar_title": {
+    "message": "ファイル"
+  },
+  "sidebar_changeFolder": {
+    "message": "フォルダを変更"
+  },
+  "sidebar_refresh": {
+    "message": "更新"
+  },
+  "sidebar_expandCollapse": {
+    "message": "すべて展開/折りたたみ"
+  },
+  "sidebar_hide": {
+    "message": "サイドバーを隠す"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "ファイルを検索..."
+  },
+  "sidebar_scanning": {
+    "message": "ディレクトリをスキャン中..."
+  },
+  "sidebar_bookmarks": {
+    "message": "ブックマーク"
+  },
+  "sidebar_addBookmark": {
+    "message": "ブックマークを追加"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "削除"
+  },
+  "sidebar_renameBookmark": {
+    "message": "名前を変更"
+  },
+  "sidebar_lastAccess": {
+    "message": "最終アクセス"
+  },
+  "permissionTitle": {
+    "message": "ファイルアクセスが必要です"
+  },
+  "permissionText": {
+    "message": "ローカルのMarkdownファイルを閲覧するには、ファイルアクセスを有効にしてください："
+  },
+  "permissionStep1": {
+    "message": "移動："
+  },
+  "permissionStep2": {
+    "message": "MarkViewを見つけて「詳細」をクリック"
+  },
+  "permissionStep3": {
+    "message": "「ファイルのURLへのアクセスを許可する」を有効にする"
+  },
+  "permissionStep4": {
+    "message": "このページを更新してください"
+  },
+  "openExtensionSettings": {
+    "message": "拡張機能の設定を開く"
+  },
+  "sidebar_emptyTitle": {
+    "message": "Markdownファイルを閲覧"
+  },
+  "sidebar_emptyText": {
+    "message": "ナビゲーションを有効にするには、Markdownファイルを含むフォルダを選択してください。"
+  },
+  "sidebar_selectFolder": {
+    "message": "フォルダを選択"
+  },
+  "sidebar_close": {
+    "message": "サイドバーを閉じる"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 選択すると、このフォルダは記憶されます"
+  },
+  "sidebar_externalTitle": {
+    "message": "外部ファイルモード"
+  },
+  "sidebar_externalText": {
+    "message": "外部ファイル（HTTP/HTTPS URL）ではファイル閲覧はサポートされていません。"
+  },
+  "sidebar_externalHint": {
+    "message": "💡 この機能はローカルファイル（file:// プロトコル）でのみ利用可能です"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "異なるフォルダ"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "現在表示中："
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "このファイルは別の場所にあるようです。ここでファイルを閲覧するには新しいフォルダを選択してください。"
+  },
+  "sidebar_selectNewFolder": {
+    "message": "新しいフォルダを選択"
+  },
+  "sidebar_errorTitle": {
+    "message": "エラー"
+  },
+  "sidebar_errorText": {
+    "message": "ディレクトリのスキャンに失敗しました："
+  },
+  "sidebar_retry": {
+    "message": "再試行"
+  },
+  "sidebar_noFiles": {
+    "message": "このディレクトリにはMarkdownファイルが見つかりません。"
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "アクセス許可が必要"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "このフォルダへのアクセス許可が切れました。下のボタンをクリックしてアクセスを復元してください。"
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "ヒント：ブラウザは許可プロンプトに複数のフォルダを表示する場合があります。「毎回許可する」を選択してすべてのアクセスを復元してください。"
+  },
+  "sidebar_restoreAccess": {
+    "message": "アクセスを復元"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ 設定が保存されました！"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ キャッシュがクリアされました！"
+  },
+  "popup_clearCacheTitle": {
+    "message": "キャッシュをクリアしますか？"
+  },
+  "popup_clearCache": {
+    "message": "キャッシュをクリア"
+  },
+  "popup_resetTitle": {
+    "message": "設定をリセットしますか？"
+  },
+  "popup_resetText": {
+    "message": "すべての設定をデフォルト値にリセットします。この操作は元に戻せません。"
+  },
+  "popup_cancel": {
+    "message": "キャンセル"
+  },
+  "popup_reset": {
+    "message": "リセット"
+  },
+  "toc_title": {
+    "message": "目次"
+  },
+  "toc_collapseAll": {
+    "message": "すべて折りたたむ"
+  },
+  "toc_expandAll": {
+    "message": "すべて展開"
+  },
+  "toc_close": {
+    "message": "目次を閉じる"
+  },
+  "toc_collapse": {
+    "message": "折りたたむ"
+  },
+  "toc_expand": {
+    "message": "展開"
+  },
+  "toc_noHeadings": {
+    "message": "見出しが見つかりません"
+  },
+  "toc_rawModeTitle": {
+    "message": "Rawマークダウンモード"
+  },
+  "toc_rawModeMessage": {
+    "message": "目次はrawマークダウンビューでは利用できません。"
+  },
+  "toc_toggleButtonTitle": {
+    "message": "目次サイドバーの切り替え - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "テーマ切り替え（ライト/ダーク/自動） - Ctrl+Shift+D"
+  },
+  "theme_light": {
+    "message": "⚪ ライトテーマ"
+  },
+  "theme_dark": {
+    "message": "⚫ ダークテーマ"
+  },
+  "theme_auto": {
+    "message": "⚙️ 自動"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "レイアウト切り替え（ワイド/センター） - Ctrl+Shift+C"
+  },
+  "centered_centered": {
+    "message": "📄 中央揃え"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ 全幅"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "フォルダブラウザのサイドバー切り替え - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "すべての最近のドキュメントをクリアしますか？"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "これにより、リストからすべての最近のドキュメントが削除されます。この操作は元に戻せません。"
+  },
+  "recent_clearSuccess": {
+    "message": "最近のドキュメントをクリアしました"
+  },
+  "recent_clearFailed": {
+    "message": "最近のドキュメントのクリアに失敗しました"
+  },
+  "recent_loadFailed": {
+    "message": "最近のドキュメントの読み込みに失敗しました"
+  },
+  "recent_openFailed": {
+    "message": "このファイルは履歴から再度開くことができません。「フォルダを変更」を使用して再度検索してください。"
+  },
+  "recent_clearAll": {
+    "message": "すべてクリア"
+  },
+  "recent_refresh": {
+    "message": "更新"
+  },
+  "recent_search": {
+    "message": "ドキュメントを検索..."
+  },
+  "recent_infoText": {
+    "message": "ブラウザのアドレスバーに貼り付けられた URL のみがここに保存されます"
+  },
+  "recent_noResults": {
+    "message": "検索に一致するドキュメントがありません"
+  },
+  "recent_accessed": {
+    "message": "アクセス日時"
+  },
+  "recent_removeItem": {
+    "message": "リストから削除"
+  },
+  "recent_copyUrl": {
+    "message": "URLをコピー"
+  },
+  "recent_urlCopied": {
+    "message": "URLをクリップボードにコピーしました"
+  },
+  "recent_clickToOpen": {
+    "message": "クリックで現在のタブで開く、Shift+クリックで新しいタブ"
+  },
+  "recent_cannotReopen": {
+    "message": "File System APIファイルは履歴から再度開くことができません"
+  },
+  "recent_localFiles": {
+    "message": "ローカルファイル"
+  },
+  "recent_externalFiles": {
+    "message": "外部ファイル"
+  },
+  "recent_otherFiles": {
+    "message": "その他のファイル"
+  },
+  "recent_showMoreFiles": {
+    "message": "さらに{0}個のファイルを表示"
+  },
+  "recent_refreshed": {
+    "message": "最近のドキュメントを更新しました"
+  },
+  "recent_removed": {
+    "message": "ドキュメントをリストから削除しました"
+  },
+  "recent_filenameCopied": {
+    "message": "ファイル名をコピーしました"
+  },
+  "recent_fileHandleLost": {
+    "message": "ファイルアクセスが失われました。「フォルダーを変更」を使用してファイルを再度参照してください。"
+  },
+  "recent_permissionDenied": {
+    "message": "権限が拒否されました。ファイルを開けません。"
+  },
+  "cancel": {
+    "message": "キャンセル"
+  },
+  "permissionTab": {
+    "message": "セットアップが必要"
+  },
+  "keyboardHelp_title": {
+    "message": "キーボードショートカット"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "すべての機能への素早いアクセス"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "表示"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "テーマの切り替え（ライト/ダーク/自動）"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "元データを表示"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "レイアウト切り替え（ワイド/センター）"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "目次サイドバーの切り替え"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "フォルダブラウザのサイドバー切り替え"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "クイック設定を開く"
+  },
+  "keyboardHelp_navigation": {
+    "message": "ナビゲーション"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "フォルダ内を検索"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "ページトップへスクロール"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "開いているモーダルを閉じる"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "画像ギャラリー"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "前の画像"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "次の画像"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "画像ビューアを閉じる"
+  },
+  "keyboardHelp_macNote": {
+    "message": "macOSでは、Ctrlの代わりに⌘（Cmd）を使用してください"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "macOSでは、Ctrlを⌘（Cmd）に置き換えてください"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "キーボードショートカット"
+  },
+  "actions_configurePlugins": {
+    "message": "プラグインの設定"
+  },
+  "actions_extensionInfo": {
+    "message": "MarkViewについて"
+  },
+  "actions_quickSettings": {
+    "message": "クイック設定"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "よく使う設定を調整"
+  },
+  "pluginConfig_title": {
+    "message": "プラグイン設定"
+  },
+  "pluginConfig_subtitle": {
+    "message": "マークダウンレンダリングプラグインを有効または無効にする"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "デフォルトにリセット"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "すべてのプラグインをデフォルト設定にリセットしますか？"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "コアレンダリング"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "コンテンツとメディア"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "テキストフォーマット"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "拡張構文"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "高度な機能"
+  },
+  "common_close": {
+    "message": "閉じる"
+  },
+  "common_cancel": {
+    "message": "キャンセル"
+  },
+  "common_confirm": {
+    "message": "OK"
+  },
+  "codeBlockDisplay": {
+    "message": "コードブロック表示"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "コードブロック内の長い行の処理方法。スクロールは水平スクロールバーで書式を保持し、折り返しは読みやすくするために長い行を分割します。"
+  },
+  "codeBlockDisplayScroll": {
+    "message": "スクロール（書式を保持）"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "折り返し（長い行を分割）"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "クイックリンク"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "拡張機能を評価"
+  },
+  "extensionInfo_about": {
+    "message": "MarkViewについて"
+  },
+  "extensionInfo_description": {
+    "message": "MarkViewは、Chromiumブラウザ（Chrome、Edge、Brave、Operaなど）用の最新の機能豊富なMarkdownビューアです。シンタックスハイライト、図、数式などを使って、Markdownファイルを美しいインタラクティブなドキュメントに変換します。"
+  },
+  "extensionInfo_website": {
+    "message": "公式ウェブサイト"
+  },
+  "extensionInfo_madeWith": {
+    "message": "作成"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "開発者と執筆者のために"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "全ての権利を保有"
+  }
+}

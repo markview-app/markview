@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "모던 마크다운 뷰어"
+  },
+  "recentDocuments": {
+    "message": "최근 문서"
+  },
+  "settingsTab": {
+    "message": "설정"
+  },
+  "recentEmptyTitle": {
+    "message": "최근 파일 없음"
+  },
+  "recentEmptyText": {
+    "message": "여기에 표시하려면 마크다운 파일을 열어보세요"
+  },
+  "generalSettings": {
+    "message": "일반"
+  },
+  "extensionEnabled": {
+    "message": "확장 프로그램 사용"
+  },
+  "language": {
+    "message": "언어"
+  },
+  "theme": {
+    "message": "테마"
+  },
+  "themeLight": {
+    "message": "라이트"
+  },
+  "themeDark": {
+    "message": "다크"
+  },
+  "themeAuto": {
+    "message": "자동"
+  },
+  "layoutSettings": {
+    "message": "레이아웃"
+  },
+  "centeredLayout": {
+    "message": "중앙 정렬"
+  },
+  "maxWidth": {
+    "message": "최대 너비"
+  },
+  "maxWidthDescription": {
+    "message": "가독성을 높이기 위해 콘텐츠 너비를 제한합니다. 중앙 정렬 레이아웃 모드에만 적용됩니다."
+  },
+  "fontSize": {
+    "message": "글꼴 크기"
+  },
+  "lineHeight": {
+    "message": "줄 높이"
+  },
+  "fontFamily": {
+    "message": "글꼴"
+  },
+  "fontDefault": {
+    "message": "기본값"
+  },
+  "featuresSettings": {
+    "message": "기능"
+  },
+  "configurePlugins": {
+    "message": "플러그인 구성"
+  },
+  "syntaxTheme": {
+    "message": "구문 테마"
+  },
+  "syntaxThemeDescription": {
+    "message": "코드 블록의 색상 테마. MarkView 테마는 라이트/다크 모드에 자동 적응합니다."
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "자동 (라이트/다크)"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "라이트 테마"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "다크 테마"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView (기본값)"
+  },
+  "syntaxHighlighting": {
+    "message": "구문 강조"
+  },
+  "taskLists": {
+    "message": "작업 목록"
+  },
+  "tables": {
+    "message": "표"
+  },
+  "productivitySettings": {
+    "message": "생산성"
+  },
+  "autoRefresh": {
+    "message": "자동 새로고침"
+  },
+  "autoRefreshDescription": {
+    "message": "파일이 변경되면 자동으로 새로고침 (2초마다)"
+  },
+  "sidebarsSettings": {
+    "message": "사이드바"
+  },
+  "folderBrowser": {
+    "message": "폴더 브라우저"
+  },
+  "tableOfContents": {
+    "message": "목차"
+  },
+  "resetToDefaults": {
+    "message": "기본값으로 재설정"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 이 기능은 RAW 모드에서 사용할 수 없습니다"
+  },
+  "clearCache": {
+    "message": "캐시 지우기"
+  },
+  "clearCacheHint": {
+    "message": "파일 핸들, 디렉토리 트리, URL 메타데이터 및 메모리 내 캐시를 포함한 임시 캐시 데이터를 지웁니다. 파일 액세스 권한이 지워지며 폴더를 다시 선택해야 할 수 있습니다. 설정, 북마크 및 기록 메타데이터는 유지됩니다."
+  },
+  "watchDemo": {
+    "message": "데모 보기"
+  },
+  "whatsNew": {
+    "message": "새로운 기능"
+  },
+  "actions": {
+    "message": "작업"
+  },
+  "print": {
+    "message": "인쇄 (PDF 저장)"
+  },
+  "reportIssue": {
+    "message": "문제 보고"
+  },
+  "actions_previousSlide": {
+    "message": "이전 슬라이드"
+  },
+  "actions_nextSlide": {
+    "message": "다음 슬라이드"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "자동 재생 전환"
+  },
+  "actions_autoPlay": {
+    "message": "자동 재생 (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "자동 재생 일시 중지"
+  },
+  "actions_startAutoPlay": {
+    "message": "자동 재생 시작"
+  },
+  "actions_toggleFullscreen": {
+    "message": "전체 화면 전환"
+  },
+  "notification_noMarkdownFound": {
+    "message": "마크다운 콘텐츠를 찾을 수 없습니다"
+  },
+  "notification_renderFailed": {
+    "message": "마크다운 렌더링 실패"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkView가 성공적으로 로드되었습니다!"
+  },
+  "notification_loadedWithFilename": {
+    "message": "로드됨"
+  },
+  "notification_renderError": {
+    "message": "마크다운 렌더링 오류"
+  },
+  "notification_contentUpdated": {
+    "message": "콘텐츠가 업데이트되었습니다"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "자동 새로고침 불가: 파일이 선택된 폴더 외부에 있습니다. 이 파일을 포함하는 상위 폴더를 선택해주세요."
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "이 폴더는 이미 열려 있습니다"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "자동 새로고침이 일시 중지되었습니다. 계속하려면 사이드바에서 파일을 클릭하세요."
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 MarkView 확장 프로그램이 업데이트되었습니다. 페이지를 새로고침합니다..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 이 기능은 샌드박스 컨텍스트(외부 URL)에서 지원되지 않습니다."
+  },
+  "ui_toggleRaw": {
+    "message": "원본 데이터 보기"
+  },
+  "ui_rawView": {
+    "message": "📝 원본 마크다운 보기"
+  },
+  "ui_renderedView": {
+    "message": "✨ 렌더링된 보기"
+  },
+  "ui_scrollTopTitle": {
+    "message": "맨 위로 스크롤 (Home 키)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ 맨 위로 스크롤됨"
+  },
+  "sidebar_title": {
+    "message": "파일"
+  },
+  "sidebar_changeFolder": {
+    "message": "폴더 변경"
+  },
+  "sidebar_refresh": {
+    "message": "새로고침"
+  },
+  "sidebar_expandCollapse": {
+    "message": "모두 펼치기/접기"
+  },
+  "sidebar_hide": {
+    "message": "사이드바 숨기기"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "파일 검색..."
+  },
+  "sidebar_scanning": {
+    "message": "디렉토리 스캔 중..."
+  },
+  "sidebar_bookmarks": {
+    "message": "북마크"
+  },
+  "sidebar_addBookmark": {
+    "message": "북마크 추가"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "삭제"
+  },
+  "sidebar_renameBookmark": {
+    "message": "이름 바꾸기"
+  },
+  "sidebar_lastAccess": {
+    "message": "마지막 액세스"
+  },
+  "permissionTitle": {
+    "message": "파일 액세스 필요"
+  },
+  "permissionText": {
+    "message": "로컬 마크다운 파일을 탐색하려면 파일 액세스를 활성화하세요:"
+  },
+  "permissionStep1": {
+    "message": "이동:"
+  },
+  "permissionStep2": {
+    "message": "MarkView를 찾아 \"세부정보\" 클릭"
+  },
+  "permissionStep3": {
+    "message": "\"파일 URL에 대한 액세스 허용\" 활성화"
+  },
+  "permissionStep4": {
+    "message": "이 페이지를 새로고침하세요"
+  },
+  "openExtensionSettings": {
+    "message": "확장 프로그램 설정 열기"
+  },
+  "sidebar_emptyTitle": {
+    "message": "마크다운 파일 탐색"
+  },
+  "sidebar_emptyText": {
+    "message": "탐색을 활성화하려면 마크다운 파일이 포함된 폴더를 선택하세요."
+  },
+  "sidebar_selectFolder": {
+    "message": "폴더 선택"
+  },
+  "sidebar_close": {
+    "message": "사이드바 닫기"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 선택하면 이 폴더가 기억됩니다"
+  },
+  "sidebar_externalTitle": {
+    "message": "외부 파일 모드"
+  },
+  "sidebar_externalText": {
+    "message": "외부 파일(HTTP/HTTPS URL)은 파일 탐색을 지원하지 않습니다."
+  },
+  "sidebar_externalHint": {
+    "message": "💡 이 기능은 로컬 파일(file:// 프로토콜)에서만 사용할 수 있습니다"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "다른 폴더"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "현재 표시 중:"
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "이 파일은 다른 위치에 있는 것 같습니다. 여기서 파일을 탐색하려면 새 폴더를 선택하세요."
+  },
+  "sidebar_selectNewFolder": {
+    "message": "새 폴더 선택"
+  },
+  "sidebar_errorTitle": {
+    "message": "오류"
+  },
+  "sidebar_errorText": {
+    "message": "디렉토리 스캔 실패:"
+  },
+  "sidebar_retry": {
+    "message": "재시도"
+  },
+  "sidebar_noFiles": {
+    "message": "이 디렉토리에서 마크다운 파일을 찾을 수 없습니다."
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "권한 필요"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "이 폴더에 대한 브라우저 권한이 만료되었습니다. 아래 버튼을 클릭하여 접근을 복원하세요."
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "팁: 브라우저가 권한 프롬프트에 여러 폴더를 표시할 수 있습니다. \"항상 허용\"을 선택하여 모두 복원하세요."
+  },
+  "sidebar_restoreAccess": {
+    "message": "접근 복원"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ 설정이 저장되었습니다!"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ 캐시가 삭제되었습니다!"
+  },
+  "popup_clearCacheTitle": {
+    "message": "캐시를 삭제하시겠습니까?"
+  },
+  "popup_clearCache": {
+    "message": "캐시 삭제"
+  },
+  "popup_resetTitle": {
+    "message": "설정을 재설정하시겠습니까?"
+  },
+  "popup_resetText": {
+    "message": "모든 설정이 기본값으로 재설정됩니다. 이 작업은 취소할 수 없습니다."
+  },
+  "popup_cancel": {
+    "message": "취소"
+  },
+  "popup_reset": {
+    "message": "재설정"
+  },
+  "toc_title": {
+    "message": "목차"
+  },
+  "toc_collapseAll": {
+    "message": "모두 접기"
+  },
+  "toc_expandAll": {
+    "message": "모두 펼치기"
+  },
+  "toc_close": {
+    "message": "목차 닫기"
+  },
+  "toc_collapse": {
+    "message": "접기"
+  },
+  "toc_expand": {
+    "message": "펼치기"
+  },
+  "toc_noHeadings": {
+    "message": "제목을 찾을 수 없습니다"
+  },
+  "toc_rawModeTitle": {
+    "message": "Raw 마크다운 모드"
+  },
+  "toc_rawModeMessage": {
+    "message": "목차는 raw 마크다운 뷰에서 사용할 수 없습니다."
+  },
+  "toc_toggleButtonTitle": {
+    "message": "목차 사이드바 전환 - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "테마 전환 (라이트/다크/자동) - Ctrl+Shift+D"
+  },
+  "theme_light": {
+    "message": "⚪ 밝은 테마"
+  },
+  "theme_dark": {
+    "message": "⚫ 어두운 테마"
+  },
+  "theme_auto": {
+    "message": "⚙️ 자동"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "레이아웃 전환 (와이드/중앙) - Ctrl+Shift+C"
+  },
+  "centered_centered": {
+    "message": "📄 중앙 정렬"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ 전체 너비"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "폴더 브라우저 사이드바 전환 - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "최근 문서를 모두 지우시겠습니까?"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "목록에서 모든 최근 문서가 제거됩니다. 이 작업은 취소할 수 없습니다."
+  },
+  "recent_clearSuccess": {
+    "message": "최근 문서가 지워졌습니다"
+  },
+  "recent_clearFailed": {
+    "message": "최근 문서 지우기에 실패했습니다"
+  },
+  "recent_loadFailed": {
+    "message": "최근 문서 로드에 실패했습니다"
+  },
+  "recent_openFailed": {
+    "message": "이 파일은 기록에서 다시 열 수 없습니다. '폴더 변경'을 사용하여 다시 찾아보세요."
+  },
+  "recent_clearAll": {
+    "message": "모두 지우기"
+  },
+  "recent_refresh": {
+    "message": "새로고침"
+  },
+  "recent_search": {
+    "message": "문서 검색..."
+  },
+  "recent_infoText": {
+    "message": "브라우저 주소 표시줄에 붙여넣은 URL만 여기에 저장됩니다"
+  },
+  "recent_noResults": {
+    "message": "검색과 일치하는 문서가 없습니다"
+  },
+  "recent_accessed": {
+    "message": "액세스됨"
+  },
+  "recent_removeItem": {
+    "message": "목록에서 제거"
+  },
+  "recent_copyUrl": {
+    "message": "URL 복사"
+  },
+  "recent_urlCopied": {
+    "message": "URL이 클립보드에 복사되었습니다"
+  },
+  "recent_clickToOpen": {
+    "message": "클릭하면 현재 탭에서 열기, Shift+클릭하면 새 탭"
+  },
+  "recent_cannotReopen": {
+    "message": "File System API 파일은 기록에서 다시 열 수 없습니다"
+  },
+  "recent_localFiles": {
+    "message": "로컬 파일"
+  },
+  "recent_externalFiles": {
+    "message": "외부 파일"
+  },
+  "recent_otherFiles": {
+    "message": "기타 파일"
+  },
+  "recent_showMoreFiles": {
+    "message": "{0}개 파일 더 보기"
+  },
+  "recent_refreshed": {
+    "message": "최근 문서가 새로고침되었습니다"
+  },
+  "recent_removed": {
+    "message": "목록에서 문서가 제거되었습니다"
+  },
+  "recent_filenameCopied": {
+    "message": "파일 이름이 복사되었습니다"
+  },
+  "recent_fileHandleLost": {
+    "message": "파일 액세스가 손실되었습니다. '폴더 변경'을 사용하여 파일을 다시 찾아보세요."
+  },
+  "recent_permissionDenied": {
+    "message": "권한이 거부되었습니다. 파일을 열 수 없습니다."
+  },
+  "cancel": {
+    "message": "취소"
+  },
+  "permissionTab": {
+    "message": "설정 필요"
+  },
+  "keyboardHelp_title": {
+    "message": "키보드 단축키"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "모든 기능에 빠르게 액세스"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "디스플레이"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "테마 전환 (라이트/다크/자동)"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "원본 데이터 보기"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "레이아웃 전환 (와이드/중앙)"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "목차 사이드바 전환"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "폴더 브라우저 사이드바 전환"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "빠른 설정 열기"
+  },
+  "keyboardHelp_navigation": {
+    "message": "탐색"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "폴더에서 검색"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "페이지 상단으로 스크롤"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "열린 모달 닫기"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "이미지 갤러리"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "이전 이미지"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "다음 이미지"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "이미지 뷰어 닫기"
+  },
+  "keyboardHelp_macNote": {
+    "message": "macOS에서는 Ctrl 대신 ⌘ (Cmd)를 사용하세요"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "macOS에서는 Ctrl을 ⌘ (Cmd)로 바꾸세요"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "키보드 단축키"
+  },
+  "actions_configurePlugins": {
+    "message": "플러그인 구성"
+  },
+  "actions_extensionInfo": {
+    "message": "MarkView 정보"
+  },
+  "actions_quickSettings": {
+    "message": "빠른 설정"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "자주 사용하는 설정 조정"
+  },
+  "pluginConfig_title": {
+    "message": "플러그인 구성"
+  },
+  "pluginConfig_subtitle": {
+    "message": "마크다운 렌더링 플러그인 활성화 또는 비활성화"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "기본값으로 초기화"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "모든 플러그인을 기본 설정으로 초기화하시겠습니까?"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "핵심 렌더링"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "콘텐츠 및 미디어"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "텍스트 서식"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "확장 구문"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "고급 기능"
+  },
+  "common_close": {
+    "message": "닫기"
+  },
+  "common_cancel": {
+    "message": "취소"
+  },
+  "common_confirm": {
+    "message": "OK"
+  },
+  "codeBlockDisplay": {
+    "message": "코드 블록 표시"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "코드 블록에서 긴 줄을 처리하는 방법입니다. 스크롤은 가로 스크롤바로 서식을 유지하고, 줄 바꿈은 읽기 쉽게 긴 줄을 나눕니다."
+  },
+  "codeBlockDisplayScroll": {
+    "message": "스크롤 (서식 유지)"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "줄 바꿈 (긴 줄 나누기)"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "빠른 링크"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "확장 프로그램 평가"
+  },
+  "extensionInfo_about": {
+    "message": "MarkView 정보"
+  },
+  "extensionInfo_description": {
+    "message": "MarkView는 Chromium 브라우저(Chrome, Edge, Brave, Opera 등)용 최신 기능이 풍부한 Markdown 뷰어입니다. 구문 강조, 다이어그램, 수학 방정식 등을 사용하여 Markdown 파일을 아름답고 상호작용적인 문서로 변환하세요."
+  },
+  "extensionInfo_website": {
+    "message": "공식 웹사이트"
+  },
+  "extensionInfo_madeWith": {
+    "message": "제작"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "개발자와 작가를 위해"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "모든 권리 보유"
+  }
+}

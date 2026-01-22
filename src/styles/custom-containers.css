@@ -1,0 +1,178 @@
+/* ============================================
+   Custom Containers (markdown-it-container)
+   ============================================
+   
+   Syntax: ::: info, ::: warning, ::: danger, ::: details, ::: spoiler
+   Scoped to: #markview-container .custom-container
+*/
+
+/* Base container styles */
+#markview-container .custom-container {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid;
+  border-radius: 6px;
+  background-color: var(--container-bg, #f8f9fa);
+}
+
+#markview-container .custom-container-title {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  font-size: 1.05em;
+}
+
+/* ============================================
+   Container Type: INFO (Blue)
+   ============================================ */
+#markview-container .custom-container-info {
+  border-left-color: #3b82f6;
+  background-color: var(--info-bg, #eff6ff);
+  color: var(--info-text, #1e40af);
+}
+
+#markview-container .custom-container-info .custom-container-title {
+  color: var(--info-title, #1e3a8a);
+}
+
+.markview-dark .custom-container-info {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #93c5fd !important;
+}
+
+.markview-dark .custom-container-info .custom-container-title {
+  color: #bfdbfe;
+}
+
+/* ============================================
+   Container Type: WARNING (Orange/Yellow)
+   ============================================ */
+#markview-container .custom-container-warning {
+  border-left-color: #f59e0b;
+  background-color: var(--warning-bg, #fffbeb);
+  color: var(--warning-text, #92400e);
+}
+
+#markview-container .custom-container-warning .custom-container-title {
+  color: var(--warning-title, #78350f);
+}
+
+.markview-dark .custom-container-warning {
+  background-color: rgba(245, 158, 11, 0.1) !important;
+  color: #fde68a !important;
+}
+
+.markview-dark .custom-container-warning .custom-container-title {
+  color: #fef3c7;
+}
+
+/* ============================================
+   Container Type: DANGER (Red)
+   ============================================ */
+#markview-container .custom-container-danger {
+  border-left-color: #ef4444;
+  background-color: var(--danger-bg, #fef2f2);
+  color: var(--danger-text, #991b1b);
+}
+
+#markview-container .custom-container-danger .custom-container-title {
+  color: var(--danger-title, #7f1d1d);
+}
+
+.markview-dark .custom-container-danger {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  color: #fecaca !important;
+}
+
+.markview-dark .custom-container-danger .custom-container-title {
+  color: #fee2e2;
+}
+
+/* ============================================
+   Container Type: DETAILS (Purple)
+   ============================================ */
+#markview-container .custom-container-details {
+  border-left-color: #8b5cf6;
+  background-color: var(--details-bg, #f5f3ff);
+  color: var(--details-text, #5b21b6);
+}
+
+#markview-container .custom-container-details .custom-container-title {
+  color: var(--details-title, #4c1d95);
+}
+
+.markview-dark .custom-container-details {
+  background-color: rgba(139, 92, 246, 0.1) !important;
+  color: #ddd6fe !important;
+}
+
+.markview-dark .custom-container-details .custom-container-title {
+  color: #ede9fe;
+}
+
+/* ============================================
+   Container Type: SPOILER (Gray)
+   ============================================ */
+#markview-container .custom-container-spoiler {
+  border-left-color: #6b7280;
+  background-color: var(--spoiler-bg, #f9fafb);
+  color: var(--spoiler-text, #374151);
+}
+
+#markview-container .custom-container-spoiler .custom-container-title {
+  color: var(--spoiler-title, #1f2937);
+}
+
+.markview-dark .custom-container-spoiler {
+  background-color: rgba(107, 114, 128, 0.1) !important;
+  color: #d1d5db !important;
+}
+
+.markview-dark .custom-container-spoiler .custom-container-title {
+  color: #e5e7eb;
+}
+
+/* ============================================
+   Definition Lists (markdown-it-deflist)
+   ============================================
+   
+   Syntax: Term\n:   Definition
+   Scoped to: #markview-container dl/dt/dd
+*/
+
+#markview-container dl {
+  margin: 1em 0;
+}
+
+#markview-container dt {
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+  color: var(--markview-text);
+}
+
+#markview-container dd {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  border-left: 2px solid var(--markview-border);
+}
+
+#markview-container dd:last-child {
+  margin-bottom: 1em;
+}
+
+/* ============================================
+   Print & Responsive
+   ============================================ */
+@media print {
+  #markview-container .custom-container {
+    page-break-inside: avoid;
+  }
+}
+
+@media (max-width: 768px) {
+  #markview-container .custom-container {
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-md) 0;
+  }
+}

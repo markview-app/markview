@@ -1,0 +1,100 @@
+/**
+ * MarkView Scroll to Top Button Styles
+ * Floating button for smooth scrolling to page top
+ */
+
+/* ===================================
+   Scroll to Top Button
+   =================================== */
+
+#markview-scroll-top {
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10001;
+  box-shadow: 0 4px 12px rgba(96, 125, 139, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+  transform: translateY(20px);
+}
+
+#markview-scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#markview-scroll-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(96, 125, 139, 0.4);
+}
+
+#markview-scroll-top:active {
+  transform: translateY(0);
+}
+
+/* Dark Theme Support */
+html.markview-active.markview-dark #markview-scroll-top {
+  box-shadow: 0 4px 12px rgba(96, 125, 139, 0.5);
+}
+
+html.markview-active.markview-dark #markview-scroll-top:hover {
+  box-shadow: 0 6px 16px rgba(96, 125, 139, 0.6);
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+
+@media (max-width: 768px) {
+  #markview-scroll-top {
+    width: 40px;
+    height: 40px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .markview-scroll-notification {
+    top: 10px;
+    right: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  #markview-scroll-top {
+    width: 36px;
+    height: 36px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  #markview-scroll-top svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .markview-scroll-notification {
+    padding: 8px 14px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+  #markview-scroll-top,
+  .markview-scroll-notification {
+    display: none !important;
+  }
+}

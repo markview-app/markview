@@ -1,0 +1,48 @@
+/**
+ * MarkView Raw Toggle Styles
+ * Styles for raw markdown view and toggle functionality
+ */
+
+/* ===================================
+   Raw View Container
+   =================================== */
+
+.markview-raw-view {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 20px;
+  background: var(--markview-code-bg);
+  color: var(--markview-text);
+  border: 1px solid var(--markview-border);
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* Dark Theme Support */
+html.markview-active.markview-dark .markview-raw-view {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-color: #404040;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+
+@media (max-width: 768px) {
+  .markview-raw-view {
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .markview-raw-view {
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+}

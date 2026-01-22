@@ -1,0 +1,101 @@
+/* ========================================
+   Mermaid Diagram Download Button Styles
+   ======================================== */
+
+/* Action buttons on diagrams */
+#markview-container .mermaid-container {
+  position: relative;
+}
+
+#markview-container .mermaid-action-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+#markview-container .mermaid-download-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#markview-container .mermaid-download-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+#markview-container .mermaid-download-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+#markview-container .mermaid-download-btn svg {
+  display: block;
+  color: #333;
+}
+
+/* Dark mode action buttons */
+.markview-dark #markview-container .mermaid-download-btn {
+  background: rgba(45, 45, 45, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.markview-dark #markview-container .mermaid-download-btn:hover {
+  background: rgba(55, 55, 55, 1);
+}
+
+.markview-dark #markview-container .mermaid-download-btn svg {
+  color: #e0e0e0;
+}
+
+/* Download Options Select - Custom styling for select dropdowns */
+.mermaid-download-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--markview-border-color, #d0d0d0);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  background: var(--markview-bg-color, #ffffff);
+  color: var(--markview-text-color, #333);
+  cursor: pointer;
+  transition: var(--transition-base);
+  font-family: inherit;
+}
+
+.markview-dark .mermaid-download-select {
+  background: #1a1a1a;
+  border-color: #404040;
+  color: #e0e0e0;
+}
+
+.mermaid-download-select:hover {
+  border-color: #999;
+}
+
+.markview-dark .mermaid-download-select:hover {
+  border-color: #606060;
+}
+
+.mermaid-download-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Print Styles - Hide buttons */
+@media print {
+  #markview-container .mermaid-action-buttons {
+    display: none !important;
+  }
+}

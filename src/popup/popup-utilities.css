@@ -1,0 +1,339 @@
+/**
+ * Popup Utilities - Shared Component Patterns
+ * Reusable styles for popup interface components
+ * Eliminates duplication across tab CSS files
+ */
+
+/* ============================================
+   INPUT STYLES
+   ============================================ */
+
+.popup-input {
+  width: 100%;
+  padding: var(--input-padding);
+  border: var(--input-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  transition: all var(--transition-base);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.popup-input:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+  background: var(--color-bg-primary);
+}
+
+.popup-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+/* Large input variant */
+.popup-input-lg {
+  padding: var(--input-padding-lg);
+  border-radius: var(--radius-lg);
+}
+
+/* Monospace input (for license keys) */
+.popup-input-mono {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+/* Search input */
+.popup-search {
+  width: 100%;
+  padding: var(--input-padding);
+  border: var(--input-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-family: inherit;
+  transition: all var(--transition-base);
+}
+
+.popup-search:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+.popup-search::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+
+.popup-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.popup-empty-state {
+  text-align: center;
+  padding: 60px var(--space-lg);
+  color: var(--color-text-muted);
+}
+
+.popup-empty-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-md);
+  opacity: 0.3;
+  color: var(--color-text-muted);
+}
+
+.popup-empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+  color: #666;
+}
+
+.popup-empty-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+
+.popup-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.popup-scroll::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+.popup-scroll::-webkit-scrollbar-thumb {
+  background: #d1d5da;
+  border-radius: var(--radius-sm);
+}
+
+.popup-scroll::-webkit-scrollbar-thumb:hover {
+  background: #959da5;
+}
+
+/* ============================================
+   SECTION CONTAINER
+   ============================================ */
+
+.popup-section {
+  padding: var(--space-md);
+  background: var(--color-bg-primary);
+}
+
+.popup-section-secondary {
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+
+.popup-divider {
+  height: 1px;
+  background: var(--color-border-primary);
+  margin: 0;
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+
+.popup-section-header {
+  padding: var(--space-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-section-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--brand-gradient);
+}
+
+.popup-section-title {
+  margin: 0 0 6px 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.popup-section-subtitle {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+/* ============================================
+   STATUS BADGE
+   ============================================ */
+
+.popup-badge-container {
+  padding: var(--space-lg) var(--space-lg);
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+}
+
+.popup-badge-default {
+  background: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-border-primary);
+}
+
+.popup-badge-primary {
+  background: var(--brand-gradient);
+  color: white;
+  border: none;
+}
+
+/* ============================================
+   PRO FEATURES LINK
+   ============================================ */
+
+.popup-pro-link-container {
+  padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
+  background: var(--color-bg-primary);
+}
+
+.popup-pro-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-pro-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.popup-pro-link:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border-color: rgba(102, 126, 234, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.popup-pro-link:hover::before {
+  left: 100%;
+}
+
+.popup-pro-link:active {
+  transform: translateY(0);
+}
+
+.popup-pro-link svg:first-child {
+  flex-shrink: 0;
+  color: #fbbf24;
+  animation: starPulse 2s ease-in-out infinite;
+}
+
+.popup-pro-link svg:last-child {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+}
+
+.popup-pro-link:hover svg:last-child {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+@keyframes starPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* ============================================
+   FORM SECTION
+   ============================================ */
+
+.popup-form-section {
+  padding: var(--space-lg);
+  background: var(--color-bg-primary);
+}
+
+.popup-form-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   ACTION BUTTON (for deactivate, etc)
+   ============================================ */
+
+.popup-action-section {
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border-primary);
+}

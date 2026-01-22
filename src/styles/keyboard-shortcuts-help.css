@@ -1,0 +1,345 @@
+/**
+ * Keyboard Shortcuts Help Modal Styles
+ * Follows MarkView brand design system with signature purple gradient
+ */
+
+/* Modal Overlay */
+.markview-keyboard-help-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  animation: fadeIn 0.2s ease-out;
+  padding: 20px;
+}
+
+.markview-keyboard-help-overlay.fade-out {
+  animation: fadeOut 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Modal Container */
+.markview-keyboard-help-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.markview-keyboard-help-header {
+  padding: 32px 32px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+.markview-keyboard-help-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: white;
+}
+
+.markview-keyboard-help-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.markview-keyboard-help-header-content {
+  text-align: center;
+}
+
+.markview-keyboard-help-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.markview-keyboard-help-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: white;
+}
+
+.markview-keyboard-help-subtitle {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.9;
+  color: white;
+}
+
+/* Modal Body */
+.markview-keyboard-help-body {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.markview-keyboard-help-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.markview-keyboard-help-body::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+.markview-keyboard-help-body::-webkit-scrollbar-thumb {
+  background: #d1d5da;
+  border-radius: 4px;
+}
+
+.markview-keyboard-help-body::-webkit-scrollbar-thumb:hover {
+  background: #959da5;
+}
+
+.markview-keyboard-help-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Section */
+.markview-keyboard-help-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.markview-keyboard-help-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #667eea;
+}
+
+.markview-keyboard-help-shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Shortcut Row */
+.markview-keyboard-help-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.markview-keyboard-help-row:hover {
+  background: #f3f4f6;
+}
+
+.markview-keyboard-help-keys {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.markview-keyboard-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 10px;
+  background: white;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.markview-keyboard-plus {
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.markview-keyboard-help-description {
+  flex: 1;
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Platform Note */
+.markview-keyboard-help-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #fbbf24;
+  border-radius: 8px;
+  color: #92400e;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.markview-keyboard-help-note svg {
+  flex-shrink: 0;
+  color: #f59e0b;
+}
+
+/* Dark Theme Support */
+html.markview-active.markview-dark .markview-keyboard-help-modal {
+  background: #1f2937;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-header {
+  border-bottom-color: #374151;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-section-title {
+  color: #f9fafb;
+  border-bottom-color: #667eea;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-row {
+  background: #111827;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-row:hover {
+  background: #1f2937;
+}
+
+html.markview-active.markview-dark .markview-keyboard-key {
+  background: #374151;
+  border-color: #4b5563;
+  color: #e5e7eb;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-description {
+  color: #d1d5db;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-note {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  border-color: #6b7280;
+  color: #fbbf24;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-note svg {
+  color: #fbbf24;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-body::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-body::-webkit-scrollbar-thumb {
+  background: #30363d;
+}
+
+html.markview-active.markview-dark .markview-keyboard-help-body::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .markview-keyboard-help-modal {
+    max-width: 100%;
+    max-height: 90vh;
+    margin: 0;
+  }
+
+  .markview-keyboard-help-header {
+    padding: 24px 24px 20px;
+  }
+
+  .markview-keyboard-help-body {
+    padding: 24px;
+  }
+
+  .markview-keyboard-help-title {
+    font-size: 24px;
+  }
+
+  .markview-keyboard-help-subtitle {
+    font-size: 14px;
+  }
+
+  .markview-keyboard-help-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .markview-keyboard-help-keys {
+    align-self: flex-start;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .markview-keyboard-help-overlay,
+  .markview-keyboard-help-modal {
+    display: none !important;
+  }
+}

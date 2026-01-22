@@ -1,0 +1,76 @@
+/**
+ * MarkView Theme Toggle Styles
+ * Toggle button for switching between light/dark/auto themes
+ */
+
+/* ===================================
+   Theme Toggle Button
+   =================================== */
+
+#markview-theme-toggle {
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  bottom: 76px;
+  right: 20px;
+  z-index: 10001;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#markview-theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+#markview-theme-toggle:active {
+  transform: translateY(0);
+}
+
+/* Dark Theme Support */
+html.markview-active.markview-dark #markview-theme-toggle {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+html.markview-active.markview-dark #markview-theme-toggle:hover {
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+
+@media (max-width: 768px) {
+  #markview-theme-toggle {
+    width: 40px;
+    height: 40px;
+    bottom: 68px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #markview-theme-toggle {
+    width: 36px;
+    height: 36px;
+    bottom: 60px;
+    right: 12px;
+  }
+
+  #markview-theme-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+  #markview-theme-toggle {
+    display: none !important;
+  }
+}

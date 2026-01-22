@@ -3,17 +3,9 @@ node_modules/
 .pnpm-store/
 
 # Build output
+extension/
 dist/
 *.zip
-
-# Testing
-coverage/
-.nyc_output/
-
-# Environment
-.env
-.env.local
-.env.*.local
 
 # IDE
 .vscode/
@@ -21,31 +13,38 @@ coverage/
 *.swp
 *.swo
 *~
+
+# OS
 .DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
 
 # Logs
 logs/
 *.log
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 lerna-debug.log*
 
-# Temporary files
-*.tmp
-*.temp
-.cache/
-IMPLEMENTATION_PLAN.md
-
-# OS
-Thumbs.db
-.DS_Store
-.AppleDouble
-.LSOverride
+# Environment
+.env
+.env.local
+.env.*.local
 
 # TypeScript
 *.tsbuildinfo
 
+# Temporary
+.tmp/
+.cache/
+temp/
+*.tmp
+*.temp
+
 # Testing
+coverage/
+.nyc_output/
 .vitest/

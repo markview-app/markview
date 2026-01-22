@@ -1,0 +1,111 @@
+/**
+ * MarkView Resize Handle Styles
+ *
+ * Scoping Strategy:
+ * - Base styles use .markview-resize-handle prefix
+ * - Context-specific styles scope to parent container
+ * - Global states use body class for cursor management
+ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES (Portable - can be used anywhere)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.markview-resize-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  cursor: col-resize;
+  z-index: var(--z-sticky, 1020);
+
+  /* Visual indicator */
+  background: transparent;
+  transition: background-color var(--transition-fast, 150ms) ease;
+
+  /* Expand hit area for easier grabbing */
+  padding: 0 2px;
+  margin: 0 -2px;
+}
+
+/* Hover state - subtle indicator */
+.markview-resize-handle:hover {
+  background-color: rgba(102, 126, 234, 0.3); /* brand-primary with opacity */
+}
+
+/* Active/dragging state - prominent indicator */
+.markview-resize-handle--active,
+.markview-resize-handle:active {
+  background-color: var(--brand-primary, #667eea);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONTEXT-SPECIFIC STYLES (Scoped to parent containers)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Left sidebar (folder browser) - handle on right edge */
+#markview-sidebar .markview-resize-handle {
+  right: -3px; /* Overlap edge slightly for easier grabbing */
+}
+
+/* TOC sidebar on right - handle on left edge */
+.markview-toc-sidebar--right .markview-resize-handle {
+  left: -3px;
+}
+
+/* TOC sidebar on left - handle on right edge */
+.markview-toc-sidebar--left .markview-resize-handle {
+  right: -3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLOBAL STATES (Applied to body during resize)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Prevent text selection during resize */
+body.markview-resizing {
+  cursor: col-resize !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* Ensure cursor stays consistent over all elements */
+body.markview-resizing * {
+  cursor: col-resize !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   THEME SUPPORT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Dark theme adjustments */
+html.markview-dark .markview-resize-handle:hover {
+  background-color: rgba(102, 126, 234, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Focus state for keyboard navigation (future enhancement) */
+.markview-resize-handle:focus {
+  outline: 2px solid var(--brand-primary, #667eea);
+  outline-offset: 2px;
+}
+
+/* Focus visible (only when navigating via keyboard) */
+.markview-resize-handle:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.markview-resize-handle:focus-visible {
+  outline: 2px solid var(--brand-primary, #667eea);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .markview-resize-handle {
+    transition: none;
+  }
+}

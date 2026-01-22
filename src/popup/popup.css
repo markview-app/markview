@@ -1,0 +1,299 @@
+/* MarkView Popup Styles */
+/* Only contains custom styles not covered by the design system */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  height: 600px;
+  max-height: 600px;
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Popup container with strict height constraint */
+.popup-container {
+  height: 100%;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+/* Header with gradient */
+.popup-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 20px 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.popup-header h1 {
+  margin-bottom: 4px;
+}
+
+.popup-header p {
+  margin-bottom: 0;
+}
+
+.header-links {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.header-version {
+  margin-bottom: 6px;
+}
+
+.header-links-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.header-link {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.header-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.header-separator {
+  opacity: 0.6;
+}
+
+/* Common Button Styles */
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* Utility: Hidden class */
+.hidden {
+  display: none !important;
+}
+
+/* Modal overlay styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Override hidden for modal-overlay when visible */
+#confirm-dialog:not(.hidden) {
+  display: flex !important;
+}
+
+/* Ensure modal has solid background in popup */
+.modal-overlay .modal,
+#confirm-dialog .modal {
+  background: #ffffff !important;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease forwards;
+  transform: scale(0.9);
+  opacity: 0;
+}
+
+@keyframes modalSlideIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Modal header styling for all modals */
+.modal-overlay .modal-header,
+#confirm-dialog .modal-header {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.15);
+}
+
+.modal-overlay .modal-header .icon-base,
+#confirm-dialog .modal-header .icon-base {
+  color: #ffc107;
+  width: 24px;
+  height: 24px;
+}
+
+.modal-overlay .modal-title,
+#confirm-dialog .modal-title {
+  color: #333;
+  font-size: 16px;
+}
+
+.modal-overlay .modal-body,
+#confirm-dialog .modal-body {
+  padding: 20px;
+  background: #ffffff;
+}
+
+.modal-overlay .modal-body p,
+#confirm-dialog .modal-body p {
+  margin: 0;
+  line-height: 1.6;
+  color: #666;
+}
+
+.modal-overlay .modal-footer,
+#confirm-dialog .modal-footer {
+  background: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(102, 126, 234, 0.15);
+}
+
+/* Override btn-primary for confirm dialog to be red (destructive) */
+#confirm-reset.btn-primary {
+  background: #dc3545;
+}
+
+#confirm-reset.btn-primary:hover {
+  background: #c82333;
+}
+
+
+/* ========================================
+   TAB NAVIGATION
+   ======================================== */
+
+.popup-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 0 16px;
+  background: #ffffff;
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Hide scrollbar for tabs but keep functionality */
+.popup-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+
+.popup-tabs::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.popup-tabs::-webkit-scrollbar-thumb {
+  background: #d1d5da;
+  border-radius: 2px;
+}
+
+.popup-tabs::-webkit-scrollbar-thumb:hover {
+  background: #959da5;
+}
+
+.popup-tab {
+  padding: 12px 20px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  transition: all 200ms ease;
+  font-weight: 500;
+  font-size: 14px;
+  color: #666;
+  font-family: inherit;
+  position: relative;
+  top: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.popup-tab:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.popup-tab.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+/* Tab Panels */
+.tab-panel {
+  display: none;
+  height: calc(600px - 200px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Custom scrollbar matching extension style */
+.tab-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tab-panel::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+.tab-panel::-webkit-scrollbar-thumb {
+  background: #d1d5da;
+  border-radius: 4px;
+}
+
+.tab-panel::-webkit-scrollbar-thumb:hover {
+  background: #959da5;
+}
+
+/* Notification Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}

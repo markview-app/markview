@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "现代化的Markdown查看器"
+  },
+  "recentDocuments": {
+    "message": "最近的文档"
+  },
+  "settingsTab": {
+    "message": "设置"
+  },
+  "recentEmptyTitle": {
+    "message": "无最近文件"
+  },
+  "recentEmptyText": {
+    "message": "打开markdown文件以在此处查看"
+  },
+  "generalSettings": {
+    "message": "常规"
+  },
+  "extensionEnabled": {
+    "message": "启用扩展"
+  },
+  "language": {
+    "message": "语言"
+  },
+  "theme": {
+    "message": "主题"
+  },
+  "themeLight": {
+    "message": "浅色"
+  },
+  "themeDark": {
+    "message": "深色"
+  },
+  "themeAuto": {
+    "message": "自动"
+  },
+  "layoutSettings": {
+    "message": "布局"
+  },
+  "centeredLayout": {
+    "message": "居中布局"
+  },
+  "maxWidth": {
+    "message": "最大宽度"
+  },
+  "maxWidthDescription": {
+    "message": "限制内容宽度以提高可读性。仅适用于居中布局模式。"
+  },
+  "fontSize": {
+    "message": "字体大小"
+  },
+  "lineHeight": {
+    "message": "行高"
+  },
+  "fontFamily": {
+    "message": "字体"
+  },
+  "fontDefault": {
+    "message": "默认"
+  },
+  "featuresSettings": {
+    "message": "功能"
+  },
+  "configurePlugins": {
+    "message": "配置插件"
+  },
+  "syntaxTheme": {
+    "message": "代码主题"
+  },
+  "syntaxThemeDescription": {
+    "message": "代码块的颜色主题。MarkView主题自动适应浅色/深色模式。"
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "自动（浅色/深色）"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "浅色主题"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "深色主题"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView（默认）"
+  },
+  "syntaxHighlighting": {
+    "message": "语法高亮"
+  },
+  "taskLists": {
+    "message": "任务列表"
+  },
+  "tables": {
+    "message": "表格"
+  },
+  "productivitySettings": {
+    "message": "生产力"
+  },
+  "autoRefresh": {
+    "message": "自动刷新"
+  },
+  "autoRefreshDescription": {
+    "message": "文件更改时自动重新加载（每2秒）"
+  },
+  "sidebarsSettings": {
+    "message": "侧边栏"
+  },
+  "folderBrowser": {
+    "message": "文件夹浏览"
+  },
+  "tableOfContents": {
+    "message": "目录"
+  },
+  "resetToDefaults": {
+    "message": "恢复默认"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 此功能在 RAW 模式下不可用"
+  },
+  "clearCache": {
+    "message": "清除缓存"
+  },
+  "clearCacheHint": {
+    "message": "清除临时缓存数据，包括文件句柄、目录树、URL元数据和内存缓存。这将清除文件访问权限，可能需要重新选择文件夹。设置、书签和历史元数据将保留。"
+  },
+  "watchDemo": {
+    "message": "观看演示"
+  },
+  "whatsNew": {
+    "message": "更新内容"
+  },
+  "actions": {
+    "message": "操作"
+  },
+  "print": {
+    "message": "打印 (保存PDF)"
+  },
+  "reportIssue": {
+    "message": "报告问题"
+  },
+  "actions_previousSlide": {
+    "message": "上一张幻灯片"
+  },
+  "actions_nextSlide": {
+    "message": "下一张幻灯片"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "切换自动播放"
+  },
+  "actions_autoPlay": {
+    "message": "自动播放 (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "暂停自动播放"
+  },
+  "actions_startAutoPlay": {
+    "message": "开始自动播放"
+  },
+  "actions_toggleFullscreen": {
+    "message": "切换全屏"
+  },
+  "notification_noMarkdownFound": {
+    "message": "未找到 Markdown 内容"
+  },
+  "notification_renderFailed": {
+    "message": "渲染 Markdown 失败"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkView 加载成功！"
+  },
+  "notification_loadedWithFilename": {
+    "message": "已加载"
+  },
+  "notification_renderError": {
+    "message": "渲染 Markdown 错误"
+  },
+  "notification_contentUpdated": {
+    "message": "内容已更新"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "自动刷新不可用：文件位于所选文件夹之外。请选择包含此文件的父文件夹。"
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "此文件夹已打开"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "自动刷新已暂停。请点击侧边栏中的文件以继续。"
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 MarkView 扩展已更新。正在重新加载页面..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 此功能在沙盒环境（外部 URL）中不受支持。"
+  },
+  "ui_toggleRaw": {
+    "message": "查看原始内容"
+  },
+  "ui_rawView": {
+    "message": "📝 原始 Markdown 视图"
+  },
+  "ui_renderedView": {
+    "message": "✨ 渲染视图"
+  },
+  "ui_scrollTopTitle": {
+    "message": "滚动到顶部 (Home 键)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ 已滚动到顶部"
+  },
+  "sidebar_title": {
+    "message": "文件"
+  },
+  "sidebar_changeFolder": {
+    "message": "更改文件夹"
+  },
+  "sidebar_refresh": {
+    "message": "刷新"
+  },
+  "sidebar_expandCollapse": {
+    "message": "展开/折叠全部"
+  },
+  "sidebar_hide": {
+    "message": "隐藏侧边栏"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "搜索文件..."
+  },
+  "sidebar_scanning": {
+    "message": "正在扫描目录..."
+  },
+  "sidebar_bookmarks": {
+    "message": "书签"
+  },
+  "sidebar_addBookmark": {
+    "message": "添加书签"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "删除"
+  },
+  "sidebar_renameBookmark": {
+    "message": "重命名"
+  },
+  "sidebar_lastAccess": {
+    "message": "最后访问"
+  },
+  "permissionTitle": {
+    "message": "需要文件访问权限"
+  },
+  "permissionText": {
+    "message": "要浏览本地 Markdown 文件，请启用文件访问权限："
+  },
+  "permissionStep1": {
+    "message": "前往"
+  },
+  "permissionStep2": {
+    "message": "找到 MarkView 并点击“详细信息”"
+  },
+  "permissionStep3": {
+    "message": "启用“允许访问文件网址”"
+  },
+  "permissionStep4": {
+    "message": "刷新此页面"
+  },
+  "openExtensionSettings": {
+    "message": "打开扩展设置"
+  },
+  "sidebar_emptyTitle": {
+    "message": "浏览 Markdown 文件"
+  },
+  "sidebar_emptyText": {
+    "message": "选择包含 Markdown 文件的文件夹以启用导航。"
+  },
+  "sidebar_selectFolder": {
+    "message": "选择文件夹"
+  },
+  "sidebar_close": {
+    "message": "关闭侧边栏"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 选择后，将记住此文件夹"
+  },
+  "sidebar_externalTitle": {
+    "message": "外部文件模式"
+  },
+  "sidebar_externalText": {
+    "message": "外部文件（HTTP/HTTPS URL）不支持文件浏览。"
+  },
+  "sidebar_externalHint": {
+    "message": "💡 此功能仅适用于本地文件（file:// 协议）"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "不同文件夹"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "当前显示："
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "此文件似乎位于不同位置。选择新文件夹以在此处浏览文件。"
+  },
+  "sidebar_selectNewFolder": {
+    "message": "选择新文件夹"
+  },
+  "sidebar_errorTitle": {
+    "message": "错误"
+  },
+  "sidebar_errorText": {
+    "message": "扫描目录失败："
+  },
+  "sidebar_retry": {
+    "message": "重试"
+  },
+  "sidebar_noFiles": {
+    "message": "在此目录中未找到 Markdown 文件。"
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "需要授权"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "访问此文件夹的浏览器权限已过期。点击下方按钮恢复访问权限。"
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "提示：浏览器可能在权限提示中显示多个文件夹。选择「每次访问时都允许」以恢复所有文件夹的访问权限。"
+  },
+  "sidebar_restoreAccess": {
+    "message": "恢复访问权限"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ 设置已保存！"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ 缓存已清除！"
+  },
+  "popup_clearCacheTitle": {
+    "message": "清除缓存？"
+  },
+  "popup_clearCache": {
+    "message": "清除缓存"
+  },
+  "popup_resetTitle": {
+    "message": "重置设置？"
+  },
+  "popup_resetText": {
+    "message": "这将把所有设置重置为默认值。此操作无法撤消。"
+  },
+  "popup_cancel": {
+    "message": "取消"
+  },
+  "popup_reset": {
+    "message": "重置"
+  },
+  "toc_title": {
+    "message": "目录"
+  },
+  "toc_collapseAll": {
+    "message": "全部折叠"
+  },
+  "toc_expandAll": {
+    "message": "全部展开"
+  },
+  "toc_close": {
+    "message": "关闭目录"
+  },
+  "toc_collapse": {
+    "message": "折叠"
+  },
+  "toc_expand": {
+    "message": "展开"
+  },
+  "toc_noHeadings": {
+    "message": "未找到标题"
+  },
+  "toc_rawModeTitle": {
+    "message": "Markdown原始模式"
+  },
+  "toc_rawModeMessage": {
+    "message": "目录在原始 Markdown 视图中不可用。"
+  },
+  "toc_toggleButtonTitle": {
+    "message": "切换目录侧边栏 - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "切换主题（明亮/暗黑/自动） - Ctrl+Shift+D"
+  },
+  "theme_light": {
+    "message": "⚪ 亮色主题"
+  },
+  "theme_dark": {
+    "message": "⚫ 暗色主题"
+  },
+  "theme_auto": {
+    "message": "⚙️ 自动"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "切换布局（宽/居中） - Ctrl+Shift+C"
+  },
+  "centered_centered": {
+    "message": "📄 居中"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ 全宽"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "切换文件夹浏览器侧边栏 - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "清除所有最近的文档？"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "这将从列表中删除所有最近的文档。此操作无法撤消。"
+  },
+  "recent_clearSuccess": {
+    "message": "最近的文档已清除"
+  },
+  "recent_clearFailed": {
+    "message": "清除最近的文档失败"
+  },
+  "recent_loadFailed": {
+    "message": "加载最近的文档失败"
+  },
+  "recent_openFailed": {
+    "message": "此文件无法从历史记录中重新打开。请使用「更改文件夹」再次搜索。"
+  },
+  "recent_clearAll": {
+    "message": "全部清除"
+  },
+  "recent_refresh": {
+    "message": "刷新"
+  },
+  "recent_search": {
+    "message": "搜索文档..."
+  },
+  "recent_infoText": {
+    "message": "仅保存在浏览器地址栏中粘贴的 URL"
+  },
+  "recent_noResults": {
+    "message": "没有文档与您的搜索匹配"
+  },
+  "recent_accessed": {
+    "message": "访问时间"
+  },
+  "recent_removeItem": {
+    "message": "从列表中删除"
+  },
+  "recent_copyUrl": {
+    "message": "复制URL"
+  },
+  "recent_urlCopied": {
+    "message": "URL已复制到剪贴板"
+  },
+  "recent_clickToOpen": {
+    "message": "单击在当前标签页中打开，Shift+单击在新标签页中打开"
+  },
+  "recent_cannotReopen": {
+    "message": "文件系统API文件无法从历史记录中重新打开"
+  },
+  "recent_localFiles": {
+    "message": "本地文件"
+  },
+  "recent_externalFiles": {
+    "message": "外部文件"
+  },
+  "recent_otherFiles": {
+    "message": "其他文件"
+  },
+  "recent_showMoreFiles": {
+    "message": "显示更多 {0} 个文件"
+  },
+  "recent_refreshed": {
+    "message": "最近的文档已刷新"
+  },
+  "recent_removed": {
+    "message": "文档已从列表中删除"
+  },
+  "recent_filenameCopied": {
+    "message": "文件名已复制"
+  },
+  "recent_fileHandleLost": {
+    "message": "文件访问丢失。使用\"更改文件夹\"再次浏览文件。"
+  },
+  "recent_permissionDenied": {
+    "message": "权限被拒绝。无法打开文件。"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "permissionTab": {
+    "message": "需要设置"
+  },
+  "keyboardHelp_title": {
+    "message": "键盘快捷键"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "快速访问所有功能"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "显示"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "切换主题（浅色/深色/自动）"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "查看原始内容"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "切换布局（宽/居中）"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "切换目录侧边栏"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "切换文件夹浏览器侧边栏"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "打开快速设置"
+  },
+  "keyboardHelp_navigation": {
+    "message": "导航"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "在文件夹中搜索"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "滚动到页面顶部"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "关闭任何打开的模态框"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "图片库"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "上一张图片"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "下一张图片"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "关闭图片查看器"
+  },
+  "keyboardHelp_macNote": {
+    "message": "在macOS上，使用⌘（Cmd）代替Ctrl"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "在macOS上，将Ctrl替换为⌘（Cmd）"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "键盘快捷键"
+  },
+  "actions_configurePlugins": {
+    "message": "配置插件"
+  },
+  "actions_extensionInfo": {
+    "message": "关于 MarkView"
+  },
+  "actions_quickSettings": {
+    "message": "快速设置"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "调整常用设置"
+  },
+  "pluginConfig_title": {
+    "message": "插件配置"
+  },
+  "pluginConfig_subtitle": {
+    "message": "启用或禁用 Markdown 渲染插件"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "恢复默认设置"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "将所有插件恢复为默认设置？"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "核心渲染"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "内容与媒体"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "文本格式"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "扩展语法"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "高级功能"
+  },
+  "common_close": {
+    "message": "关闭"
+  },
+  "common_cancel": {
+    "message": "取消"
+  },
+  "common_confirm": {
+    "message": "确定"
+  },
+  "codeBlockDisplay": {
+    "message": "代码块显示"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "如何处理代码块中的长行。滚动通过水平滚动条保留格式，而换行则将长行拆分以便于阅读。"
+  },
+  "codeBlockDisplayScroll": {
+    "message": "滚动（保留格式）"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "换行（拆分长行）"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "快速链接"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "评价扩展"
+  },
+  "extensionInfo_about": {
+    "message": "关于 MarkView"
+  },
+  "extensionInfo_description": {
+    "message": "MarkView 是一款功能丰富的现代化 Chromium 浏览器（Chrome、Edge、Brave、Opera 等）Markdown 查看器。将您的 Markdown 文件转换为带有语法高亮、图表、数学公式等的精美交互式文档。"
+  },
+  "extensionInfo_website": {
+    "message": "官方网站"
+  },
+  "extensionInfo_madeWith": {
+    "message": "用心制作"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "为开发者和写作者"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "保留所有权利"
+  }
+}

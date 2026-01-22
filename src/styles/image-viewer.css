@@ -1,0 +1,241 @@
+/* MarkView Image Viewer Styles */
+
+/* Modal Backdrop */
+.markview-image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10100;
+  cursor: zoom-out;
+  transition: 0.3s ease;
+  transition-property: backdrop-filter, background;
+  will-change: backdrop-filter, background;
+  background: transparent;
+  backdrop-filter: blur(0px);
+}
+
+/* Modal opened state */
+.markview-image-modal.opened {
+  backdrop-filter: blur(10px);
+  background: var(--image-modal-bg);
+}
+
+.markview-image-modal.opened .markview-zoom-image {
+  opacity: var(--image-opacity);
+}
+
+/* Zoomed Image */
+.markview-zoom-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+  transition-property: transform, opacity, width, height;
+  will-change: transform, opacity, width, height;
+  user-select: none;
+  cursor: default;
+  object-fit: contain;
+  pointer-events: auto;
+  transform-origin: center center;
+}
+
+/* Pan/drag cursor states (controlled via JS) */
+.markview-zoom-image.can-pan {
+  cursor: grab;
+}
+
+.markview-zoom-image.is-panning {
+  cursor: grabbing;
+}
+
+/* Light theme variables */
+:root {
+  --image-modal-bg: rgba(255, 255, 255, 0.6);
+  --image-opacity: 1;
+}
+
+/* Dark theme variables */
+.markview-dark {
+  --image-modal-bg: rgba(0, 0, 0, 0.4);
+  --image-opacity: 0.9;
+}
+
+/* Prevent scrolling when modal is open */
+body:has(.markview-image-modal.opened) {
+  overflow: hidden;
+}
+
+/* Navigation Controls */
+.markview-image-prev,
+.markview-image-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--nav-button-bg);
+  border: 1px solid var(--nav-button-border);
+  border-radius: 50%;
+  color: var(--nav-button-text);
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  line-height: 1;
+  transition: all 0.2s ease;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.markview-image-prev {
+  left: 24px;
+}
+
+.markview-image-next {
+  right: 24px;
+}
+
+.markview-image-prev:hover,
+.markview-image-next:hover {
+  background: var(--nav-button-hover-bg);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.markview-image-prev:active,
+.markview-image-next:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Image Counter */
+.markview-image-counter {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10101;
+  padding: 8px 16px;
+  background: var(--counter-bg);
+  border: 1px solid var(--counter-border);
+  border-radius: 20px;
+  color: var(--counter-text);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Helvetica Neue', Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  user-select: none;
+}
+
+/* Light theme variables */
+:root {
+  --image-modal-bg: rgba(255, 255, 255, 0.6);
+  --image-opacity: 1;
+  --nav-button-bg: rgba(255, 255, 255, 0.9);
+  --nav-button-border: rgba(0, 0, 0, 0.1);
+  --nav-button-text: #333;
+  --nav-button-hover-bg: rgba(255, 255, 255, 1);
+  --counter-bg: rgba(255, 255, 255, 0.9);
+  --counter-border: rgba(0, 0, 0, 0.1);
+  --counter-text: #333;
+}
+
+/* Dark theme variables */
+.markview-dark {
+  --image-modal-bg: rgba(0, 0, 0, 0.4);
+  --image-opacity: 0.9;
+  --nav-button-bg: rgba(40, 40, 40, 0.9);
+  --nav-button-border: rgba(255, 255, 255, 0.1);
+  --nav-button-text: #eee;
+  --nav-button-hover-bg: rgba(50, 50, 50, 1);
+  --counter-bg: rgba(40, 40, 40, 0.9);
+  --counter-border: rgba(255, 255, 255, 0.1);
+  --counter-text: #eee;
+}
+
+/* Prevent scrolling when modal is open */
+body:has(.markview-image-modal.opened) {
+  overflow: hidden;
+}
+
+/* Loading state (optional enhancement) */
+.markview-zoom-image.loading {
+  opacity: 0.5;
+}
+
+/* Zoom Controls */
+.markview-image-zoom-controls {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 10101;
+  display: flex;
+  gap: 8px;
+}
+
+.markview-image-zoom-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: var(--nav-button-bg);
+  border: 1px solid var(--nav-button-border);
+  border-radius: 50%;
+  color: var(--nav-button-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.markview-image-zoom-btn:hover:not(:disabled) {
+  background: var(--nav-button-hover-bg);
+  transform: scale(1.1);
+}
+
+.markview-image-zoom-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.markview-image-zoom-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.markview-image-zoom-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Print: hide image viewer */
+@media print {
+  .markview-image-modal {
+    display: none !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .markview-image-modal,
+  .markview-zoom-image {
+    transition: none !important;
+  }
+
+  .markview-image-prev,
+  .markview-image-next {
+    transition: none !important;
+  }
+}
+
+/* Prevent scrolling when modal is open */

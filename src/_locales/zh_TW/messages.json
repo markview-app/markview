@@ -1,0 +1,635 @@
+{
+  "appName": {
+    "message": "MarkView"
+  },
+  "appDescription": {
+    "message": "現代化的Markdown檢視器"
+  },
+  "recentDocuments": {
+    "message": "最近的文件"
+  },
+  "settingsTab": {
+    "message": "設定"
+  },
+  "recentEmptyTitle": {
+    "message": "沒有最近的檔案"
+  },
+  "recentEmptyText": {
+    "message": "開啟markdown檔案以在此處查看"
+  },
+  "generalSettings": {
+    "message": "一般"
+  },
+  "extensionEnabled": {
+    "message": "啟用擴充功能"
+  },
+  "language": {
+    "message": "語言"
+  },
+  "theme": {
+    "message": "主題"
+  },
+  "themeLight": {
+    "message": "淺色"
+  },
+  "themeDark": {
+    "message": "深色"
+  },
+  "themeAuto": {
+    "message": "自動"
+  },
+  "layoutSettings": {
+    "message": "版面配置"
+  },
+  "centeredLayout": {
+    "message": "置中版面"
+  },
+  "maxWidth": {
+    "message": "最大寬度"
+  },
+  "maxWidthDescription": {
+    "message": "限制內容寬度以提高可讀性。僅適用於置中版面配置模式。"
+  },
+  "fontSize": {
+    "message": "字體大小"
+  },
+  "lineHeight": {
+    "message": "行高"
+  },
+  "fontFamily": {
+    "message": "字體"
+  },
+  "fontDefault": {
+    "message": "預設"
+  },
+  "featuresSettings": {
+    "message": "功能"
+  },
+  "configurePlugins": {
+    "message": "設定外掛程式"
+  },
+  "syntaxTheme": {
+    "message": "程式碼主題"
+  },
+  "syntaxThemeDescription": {
+    "message": "程式碼區塊的顏色主題。MarkView主題自動適應淺色/深色模式。"
+  },
+  "syntaxTheme_autoGroup": {
+    "message": "自動（淺色/深色）"
+  },
+  "syntaxTheme_lightGroup": {
+    "message": "淺色主題"
+  },
+  "syntaxTheme_darkGroup": {
+    "message": "深色主題"
+  },
+  "syntaxTheme_markview": {
+    "message": "MarkView（預設）"
+  },
+  "syntaxHighlighting": {
+    "message": "語法高亮"
+  },
+  "taskLists": {
+    "message": "任務列表"
+  },
+  "tables": {
+    "message": "表格"
+  },
+  "productivitySettings": {
+    "message": "生產力"
+  },
+  "autoRefresh": {
+    "message": "自動重新整理"
+  },
+  "autoRefreshDescription": {
+    "message": "檔案變更時自動重新載入（每2秒）"
+  },
+  "sidebarsSettings": {
+    "message": "側邊欄"
+  },
+  "folderBrowser": {
+    "message": "資料夾瀏覽"
+  },
+  "tableOfContents": {
+    "message": "目錄"
+  },
+  "resetToDefaults": {
+    "message": "恢復預設值"
+  },
+  "notAvailableInRawMode": {
+    "message": "🛑 此功能在 RAW 模式下無法使用"
+  },
+  "clearCache": {
+    "message": "清除快取"
+  },
+  "clearCacheHint": {
+    "message": "清除暫存快取資料，包括檔案控制代碼、目錄樹、URL中繼資料和記憶體快取。這將清除檔案存取權限，可能需要重新選擇資料夾。設定、書籤和歷史中繼資料將保留。"
+  },
+  "watchDemo": {
+    "message": "觀看示範"
+  },
+  "whatsNew": {
+    "message": "更新內容"
+  },
+  "actions": {
+    "message": "操作"
+  },
+  "print": {
+    "message": "列印 (儲存PDF)"
+  },
+  "reportIssue": {
+    "message": "回報問題"
+  },
+  "actions_previousSlide": {
+    "message": "上一張投影片"
+  },
+  "actions_nextSlide": {
+    "message": "下一張投影片"
+  },
+  "actions_toggleAutoPlay": {
+    "message": "切換自動播放"
+  },
+  "actions_autoPlay": {
+    "message": "自動播放 (P)"
+  },
+  "actions_pauseAutoPlay": {
+    "message": "暫停自動播放"
+  },
+  "actions_startAutoPlay": {
+    "message": "開始自動播放"
+  },
+  "actions_toggleFullscreen": {
+    "message": "切換全螢幕"
+  },
+  "notification_noMarkdownFound": {
+    "message": "未找到 Markdown 內容"
+  },
+  "notification_renderFailed": {
+    "message": "渲染 Markdown 失敗"
+  },
+  "notification_loadedSuccess": {
+    "message": "MarkView 載入成功！"
+  },
+  "notification_loadedWithFilename": {
+    "message": "已載入"
+  },
+  "notification_renderError": {
+    "message": "渲染 Markdown 錯誤"
+  },
+  "notification_contentUpdated": {
+    "message": "內容已更新"
+  },
+  "notification_autoRefreshUnavailable": {
+    "message": "自動重新整理不可用：檔案位於所選資料夾之外。請選擇包含此檔案的父資料夾。"
+  },
+  "notification_folderAlreadyOpen": {
+    "message": "此資料夾已開啟"
+  },
+  "notification_autoRefreshPaused": {
+    "message": "自動重新整理已暫停。請點擊側邊欄中的檔案以繼續。"
+  },
+  "notification_extensionUpdated": {
+    "message": "🔃 MarkView 擴充功能已更新。正在重新載入頁面..."
+  },
+  "notification_sandboxRestriction": {
+    "message": "🛑 此功能在沙盒環境（外部 URL）中不受支援。"
+  },
+  "ui_toggleRaw": {
+    "message": "檢視原始內容"
+  },
+  "ui_rawView": {
+    "message": "📝 原始 Markdown 檢視"
+  },
+  "ui_renderedView": {
+    "message": "✨ 渲染檢視"
+  },
+  "ui_scrollTopTitle": {
+    "message": "捲動到頂部 (Home 鍵)"
+  },
+  "ui_scrolledTop": {
+    "message": "⬆️ 已捲動到頂部"
+  },
+  "sidebar_title": {
+    "message": "檔案"
+  },
+  "sidebar_changeFolder": {
+    "message": "變更資料夾"
+  },
+  "sidebar_refresh": {
+    "message": "重新整理"
+  },
+  "sidebar_expandCollapse": {
+    "message": "展開/折疊全部"
+  },
+  "sidebar_hide": {
+    "message": "隱藏側邊欄"
+  },
+  "sidebar_searchPlaceholder": {
+    "message": "搜尋檔案..."
+  },
+  "sidebar_scanning": {
+    "message": "正在掃描目錄..."
+  },
+  "sidebar_bookmarks": {
+    "message": "書籤"
+  },
+  "sidebar_addBookmark": {
+    "message": "新增書籤"
+  },
+  "sidebar_deleteBookmark": {
+    "message": "刪除"
+  },
+  "sidebar_renameBookmark": {
+    "message": "重新命名"
+  },
+  "sidebar_lastAccess": {
+    "message": "最後訪問"
+  },
+  "permissionTitle": {
+    "message": "需要檔案存取權限"
+  },
+  "permissionText": {
+    "message": "要瀏覽本地 Markdown 檔案，請啟用檔案存取權限："
+  },
+  "permissionStep1": {
+    "message": "前往"
+  },
+  "permissionStep2": {
+    "message": "找到 MarkView 並點擊「詳細資訊」"
+  },
+  "permissionStep3": {
+    "message": "啟用「允許存取檔案網址」"
+  },
+  "permissionStep4": {
+    "message": "重新整理此頁面"
+  },
+  "openExtensionSettings": {
+    "message": "開啟擴充功能設定"
+  },
+  "sidebar_emptyTitle": {
+    "message": "瀏覽 Markdown 檔案"
+  },
+  "sidebar_emptyText": {
+    "message": "選擇包含 Markdown 檔案的資料夾以啟用導航。"
+  },
+  "sidebar_selectFolder": {
+    "message": "選擇資料夾"
+  },
+  "sidebar_close": {
+    "message": "關閉側邊欄"
+  },
+  "sidebar_emptyHint": {
+    "message": "💡 選擇後，將記住此資料夾"
+  },
+  "sidebar_externalTitle": {
+    "message": "外部檔案模式"
+  },
+  "sidebar_externalText": {
+    "message": "外部檔案（HTTP/HTTPS URL）不支援檔案瀏覽。"
+  },
+  "sidebar_externalHint": {
+    "message": "💡 此功能僅適用於本地檔案（file:// 協定）"
+  },
+  "sidebar_wrongFolderTitle": {
+    "message": "不同資料夾"
+  },
+  "sidebar_wrongFolderText": {
+    "message": "目前顯示："
+  },
+  "sidebar_wrongFolderHint": {
+    "message": "此檔案似乎位於不同位置。選擇新資料夾以在此處瀏覽檔案。"
+  },
+  "sidebar_selectNewFolder": {
+    "message": "選擇新資料夾"
+  },
+  "sidebar_errorTitle": {
+    "message": "錯誤"
+  },
+  "sidebar_errorText": {
+    "message": "掃描目錄失敗："
+  },
+  "sidebar_retry": {
+    "message": "重試"
+  },
+  "sidebar_noFiles": {
+    "message": "在此目錄中未找到 Markdown 檔案。"
+  },
+  "sidebar_permissionExpiredTitle": {
+    "message": "需要授權"
+  },
+  "sidebar_permissionExpiredText": {
+    "message": "存取此資料夾的瀏覽器權限已過期。點擊下方按鈕恢復存取權限。"
+  },
+  "sidebar_permissionExpiredHint": {
+    "message": "提示：瀏覽器可能在權限提示中顯示多個資料夾。選擇「每次造訪時都允許」以恢復所有資料夾的存取權限。"
+  },
+  "sidebar_restoreAccess": {
+    "message": "恢復存取權限"
+  },
+  "popup_settingsSaved": {
+    "message": "✓ 設定已儲存！"
+  },
+  "popup_cacheCleared": {
+    "message": "✓ 快取已清除！"
+  },
+  "popup_clearCacheTitle": {
+    "message": "清除快取？"
+  },
+  "popup_clearCache": {
+    "message": "清除快取"
+  },
+  "popup_resetTitle": {
+    "message": "重置設定？"
+  },
+  "popup_resetText": {
+    "message": "這將把所有設定重置為預設值。此操作無法復原。"
+  },
+  "popup_cancel": {
+    "message": "取消"
+  },
+  "popup_reset": {
+    "message": "重置"
+  },
+  "toc_title": {
+    "message": "目錄"
+  },
+  "toc_collapseAll": {
+    "message": "全部摺疊"
+  },
+  "toc_expandAll": {
+    "message": "全部展開"
+  },
+  "toc_close": {
+    "message": "關閉目錄"
+  },
+  "toc_collapse": {
+    "message": "摺疊"
+  },
+  "toc_expand": {
+    "message": "展開"
+  },
+  "toc_noHeadings": {
+    "message": "未找到標題"
+  },
+  "toc_rawModeTitle": {
+    "message": "Markdown原始模式"
+  },
+  "toc_rawModeMessage": {
+    "message": "目錄在原始 Markdown 視圖中不可用。"
+  },
+  "toc_toggleButtonTitle": {
+    "message": "切換目錄側邊欄 - Ctrl+Shift+L"
+  },
+  "theme_toggleButtonTitle": {
+    "message": "切換主題（明亮/深色/自動） - Ctrl+Shift+D"
+  },
+  "theme_light": {
+    "message": "⚪ 亮色主題"
+  },
+  "theme_dark": {
+    "message": "⚫ 暗色主題"
+  },
+  "theme_auto": {
+    "message": "⚙️ 自動"
+  },
+  "centered_toggleButtonTitle": {
+    "message": "切換佈局（寬/置中） - Ctrl+Shift+C"
+  },
+  "centered_centered": {
+    "message": "📄 置中"
+  },
+  "centered_fullWidth": {
+    "message": "🖥️ 全寬"
+  },
+  "sidebar_toggleButtonTitle": {
+    "message": "切換資料夾瀏覽器側邊欄 - Ctrl+Shift+B"
+  },
+  "recent_clearConfirm": {
+    "message": "清除所有最近的文件？"
+  },
+  "recent_clearConfirmMessage": {
+    "message": "這將從列表中刪除所有最近的文件。此操作無法復原。"
+  },
+  "recent_clearSuccess": {
+    "message": "最近的文件已清除"
+  },
+  "recent_clearFailed": {
+    "message": "清除最近的文件失敗"
+  },
+  "recent_loadFailed": {
+    "message": "載入最近的文件失敗"
+  },
+  "recent_openFailed": {
+    "message": "此檔案無法從歷史記錄中重新開啟。請使用「變更資料夾」再次搜尋。"
+  },
+  "recent_clearAll": {
+    "message": "全部清除"
+  },
+  "recent_refresh": {
+    "message": "重新整理"
+  },
+  "recent_search": {
+    "message": "搜尋文件..."
+  },
+  "recent_infoText": {
+    "message": "僅保存在瀏覽器地址欄中貼上的 URL"
+  },
+  "recent_noResults": {
+    "message": "沒有文件符合您的搜尋"
+  },
+  "recent_accessed": {
+    "message": "存取時間"
+  },
+  "recent_removeItem": {
+    "message": "從列表中刪除"
+  },
+  "recent_copyUrl": {
+    "message": "複製網址"
+  },
+  "recent_urlCopied": {
+    "message": "網址已複製到剪貼簿"
+  },
+  "recent_clickToOpen": {
+    "message": "按一下在目前分頁中開啟，Shift+按一下在新分頁中開啟"
+  },
+  "recent_cannotReopen": {
+    "message": "檔案系統API檔案無法從歷史記錄中重新開啟"
+  },
+  "recent_localFiles": {
+    "message": "本機檔案"
+  },
+  "recent_externalFiles": {
+    "message": "外部檔案"
+  },
+  "recent_otherFiles": {
+    "message": "其他檔案"
+  },
+  "recent_showMoreFiles": {
+    "message": "顯示更多 {0} 個檔案"
+  },
+  "recent_refreshed": {
+    "message": "最近的文件已重新整理"
+  },
+  "recent_removed": {
+    "message": "文件已從列表中刪除"
+  },
+  "recent_filenameCopied": {
+    "message": "檔案名稱已複製"
+  },
+  "recent_fileHandleLost": {
+    "message": "檔案存取遺失。使用「變更資料夾」再次瀏覽檔案。"
+  },
+  "recent_permissionDenied": {
+    "message": "權限被拒絕。無法開啟檔案。"
+  },
+  "cancel": {
+    "message": "取消"
+  },
+  "permissionTab": {
+    "message": "需要設置"
+  },
+  "keyboardHelp_title": {
+    "message": "鍵盤快速鍵"
+  },
+  "keyboardHelp_subtitle": {
+    "message": "快速存取所有功能"
+  },
+  "keyboardHelp_viewToggles": {
+    "message": "顯示"
+  },
+  "keyboardHelp_toggleTheme": {
+    "message": "切換主題（淺色/深色/自動）"
+  },
+  "keyboardHelp_toggleRaw": {
+    "message": "檢視原始內容"
+  },
+  "keyboardHelp_toggleLayout": {
+    "message": "切換佈局（寬/置中）"
+  },
+  "keyboardHelp_toggleToc": {
+    "message": "切換目錄側邊欄"
+  },
+  "keyboardHelp_toggleSidebars": {
+    "message": "切換資料夾瀏覽器側邊欄"
+  },
+  "keyboardHelp_openQuickSettings": {
+    "message": "開啟快速設定"
+  },
+  "keyboardHelp_navigation": {
+    "message": "導航"
+  },
+  "keyboardHelp_searchInFolder": {
+    "message": "在資料夾中搜尋"
+  },
+  "keyboardHelp_scrollTop": {
+    "message": "捲動到頁面頂端"
+  },
+  "keyboardHelp_closeModal": {
+    "message": "關閉任何開啟的對話框"
+  },
+  "keyboardHelp_imageGallery": {
+    "message": "圖片庫"
+  },
+  "keyboardHelp_previousImage": {
+    "message": "上一張圖片"
+  },
+  "keyboardHelp_nextImage": {
+    "message": "下一張圖片"
+  },
+  "keyboardHelp_closeViewer": {
+    "message": "關閉圖片檢視器"
+  },
+  "keyboardHelp_macNote": {
+    "message": "在macOS上，使用⌘（Cmd）代替Ctrl"
+  },
+  "keyboardHelp_windowsNote": {
+    "message": "在macOS上，將Ctrl替換為⌘（Cmd）"
+  },
+  "actions_keyboardShortcuts": {
+    "message": "鍵盤快速鍵"
+  },
+  "actions_configurePlugins": {
+    "message": "配置外掛程式"
+  },
+  "actions_extensionInfo": {
+    "message": "關於 MarkView"
+  },
+  "actions_quickSettings": {
+    "message": "快速設定"
+  },
+  "actions_quickSettingsSubtitle": {
+    "message": "調整常用設定"
+  },
+  "pluginConfig_title": {
+    "message": "外掛程式配置"
+  },
+  "pluginConfig_subtitle": {
+    "message": "啟用或停用 Markdown 渲染外掛程式"
+  },
+  "pluginConfig_resetDefaults": {
+    "message": "恢復預設設定"
+  },
+  "pluginConfig_resetConfirm": {
+    "message": "將所有外掛程式恢復為預設設定？"
+  },
+  "pluginConfig_categoryCore": {
+    "message": "核心渲染"
+  },
+  "pluginConfig_categoryContent": {
+    "message": "內容與媒體"
+  },
+  "pluginConfig_categoryFormatting": {
+    "message": "文字格式"
+  },
+  "pluginConfig_categoryExtensions": {
+    "message": "擴展語法"
+  },
+  "pluginConfig_categoryAdvanced": {
+    "message": "進階功能"
+  },
+  "common_close": {
+    "message": "關閉"
+  },
+  "common_cancel": {
+    "message": "取消"
+  },
+  "common_confirm": {
+    "message": "確定"
+  },
+  "codeBlockDisplay": {
+    "message": "程式碼區塊顯示"
+  },
+  "codeBlockDisplayDescription": {
+    "message": "如何處理程式碼區塊中的長行。捲動透過水平捲動條保留格式，而換行則將長行拆分以便於閱讀。"
+  },
+  "codeBlockDisplayScroll": {
+    "message": "捲動（保留格式）"
+  },
+  "codeBlockDisplayWrap": {
+    "message": "換行（拆分長行）"
+  },
+  "extensionInfo_quickLinks": {
+    "message": "快速連結"
+  },
+  "extensionInfo_rateExtension": {
+    "message": "評價擴充功能"
+  },
+  "extensionInfo_about": {
+    "message": "關於 MarkView"
+  },
+  "extensionInfo_description": {
+    "message": "MarkView 是一款功能豐富的現代化 Chromium 瀏覽器（Chrome、Edge、Brave、Opera 等）Markdown 檢視器。將您的 Markdown 檔案轉換為帶有語法醒目提示、圖表、數學方程式等的精美互動式文件。"
+  },
+  "extensionInfo_website": {
+    "message": "官方網站"
+  },
+  "extensionInfo_madeWith": {
+    "message": "用心製作"
+  },
+  "extensionInfo_forDevelopers": {
+    "message": "為開發者和寫作者"
+  },
+  "extensionInfo_allRightsReserved": {
+    "message": "保留所有權利"
+  }
+}

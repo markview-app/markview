@@ -9,24 +9,24 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
+      include: ['src/core/**/*.ts', 'src/utils/**/*.ts'],
       exclude: [
-        'node_modules/',
-        'dist/',
-        'build/',
-        'tests/',
-        '**/*.test.ts',
-        '**/*.config.ts',
-        'scripts/',
+        'src/**/*.d.ts',
+        'src/**/index.ts',
+        'src/main.ts',
+        'src/background.ts',
+        'src/popup/**',
       ],
     },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@core': path.resolve(__dirname, './src/core'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@core': path.resolve(__dirname, './src/core'),
       '@utils': path.resolve(__dirname, './src/utils'),
+      '@plugins': path.resolve(__dirname, './src/plugins'),
       '@styles': path.resolve(__dirname, './src/styles'),
+      '@types': path.resolve(__dirname, './src/types'),
     },
   },
 });

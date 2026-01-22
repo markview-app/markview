@@ -1,0 +1,403 @@
+/* MarkView Component System */
+
+/* ========================================
+   BUTTON COMPONENTS
+   ======================================== */
+
+/* Button Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Button Sizes */
+.btn-xs {
+  padding: 4px 8px;
+  font-size: var(--font-size-xs);
+  min-height: 24px;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: var(--font-size-sm);
+  min-height: 32px;
+}
+
+.btn-md {
+  padding: 8px 16px;
+  font-size: var(--font-size-base);
+  min-height: 36px;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: var(--font-size-lg);
+  min-height: 44px;
+}
+
+/* Button Variants */
+.btn-primary {
+  background: var(--brand-gradient);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--markview-code-bg);
+  color: var(--markview-text);
+  border: 1px solid var(--markview-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--markview-border);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--markview-text);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--markview-code-bg);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--markview-border);
+  color: var(--markview-text);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--markview-code-bg);
+  border-color: var(--brand-primary);
+}
+
+.btn-link {
+  background: transparent;
+  color: var(--markview-link);
+  padding: 0;
+  min-height: auto;
+}
+
+.btn-link:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+/* Icon Buttons */
+.btn-icon {
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  border-radius: var(--radius-full);
+}
+
+.btn-icon.btn-sm {
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  padding: 4px;
+}
+
+.btn-icon.btn-lg {
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 10px;
+}
+
+/* ========================================
+   CARD COMPONENTS
+   ======================================== */
+
+.card {
+  background: var(--markview-bg);
+  border: 1px solid var(--markview-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-flat {
+  box-shadow: none;
+}
+
+.card-flat:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.card-header {
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--markview-border);
+  margin-bottom: var(--space-md);
+}
+
+.card-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: var(--markview-text);
+}
+
+.card-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--markview-text-muted);
+  margin: 4px 0 0 0;
+}
+
+.card-body {
+  color: var(--markview-text);
+}
+
+.card-footer {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--markview-border);
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+/* ========================================
+   MODAL COMPONENTS
+   ======================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10200;
+  animation: fadeIn var(--transition-fast);
+}
+
+.modal {
+  background: var(--markview-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 10201;
+  animation: slideUp var(--transition-base);
+}
+
+.modal-sm {
+  max-width: 400px;
+}
+
+.modal-lg {
+  max-width: 700px;
+}
+
+.modal-xl {
+  max-width: 900px;
+}
+
+.modal-header {
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--markview-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: var(--markview-text);
+}
+
+.modal-body {
+  padding: var(--space-lg);
+  color: var(--markview-text);
+}
+
+.modal-footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--markview-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--markview-border);
+  border-top-color: var(--brand-primary);
+  border-radius: var(--radius-full);
+  animation: spin 0.6s linear infinite;
+}
+
+.spinner-sm {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.spinner-lg {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+.spinner-xl {
+  width: 48px;
+  height: 48px;
+  border-width: 4px;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--markview-code-bg) 0%,
+    var(--markview-border) 50%,
+    var(--markview-code-bg) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-text {
+  height: 1em;
+  margin-bottom: 0.5em;
+}
+
+.skeleton-heading {
+  height: 2em;
+  margin-bottom: 0.5em;
+}
+
+.skeleton-circle {
+  border-radius: var(--radius-full);
+  width: 40px;
+  height: 40px;
+}
+
+/* ========================================
+   BADGE COMPONENTS
+   ======================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  background: var(--markview-code-bg);
+  color: var(--markview-text);
+  border: 1px solid var(--markview-border);
+}
+
+.badge-primary {
+  background: var(--brand-primary);
+  color: white;
+  border-color: var(--brand-primary);
+}
+
+.badge-success {
+  background: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.badge-warning {
+  background: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
+
+.badge-error {
+  background: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

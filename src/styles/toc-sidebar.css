@@ -1,0 +1,417 @@
+/* Table of Contents Sidebar Styles */
+/* Only contains custom styles not covered by the design system */
+
+.markview-toc-sidebar {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  background: #ffffff;
+  border-left: 1px solid #e1e4e8;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Helvetica Neue', Arial, sans-serif;
+
+  /* Note: position: fixed already creates positioning context for resize handle */
+}
+
+.markview-toc-sidebar--left {
+  left: 0;
+  border-left: none;
+  border-right: 1px solid #e1e4e8;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.markview-toc-sidebar--right {
+  right: 0;
+}
+
+/* Header */
+.markview-toc-header {
+  padding: 16px;
+  border-bottom: 1px solid #e1e4e8;
+  background: #f6f8fa;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.markview-toc-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.markview-toc-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #24292e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 40%;
+  flex-shrink: 0;
+}
+
+.markview-toc-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 60%;
+  justify-content: flex-end;
+}
+
+/* Content Area */
+.markview-toc-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 0;
+}
+
+.markview-toc-nav {
+  padding: 0 8px;
+}
+
+/* TOC List */
+.markview-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.markview-toc-list--nested {
+  padding-left: 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-left: 1px solid #e1e4e8;
+}
+
+/* TOC Item */
+.markview-toc-item {
+  margin: 2px 0;
+  padding: 0;
+  position: relative;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.markview-toc-link {
+  display: block;
+  width: 100%;
+  padding: 4px 8px;
+  color: #586069;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.markview-toc-link:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+/* Ensure H4/H5/H6 hover color matches H1/H2/H3 */
+.markview-toc-item[data-level='4'] > .markview-toc-link:hover,
+.markview-toc-item[data-level='5'] > .markview-toc-link:hover,
+.markview-toc-item[data-level='6'] > .markview-toc-link:hover {
+  color: #667eea !important;
+}
+
+/* Active Item */
+.markview-toc-item--active > .markview-toc-link {
+  background: var(--brand-gradient);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.markview-toc-item--active > .markview-toc-link:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #6941a5 100%);
+  color: #ffffff;
+}
+
+/* Ensure active state overrides heading level colors */
+.markview-toc-item--active[data-level='4'] > .markview-toc-link,
+.markview-toc-item--active[data-level='5'] > .markview-toc-link,
+.markview-toc-item--active[data-level='6'] > .markview-toc-link {
+  color: #ffffff !important;
+}
+
+/* Ensure active H4/H5/H6 hover keeps white color */
+.markview-toc-item--active[data-level='4'] > .markview-toc-link:hover,
+.markview-toc-item--active[data-level='5'] > .markview-toc-link:hover,
+.markview-toc-item--active[data-level='6'] > .markview-toc-link:hover {
+  color: #ffffff !important;
+}
+
+/* Ensure active H2 keeps font-weight 600 (overrides default font-weight: 500) */
+.markview-toc-item--active[data-level='2'] > .markview-toc-link {
+  font-weight: 600 !important;
+}
+
+/* Heading Level Styling */
+.markview-toc-item[data-level='1'] > .markview-toc-link {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.markview-toc-item[data-level='2'] > .markview-toc-link {
+  font-weight: 500;
+}
+
+.markview-toc-item[data-level='3'] > .markview-toc-link {
+  font-size: 12px;
+}
+
+.markview-toc-item[data-level='4'] > .markview-toc-link,
+.markview-toc-item[data-level='5'] > .markview-toc-link,
+.markview-toc-item[data-level='6'] > .markview-toc-link {
+  font-size: 12px;
+  color: #6a737d;
+}
+
+/* Custom Scrollbar */
+.markview-toc-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.markview-toc-content::-webkit-scrollbar-track {
+  background: #f6f8fa;
+}
+
+.markview-toc-content::-webkit-scrollbar-thumb {
+  background: #d1d5da;
+  border-radius: 4px;
+}
+
+.markview-toc-content::-webkit-scrollbar-thumb:hover {
+  background: #959da5;
+}
+
+/* Dark Theme */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .markview-toc-sidebar {
+    width: 200px !important;
+  }
+}
+
+/* Print - Hide TOC */
+@media print {
+  .markview-toc-sidebar {
+    display: none !important;
+  }
+}
+
+/* Empty State */
+.markview-toc-empty {
+  padding: 1rem;
+  text-align: center;
+  color: var(--markview-text-muted, #6a737d);
+  font-size: 14px;
+}
+
+/* Raw Mode Message */
+.markview-toc-raw-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--markview-text-muted, #6a737d);
+}
+
+.markview-toc-raw-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.markview-toc-raw-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--markview-text, #24292e);
+}
+
+.markview-toc-raw-message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Animation for smooth transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* TOC Toggle Button */
+.markview-toc-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.markview-toc-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+.markview-toc-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Hide toggle button on print */
+@media print {
+  .markview-toc-toggle {
+    display: none !important;
+  }
+}
+
+/* Dark Theme Styles */
+.markview-dark .markview-toc-sidebar {
+  background: #0d1117;
+  border-color: #30363d;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.markview-dark .markview-toc-sidebar--left {
+  border-color: #30363d;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.markview-dark .markview-toc-header {
+  background: #161b22;
+  border-color: #30363d;
+}
+
+.markview-dark .markview-toc-title {
+  color: #c9d1d9;
+}
+
+.markview-dark .markview-toc-link {
+  color: #8b949e;
+}
+
+.markview-dark .markview-toc-link:hover {
+  color: #58a6ff;
+  background: #161b22;
+}
+
+/* Ensure H4/H5/H6 hover color matches H1/H2/H3 in dark mode */
+.markview-dark .markview-toc-item[data-level='4'] > .markview-toc-link:hover,
+.markview-dark .markview-toc-item[data-level='5'] > .markview-toc-link:hover,
+.markview-dark .markview-toc-item[data-level='6'] > .markview-toc-link:hover {
+  color: #58a6ff !important;
+}
+
+.markview-dark .markview-toc-item--active > .markview-toc-link {
+  color: #ffffff;
+  background: var(--brand-gradient);
+  font-weight: 600;
+}
+
+.markview-dark .markview-toc-item--active > .markview-toc-link:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #6941a5 100%);
+}
+
+/* Ensure active state overrides heading level colors in dark mode */
+.markview-dark .markview-toc-item--active[data-level='4'] > .markview-toc-link,
+.markview-dark .markview-toc-item--active[data-level='5'] > .markview-toc-link,
+.markview-dark .markview-toc-item--active[data-level='6'] > .markview-toc-link {
+  color: #ffffff !important;
+}
+
+/* Ensure active H4/H5/H6 hover keeps white color in dark mode */
+.markview-dark .markview-toc-item--active[data-level='4'] > .markview-toc-link:hover,
+.markview-dark .markview-toc-item--active[data-level='5'] > .markview-toc-link:hover,
+.markview-dark .markview-toc-item--active[data-level='6'] > .markview-toc-link:hover {
+  color: #ffffff !important;
+}
+
+/* Ensure active H2 keeps font-weight 600 in dark mode (overrides default font-weight: 500) */
+.markview-dark .markview-toc-item--active[data-level='2'] > .markview-toc-link {
+  font-weight: 600 !important;
+}
+
+.markview-dark .markview-toc-list--nested {
+  border-color: #30363d;
+}
+
+.markview-dark .markview-toc-item[data-level='4'] > .markview-toc-link,
+.markview-dark .markview-toc-item[data-level='5'] > .markview-toc-link,
+.markview-dark .markview-toc-item[data-level='6'] > .markview-toc-link {
+  color: #6e7681;
+}
+
+.markview-dark .markview-toc-empty {
+  color: #8b949e;
+}
+
+.markview-dark .markview-toc-raw-message-container {
+  color: #8b949e;
+}
+
+.markview-dark .markview-toc-raw-title {
+  color: #c9d1d9;
+}
+
+.markview-dark .markview-toc-raw-message {
+  color: #8b949e;
+}
+
+.markview-dark .markview-toc-content::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.markview-dark .markview-toc-content::-webkit-scrollbar-thumb {
+  background: #30363d;
+}
+
+.markview-dark .markview-toc-content::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+.markview-dark .markview-toc-toggle {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.markview-dark .markview-toc-toggle:hover {
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}

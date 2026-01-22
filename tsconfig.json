@@ -1,31 +1,49 @@
 {
   "compilerOptions": {
+    // Language and Environment
     "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
     "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "allowJs": true,
+
+    // Emit
+    "outDir": "./extension",
+    "noEmit": true,
+    "sourceMap": true,
+
+    // Type Checking
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Module Resolution
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": false,
-    "sourceMap": true,
-    "types": ["chrome", "node", "vitest/globals"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    // Path Mapping
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@core/*": ["src/core/*"],
-      "@components/*": ["src/components/*"],
-      "@utils/*": ["src/utils/*"],
-      "@styles/*": ["src/styles/*"]
-    }
+      "@/*": ["./src/*"],
+      "@core/*": ["./src/core/*"],
+      "@components/*": ["./src/components/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@types/*": ["./src/types/*"],
+      "@plugins/*": ["./src/plugins/*"],
+      "@styles/*": ["./src/styles/*"]
+    },
+
+    // Advanced
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Type Declarations
+    "types": ["chrome", "node"]
   },
   "include": ["src/**/*", "tests/**/*"],
-  "exclude": ["node_modules", "dist", "build"]
+  "exclude": ["node_modules", "extension", "dist", "scripts"]
 }

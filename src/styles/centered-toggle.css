@@ -1,0 +1,90 @@
+/**
+ * MarkView Centered Layout Toggle Styles
+ * Toggle button for switching between centered and full-width layouts
+ */
+
+/* ===================================
+   Centered Layout Toggle Button
+   =================================== */
+
+#markview-centered-toggle {
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  bottom: 132px;
+  right: 20px;
+  z-index: 10001;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#markview-centered-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+#markview-centered-toggle:active {
+  transform: translateY(0);
+}
+
+/* Dark Theme Support */
+html.markview-active.markview-dark #markview-centered-toggle {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+html.markview-active.markview-dark #markview-centered-toggle:hover {
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+
+@media (max-width: 768px) {
+  #markview-centered-toggle {
+    width: 40px;
+    height: 40px;
+    bottom: 116px;
+    right: 16px;
+  }
+
+  .markview-centered-notification {
+    top: 10px;
+    right: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  #markview-centered-toggle {
+    width: 36px;
+    height: 36px;
+    bottom: 104px;
+    right: 12px;
+  }
+
+  #markview-centered-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .markview-centered-notification {
+    padding: 8px 14px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+  #markview-centered-toggle,
+  .markview-centered-notification {
+    display: none !important;
+  }
+}
