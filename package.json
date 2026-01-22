@@ -1,6 +1,7 @@
 {
   "name": "markview-oss",
   "version": "1.0.0",
+  "type": "module",
   "description": "Lightweight markdown viewer with GFM support, syntax highlighting, Mermaid diagrams, and KaTeX math rendering.",
   "author": "MarkView Team",
   "license": "MIT",
