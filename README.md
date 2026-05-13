@@ -46,6 +46,7 @@ git clone https://github.com/markview-app/markview.git
 cd markview
 
 # Install dependencies (requires pnpm)
+# npm install -g pnpm
 pnpm install
 
 # Build the extension
@@ -55,7 +56,7 @@ pnpm run build
 # 1. Open chrome://extensions/
 # 2. Enable "Developer mode"
 # 3. Click "Load unpacked"
-# 4. Select the `dist/` folder
+# 4. Select the `extension/` folder
 ```
 
 **Requirements**: Node.js 18+, pnpm 8+
