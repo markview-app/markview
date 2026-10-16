@@ -70,7 +70,10 @@ export class RecentTab {
         refreshBtn.textContent = getMessage('recent_refresh') || 'Refresh';
 
         // Show brief success feedback
-        this.showNotification(getMessage('recent_refreshed') || 'Recent documents refreshed', 'success');
+        this.showNotification(
+          getMessage('recent_refreshed') || 'Recent documents refreshed',
+          'success'
+        );
       });
     }
 
@@ -133,7 +136,8 @@ export class RecentTab {
       if (!noResultsEl) {
         noResultsEl = document.createElement('div');
         noResultsEl.className = 'recent-no-results';
-        noResultsEl.textContent = getMessage('recent_noResults') || 'No documents match your search';
+        noResultsEl.textContent =
+          getMessage('recent_noResults') || 'No documents match your search';
         filesList.parentElement?.insertBefore(noResultsEl, filesList);
       }
       filesList.classList.add('hidden');
@@ -208,7 +212,6 @@ export class RecentTab {
       filesList.appendChild(externalSection);
     }
   }
-
 
   /**
    * Create a recent file item element
@@ -408,7 +411,10 @@ export class RecentTab {
       const filteredHistory = history.filter(item => item.url !== url);
       await chrome.storage.local.set({ markviewHistory: filteredHistory });
       await this.loadRecentFiles();
-      this.showNotification(getMessage('recent_removed') || 'Document removed from list', 'success');
+      this.showNotification(
+        getMessage('recent_removed') || 'Document removed from list',
+        'success'
+      );
     } catch (error) {
       logger.error('Failed to remove document:', error);
     }
@@ -424,7 +430,10 @@ export class RecentTab {
     try {
       await chrome.storage.local.set({ markviewHistory: [] });
       await this.loadRecentFiles();
-      this.showNotification(getMessage('recent_clearSuccess') || 'Recent documents cleared', 'success');
+      this.showNotification(
+        getMessage('recent_clearSuccess') || 'Recent documents cleared',
+        'success'
+      );
     } catch (error) {
       logger.error('Failed to clear recent documents:', error);
       this.showNotification(

@@ -14,8 +14,17 @@
   overflow: hidden;
   box-sizing: border-box;
   font-family:
-    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Helvetica Neue', Arial, sans-serif;
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
 
   /* Note: position: fixed already creates positioning context for resize handle */
 }

@@ -19,7 +19,6 @@ export function setCurrentFilePath(filePath: string | null): void {
   logger.log('[RelativePathResolver] Current file path set (no-op):', filePath || 'null');
 }
 
-
 /**
  * Resolve a relative path from the current file's directory
  * NOTE: Local file resolution has been removed in the open source version
@@ -30,8 +29,6 @@ export async function resolveRelativePath(_relativePath: string): Promise<string
   logger.log('[RelativePathResolver] Local file resolution not available in open source version');
   return null;
 }
-
-
 
 /**
  * Resolve relative URLs based on a base URL (for external/remote files)

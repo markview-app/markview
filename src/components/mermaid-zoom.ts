@@ -148,9 +148,11 @@ function downloadDiagram(svg: SVGElement, filename: string, format: string, scal
 
     // Use data URL instead of blob URL to avoid CORS taint issues
     // Encode SVG as base64 to prevent special character issues
-    const base64Data = btoa(encodeURIComponent(svgData).replace(/%([0-9A-F]{2})/g, (_, p1) =>
-      String.fromCharCode(parseInt(p1, 16))
-    ));
+    const base64Data = btoa(
+      encodeURIComponent(svgData).replace(/%([0-9A-F]{2})/g, (_, p1) =>
+        String.fromCharCode(parseInt(p1, 16))
+      )
+    );
     const svgDataUrl = `data:image/svg+xml;base64,${base64Data}`;
 
     const img = new Image();

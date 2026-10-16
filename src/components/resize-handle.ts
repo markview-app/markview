@@ -236,10 +236,7 @@ export class ResizeHandle {
     }
 
     // Clamp to min/max bounds
-    newWidth = Math.max(
-      this.options.minWidth,
-      Math.min(this.options.maxWidth, newWidth)
-    );
+    newWidth = Math.max(this.options.minWidth, Math.min(this.options.maxWidth, newWidth));
 
     // Fire resize callback for real-time updates
     this.options.onResize(newWidth);
@@ -266,10 +263,7 @@ export class ResizeHandle {
     }
 
     // Clamp to bounds
-    finalWidth = Math.max(
-      this.options.minWidth,
-      Math.min(this.options.maxWidth, finalWidth)
-    );
+    finalWidth = Math.max(this.options.minWidth, Math.min(this.options.maxWidth, finalWidth));
 
     // Update start width for next resize
     this.startWidth = finalWidth;
@@ -291,10 +285,7 @@ export class ResizeHandle {
    * Useful when loading from storage
    */
   setWidth(width: number): void {
-    this.startWidth = Math.max(
-      this.options.minWidth,
-      Math.min(this.options.maxWidth, width)
-    );
+    this.startWidth = Math.max(this.options.minWidth, Math.min(this.options.maxWidth, width));
     logger.log('[ResizeHandle] Width updated to:', this.startWidth);
   }
 

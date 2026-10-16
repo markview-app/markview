@@ -4,22 +4,34 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/**
+ * Returns `jsonText` with its top-level `version` set to `version`. Only the
+ * value is replaced: re-serialising the whole manifest with JSON.stringify
+ * rewrote its short arrays one item per line on every build, so the file left
+ * Prettier's format and showed as modified after every `pnpm run build`.
+ */
+function replaceVersionField(jsonText, version) {
+  // "manifest_version" cannot match: its value is unquoted, and the pattern
+  // requires a quote directly before `version`.
+  const updatedText = jsonText.replace(/("version":\s*")[^"]*(")/, `$1${version}$2`);
+  if (JSON.parse(updatedText).version !== version) {
+    throw new Error('version replacement did not apply — check the shape of src/manifest.json');
+  }
+  return updatedText;
+}
+
 async function syncManifestVersion() {
   try {
-    // Read package.json
     const packageJson = JSON.parse(
       await fs.readFile(path.resolve(__dirname, '../package.json'), 'utf-8')
     );
-
-    // Read manifest.json
     const manifestPath = path.resolve(__dirname, '../src/manifest.json');
-    const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf-8'));
+    const manifestText = await fs.readFile(manifestPath, 'utf-8');
+    const updatedText = replaceVersionField(manifestText, packageJson.version);
 
-    // Update version
-    manifest.version = packageJson.version;
-
-    // Write back
-    await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+    if (updatedText !== manifestText) {
+      await fs.writeFile(manifestPath, updatedText);
+    }
 
     console.log(`✅ Manifest version synced to ${packageJson.version}`);
   } catch (error) {

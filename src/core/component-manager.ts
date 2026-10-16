@@ -52,9 +52,7 @@ export function createComponentInstances(): ComponentInstances {
 /**
  * Initialize all UI components
  */
-export async function initializeComponents(
-  components: ComponentInstances
-): Promise<void> {
+export async function initializeComponents(components: ComponentInstances): Promise<void> {
   const settings = await getSettings();
 
   // Initialize keyboard shortcut manager first

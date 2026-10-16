@@ -229,7 +229,6 @@
   font-style: italic;
 }
 
-
 #tab-recent .recent-show-more {
   padding: 0;
   margin: var(--space-xs) 0;
@@ -284,5 +283,4 @@
   #tab-recent .recent-file-time {
     font-size: 10px;
   }
-
 }

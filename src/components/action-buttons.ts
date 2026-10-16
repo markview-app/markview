@@ -149,14 +149,10 @@ export class ActionButtons {
       const isSandboxRestricted = (item as any).isSandboxRestricted || false;
 
       // Check if item should be disabled in RAW mode
-      const isRawModeRestricted = ((item as any).isRawModeRestricted) && this.isRawMode;
+      const isRawModeRestricted = (item as any).isRawModeRestricted && this.isRawMode;
 
       // Use data-disabled for PRO items, sandbox-restricted items, or raw mode restricted items
-      if (
-        (item.isPro && !isProItemAccessible) ||
-        isSandboxRestricted ||
-        isRawModeRestricted
-      ) {
+      if ((item.isPro && !isProItemAccessible) || isSandboxRestricted || isRawModeRestricted) {
         menuItem.setAttribute('data-disabled', 'true');
         if (item.isPro && !isProItemAccessible) {
           menuItem.title = 'This feature is available in PRO tier';
