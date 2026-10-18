@@ -1,93 +1,41 @@
 # Changelog
 
-All notable changes to the MarkView (Open-Source Edition) will be documented in this file.
+All notable changes to MarkView (Open-Source Edition) are documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Planned
-
-- Initial open-source release
-- Core markdown rendering
-- Basic UI components
-
-### Fixed
-
-- Emoji and other non-ASCII text no longer render as garbled symbols (such as `ðŸ›‘` for `🛑`) when a server sends a
-  UTF-8 markdown file as `text/plain` without a charset. The browser decodes such a file with the locale's legacy
-  encoding; MarkView now reverses that decode when it can do so losslessly ([markview-app/support#59](https://github.com/markview-app/support/issues/59)).
-
-## [1.0.0] - TBD
+The first public version, to be released as 1.0.0.
 
 ### Added
 
-- **Core Markdown Rendering**
-  - Full GitHub Flavored Markdown (GFM) support
-  - Tables, task lists, strikethrough, footnotes
-  - Emoji support
-  - Superscript, subscript, insert, mark
-  - Abbreviations and definition lists
-  - Custom containers
+- **Rendering**
+  - GitHub Flavored Markdown: tables, task lists, strikethrough, footnotes, autolinks
   - GitHub-style alerts (Note, Tip, Important, Warning, Caution)
+  - Subscript, superscript, inserted and highlighted text, abbreviations, definition lists, custom containers, emoji
+  - Syntax highlighting with the highlight.js common language set, a copy-code button and 14 color themes
+  - Mermaid diagrams, with zoom and download
+  - KaTeX math, inline and display
+- **Reading**
+  - Light and dark themes
+  - Table of contents for H1–H3 headings, in a resizable sidebar
+  - Raw markdown view, print styles, image viewer, font selection
+  - Auto-refresh when the file changes
+  - Toolbar popup with recent documents and settings
+  - Keyboard shortcuts
+  - Interface in 12 languages
+- **Files**
+  - Local (`file://`) and remote (`http://`, `https://`) documents: `.md`, `.markdown`, `.mkd`, `.mdx`
+  - Remote plain-text pages that block inline content are detected, and their images are loaded through the
+    extension's background worker
+  - UTF-8 documents that a server sends as `text/plain` without a charset render correctly. The browser decodes such a
+    file with the locale's legacy encoding, which turns emoji into garbled symbols (`ðŸ›‘` for `🛑`); MarkView reverses
+    that decode when it can do so losslessly
+    ([markview-app/support#59](https://github.com/markview-app/support/issues/59))
+- **Project**
+  - TypeScript, webpack, Vitest, ESLint and Prettier
+  - MIT License
 
-- **Syntax Highlighting**
-  - Code block highlighting for 36 programming languages
-  - Basic theme (Atom One Light)
-  - Copy code button
-  - Line numbers
-
-- **Diagrams & Math**
-  - Mermaid diagram rendering (flowcharts, sequence, class, etc.)
-  - Mermaid download (SVG/PNG)
-  - KaTeX math equation rendering (inline and display)
-
-- **UI Components**
-  - Light/Dark theme toggle
-  - Basic Table of Contents (H1-H2 headings)
-  - Scroll to top button
-  - Raw markdown view toggle
-
-- **Print**
-  - Print optimization
-
-- **Technical Features**
-  - Local file support (`file://` protocol)
-  - External file support (`http://`, `https://`)
-  - Sandbox and CSP detection
-  - Privacy-first architecture (all processing local)
-  - No analytics or tracking
-
-- **Developer Tools**
-  - TypeScript codebase
-  - Webpack build system
-  - Vitest testing framework
-  - ESLint and Prettier
-  - Comprehensive documentation
-
-### Documentation
-
-- README with feature comparison
-- LICENSE (MIT)
-- DEVELOPMENT.md - Development setup and workflow
-- CONTRIBUTING.md - Contribution guidelines
-- ARCHITECTURE.md - Technical architecture overview
-
----
-
-## Release Notes Format
-
-Each release will include:
-
-- **Added**: New features
-- **Changed**: Changes to existing functionality
-- **Deprecated**: Soon-to-be-removed features
-- **Removed**: Removed features
-- **Fixed**: Bug fixes
-- **Security**: Security improvements
-
----
-
-[Unreleased]: https://github.com/markview-app/markview/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/markview-app/markview/releases/tag/v1.0.0
+[Unreleased]: https://github.com/markview-app/markview/commits/main

@@ -1,407 +1,132 @@
-# Architecture Overview
+# Architecture
 
-This document provides a high-level overview of the MarkView architecture.
+How MarkView (Open-Source Edition) turns a raw markdown page into a rendered document. For building and running the
+code, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
----
+## Principles
 
-## Design Philosophy
+1. **Local processing.** Documents are parsed and rendered in the tab. Nothing about them is sent anywhere.
+2. **No UI framework.** Plain TypeScript classes build and manage their own DOM.
+3. **Explicit state.** One `ExtensionState` object, created at startup, is passed to the functions that need it. There
+   are no module-level singletons holding document state.
+4. **Manifest V3.** A content script, a service worker and a popup; no remote code.
 
-### Core Principles
+## Parts of the extension
 
-1. **Pure TypeScript** - No UI frameworks (React, Vue, Angular)
-2. **Lightweight** - Minimal dependencies, small bundle size
-3. **Privacy-First** - All processing happens locally
-4. **Open & Transparent** - Auditable codebase
-5. **Standards-Compliant** - Chrome Extension Manifest V3
+| Part           | Entry               | Role                                                                               |
+| -------------- | ------------------- | ---------------------------------------------------------------------------------- |
+| Content script | `src/main.ts`       | Runs on markdown URLs, renders the document and mounts the reading UI              |
+| Service worker | `src/background.ts` | Fetches the document for auto-refresh and images the page may not load; opens tabs |
+| Popup          | `src/popup/`        | Recent documents and settings                                                      |
 
----
+The content script is declared for `.md`, `.markdown`, `.mkd` and `.mdx` URLs (with upper-case and query-string
+variants) on `file://` and `http(s)://`, and runs at `document_end`.
 
-## Architecture Diagram
+## From page load to rendered document
 
-```bash
-┌─────────────────────────────────────────────────────────┐
-│                   Browser (Chrome/Edge)                 │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │         Content Script (main.ts)                 │   │
-│  │  - Detects markdown files                        │   │
-│  │  - Initializes extension                         │   │
-│  │  - Orchestrates rendering                        │   │
-│  └──────────────┬───────────────────────────────────┘   │
-│                 │                                       │
-│  ┌──────────────▼───────────────────────────────────┐   │
-│  │       Core Rendering Engine                      │   │
-│  │  ┌─────────────────────────────────────────┐     │   │
-│  │  │  Markdown Parser (markdown-it)          │     │   │
-│  │  │  - Plugin system                        │     │   │
-│  │  │  - GFM support                          │     │   │
-│  │  └─────────────────────────────────────────┘     │   │
-│  │  ┌─────────────────────────────────────────┐     │   │
-│  │  │  Document Renderer                      │     │   │
-│  │  │  - HTML generation                      │     │   │
-│  │  │  - Content injection                    │     │   │
-│  │  └─────────────────────────────────────────┘     │   │
-│  └──────────────────────────────────────────────────┘   │
-│                                                         │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │          UI Components                           │   │
-│  │  - Theme Toggle                                  │   │
-│  │  - Table of Contents (Basic)                     │   │
-│  │  - Scroll to Top Button                          │   │
-│  └──────────────────────────────────────────────────┘   │
-│                                                         │
-│  ┌──────────────────────────────────────────────────┐   │
-│  │          Utilities                               │   │
-│  │  - DOM Manipulation                              │   │
-│  │  - Logger                                        │   │
-│  │  - Internationalization                          │   │
-│  └──────────────────────────────────────────────────┘   │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
+```text
+Browser opens a .md URL and shows the raw text in <pre>
+  │
+  ▼
+main.ts ── validateMarkdownPage() (src/utils/validation.ts)
+  │          • URL has a markdown extension
+  │          • the page is a browser-rendered text document: a <pre> with content and almost nothing else
+  │          • document.contentType is text/plain, text/markdown or text/x-markdown
+  │        Any check fails → exit without touching the page
+  ▼
+lifecycle.ts ── create ExtensionState, load settings, set up the page
+  ▼
+document-renderer.ts ── renderMarkdownContent()
 ```
 
----
-
-## Core Modules
-
-### 1. Entry Point (`src/main.ts`)
-
-**Responsibilities**:
-
-- Detect markdown files by URL pattern
-- Extract raw markdown from `<pre>` tag (`extractMarkdownSource()` in `src/utils/dom.ts`)
-- Recover UTF-8 text the browser decoded with its legacy fallback encoding, which happens when a server sends the file
-  as `text/plain` without a charset (`recoverUtf8FromLegacyDecode()` in `src/utils/source-encoding.ts`). Only
-  single-byte encodings that map the 256 bytes to 256 distinct characters are reversed, and only when the result is
-  valid UTF-8; anything else is kept as the browser decoded it
-- Initialize extension lifecycle
-- Render content
-
-**Flow**:
-
-```typescript
-1. URL matches *.md pattern → Content script injected
-2. Extract markdown from <pre> element
-3. Initialize lifecycle (hide original, setup DOM)
-4. Parse and render markdown
-5. Mount to document
-```
-
-### 2. Core Rendering (`src/core/`)
-
-#### `markdown.ts`
-
-- Configures markdown-it parser
-- Registers plugins
-- Provides rendering function
-
-#### `document-renderer.ts`
-
-- Converts markdown to HTML
-- Injects content into DOM
-- Manages layout
-- Coordinates with UI components
-
-#### `lifecycle.ts`
-
-- Extension initialization
-- DOM setup (meta tags, icons)
-- State management
-
-#### `plugins/`
-
-Plugin system for extended markdown features:
-
-- Syntax highlighting
-- Mermaid diagrams
-- KaTeX math
-- Tables, task lists, footnotes
-- GitHub alerts
-- Custom containers
-
-### 3. UI Components (`src/components/`)
-
-#### `theme-toggle.ts`
-
-- Light/Dark theme switcher
-- Theme persistence
-- CSS class management
-
-#### `toc-sidebar.ts`
-
-- Auto-generated table of contents
-- H1-H2 heading extraction
-- Smooth scrolling navigation
-- Basic styling (not collapsible in open-source)
-
-### 4. Utilities (`src/utils/`)
-
-#### `dom.ts`
-
-- DOM manipulation helpers
-- Element creation
-- CSS utilities
-
-#### `logger.ts`
-
-- Environment-aware logging
-- Disabled in production
-- Helpful for debugging
-
-#### `i18n.ts`
-
-- Internationalization support
-- Message retrieval (English only in open-source)
-
----
-
-## Data Flow
-
-### Rendering Pipeline
-
-```bash
-Raw Markdown (from <pre> tag)
-         ↓
-  Remove Frontmatter
-         ↓
-  Parse with markdown-it
-         ↓
-  Apply Plugins (in priority order)
-    - Syntax highlighting
-    - Mermaid diagrams
-    - KaTeX math
-    - Tables, footnotes, etc.
-         ↓
-  Generate HTML
-         ↓
-  Post-processing
-    - Add IDs to headings
-    - Enhance links
-    - Apply lazy loading
-         ↓
-  Inject into DOM
-         ↓
-  Render UI Components
-    - Theme toggle
-    - TOC sidebar
-         ↓
-  Apply Theme
-         ↓
-  Mount to document
-```
-
-### Event Flow
-
-```bash
-User Action (theme toggle, scroll, etc.)
-         ↓
-  Component Event Handler
-         ↓
-  Update State
-         ↓
-  Re-render Affected Components
-         ↓
-  Update DOM
-```
-
----
-
-## Plugin System
-
-### Architecture
-
-Plugins extend markdown-it functionality:
-
-```typescript
-// Plugin registration
-import MarkdownIt from 'markdown-it';
-import highlightPlugin from './plugins/highlight';
-
-const md = new MarkdownIt();
-md.use(highlightPlugin, options);
-```
-
-### Built-in Plugins
-
-1. **Syntax Highlighting** (highlight.js)
-2. **Mermaid Diagrams** (mermaid library)
-3. **KaTeX Math** (katex library)
-4. **Tables** (markdown-it-table)
-5. **Task Lists** (markdown-it-task-lists)
-6. **Footnotes** (markdown-it-footnote)
-7. **GitHub Alerts** (custom plugin)
-8. **And more...**
-
----
-
-## State Management
-
-### Approach
-
-State is **passed as function parameters**, not stored globally:
-
-```typescript
-// ✅ Good - Explicit state passing
-function render(state: ExtensionState): void {
-  updateTOC(state.headings);
-  applyTheme(state.theme);
-}
-
-// ❌ Avoid - Global state
-let globalState = {};
-function render(): void {
-  updateTOC(globalState.headings);
-}
-```
-
-### Benefits
-
-- **Type safety** - TypeScript catches issues
-- **Clear data flow** - No hidden dependencies
-- **Easier testing** - Mock state for tests
-- **Predictable** - Same input = same output
-
----
-
-## Technology Stack
-
-### Core
-
-- **TypeScript 5.0+** - Type-safe development
-- **Webpack 5** - Module bundling
-- **esbuild-loader** - Fast TypeScript compilation
-
-### Markdown Rendering
-
-- **markdown-it 14.1.0** - Parser with plugins
-- **highlight.js 11.6.0** - Syntax highlighting (36 languages)
-- **Mermaid 11.4.0** - Diagram rendering
-- **KaTeX 0.16.25** - Math equations
-
-### Build Tools
-
-- **pnpm** - Fast package manager
-- **Vitest** - Modern test runner
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-
----
-
-## Performance Considerations
-
-### Bundle Size
-
-**Open-Source Edition**:
-
-- Core rendering: ~500KB
-- Syntax highlighting: ~100KB
-- Mermaid: ~1MB
-- KaTeX: ~500KB
-- **Total**: ~2.1MB minified
-
-**Optimizations**:
-
-- Tree-shaking (remove unused code)
-- Minification (production builds)
-- Code splitting (async loading)
-- No external network requests
-
-### Rendering Performance
-
-- **Lazy rendering** - Only visible content initially
-- **Debounced handlers** - Prevent excessive updates
-- **Cached results** - Parser caching
-- **Progressive enhancement** - Basic content first, enhancements after
-
----
-
-## Security Model
-
-### Privacy
-
-- ✅ **All processing local** - No external servers
-- ✅ **No analytics** - No tracking or telemetry
-- ✅ **No network calls** - Except for external images/files user requests
-- ✅ **No data collection** - User data never leaves browser
-
-### Content Security
-
-- **Sandboxed execution** - Chrome extension isolation
-- **CSP compliance** - Content Security Policy headers
-- **XSS prevention** - HTML sanitization for user content
-- **Permission model** - Explicit file access permissions
-
----
-
-## Extension Manifest
-
-### Key Configuration
-
-```json
-{
-  "manifest_version": 3,
-  "name": "MarkView (Open-Source)",
-  "permissions": ["storage", "activeTab"],
-  "host_permissions": ["file:///*", "*://*/*"],
-  "content_scripts": [
-    {
-      "matches": ["*://*/*.md", "file://*/*.md"],
-      "js": ["js/content.js"],
-      "css": ["css/content.css"]
-    }
-  ]
-}
-```
-
----
-
-## Testing Strategy
-
-### Unit Tests
-
-- Pure functions in `src/utils/`
-- Component methods
-- Plugin functionality
-
-### Integration Tests
-
-- End-to-end rendering
-- Component interactions
-- Event handling
-
-### Coverage Goals
-
-- **80%+ overall** coverage
-- **100%** for critical rendering logic
-- **Unit tests** for utilities
-- **Integration tests** for workflows
-
----
-
-## Build Pipeline
-
-```bash
-Source Code (TypeScript)
-         ↓
-  ESLint Check
-         ↓
-  TypeScript Compilation (via esbuild-loader)
-         ↓
-  Webpack Bundling
-    - Module resolution
-    - Code splitting
-    - Asset processing
-         ↓
-  Minification (production only)
-         ↓
-  Output to dist/
-    - manifest.json
-    - js/content.js
-    - css/content.css
-    - icons/
-```
-
----
-
-**Last Updated**: January 2026
+`renderMarkdownContent()` runs twelve stages:
+
+1. **Source.** `extractMarkdownSource()` (`src/utils/dom.ts`) reads the `<pre>` text and, when the browser decoded a
+   UTF-8 file with its legacy fallback encoding, recovers the real text (see [Encoding](#encoding)).
+2. **Preload** the highlight.js languages the document uses.
+3. **Theme** for code blocks.
+4. **Render to HTML** with markdown-it and the registered plugins (`src/core/markdown.ts`).
+5. **Inject** the HTML into the page.
+6. **Metadata**: the page title.
+7. **Layout**: font and layout settings; a non-default font is loaded from Google Fonts here.
+8. **Lazy-load images**, resolving relative paths against the document URL.
+9. **Diagrams**: Mermaid blocks render asynchronously.
+10. **Components**: TOC, code copy buttons and the other UI react to the new content.
+11. **History**: the document's address and title go into the recent-documents list in `chrome.storage.local`.
+12. **Notification** that rendering finished.
+
+### Encoding
+
+A server that sends a markdown file as `text/plain` without a `charset` makes the browser decode it with the locale's
+legacy encoding (`windows-1252` for English), which turns every multi-byte UTF-8 character into several wrong ones
+(`ðŸ›‘` instead of `🛑`). `recoverUtf8FromLegacyDecode()` (`src/utils/source-encoding.ts`) maps the text back to bytes
+and decodes them as UTF-8, under two guards: the encoding must map the 256 bytes to 256 distinct characters, and the
+result must be valid UTF-8. Otherwise the text is kept as the browser decoded it. Multi-byte locale encodings (such as
+Shift_JIS or GBK) lose information and cannot be reversed this way.
+
+## Plugins
+
+Each markdown-it plugin is a `MarkdownPlugin` definition in `src/core/plugins/definitions/`, listed in
+`PLUGIN_REGISTRY` (`src/core/plugins/registry.ts`) and installed by `plugin-manager.ts` in ascending `priority`.
+
+| Plugin        | Package                         |
+| ------------- | ------------------------------- |
+| Tables        | `markdown-it-multimd-table`     |
+| Task lists    | `markdown-it-task-lists`        |
+| Math          | `@iktakahiro/markdown-it-katex` |
+| Mermaid       | custom (`src/plugins/`)         |
+| Emoji         | `markdown-it-emoji`             |
+| Alerts        | `@mdit/plugin-alert`            |
+| Footnotes     | `markdown-it-footnote`          |
+| Subscript     | `markdown-it-sub`               |
+| Superscript   | `markdown-it-sup`               |
+| Abbreviations | `markdown-it-abbr`              |
+| Insert        | `markdown-it-ins`               |
+| Mark          | `markdown-it-mark`              |
+| Definitions   | `markdown-it-deflist`           |
+| Containers    | `markdown-it-container`         |
+
+Syntax highlighting (highlight.js, common language set) and typographic replacements are markdown-it options, not
+plugins.
+
+## UI components
+
+Components live in `src/components/` and are mounted by `src/core/component-manager.ts`: the TOC sidebar (H1–H3, with
+a resize handle), theme toggle, centered-layout toggle, raw view toggle, code copy buttons, scroll-to-top, action
+menu, quick settings, keyboard shortcuts help, image viewer and Mermaid zoom with download.
+
+Interface text comes from `src/_locales/<language>/messages.json` (12 languages) through `src/utils/i18n.ts`.
+
+## Storage
+
+Settings and the recent-documents list are stored in `chrome.storage.local`, on the device. Document content is never
+stored.
+
+## Network
+
+| Request                                   | Made by                         | When                                                         |
+| ----------------------------------------- | ------------------------------- | ------------------------------------------------------------ |
+| The document URL                          | the browser; the service worker | Opening the document; each auto-refresh poll                 |
+| Images the document references            | the page; the service worker    | Rendering; the worker fetches images a sandboxed page cannot |
+| `fonts.googleapis.com` and its font files | the page                        | Only when a font other than the default is selected          |
+
+There is no analytics, telemetry, crash reporting or remote configuration.
+
+## Security notes
+
+- **Isolation.** The content script runs in the extension's isolated world. The service worker fetches a URL only when
+  the content script asks it to, and the content script asks only for the open document and its images.
+- **Raw HTML.** markdown-it runs with `html: true`, so HTML written in a document is rendered as HTML. MarkView does
+  not sanitize it.
+- **Sandboxed pages.** Some servers deliver plain-text documents in a sandboxed or CSP-restricted context, which blocks
+  dialogs such as print and external resources. MarkView detects this (`src/utils/sandbox-detection.ts`) and loads
+  external images through the service worker instead.
+
+To report a vulnerability, see [SECURITY.md](../SECURITY.md).
+
+## Build output
+
+Webpack (`build/`) bundles three entries, `content.js`, `background.js` and `popup.js`, into `extension/js/`, and
+extracts CSS into `extension/css/`. Code splitting is disabled: a content script cannot load extra chunks under
+extension CSP. Mermaid, KaTeX and highlight.js are bundled into `content.js`, which is about 3.8 MB minified; nothing
+is loaded from a CDN.

@@ -1,571 +1,178 @@
 # Development Guide
 
-This guide covers building, testing, and contributing to the MarkView open-source edition.
+How to build, run and test MarkView (Open-Source Edition), and where things live.
 
----
+## Requirements
 
-## Table of Contents
+- Node.js 20 or later (Vitest 4 and happy-dom require it)
+- pnpm 8 or later: `npm install -g pnpm`. The project refuses other package managers (`preinstall` runs
+  `only-allow pnpm`).
 
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Build System](#build-system)
-- [Development Workflow](#development-workflow)
-- [Testing](#testing)
-- [Code Style](#code-style)
-- [Architecture Overview](#architecture-overview)
-- [Common Tasks](#common-tasks)
-- [Troubleshooting](#troubleshooting)
-
----
-
-## Prerequisites
-
-### Required Software
-
-- **Node.js** 18.0.0 or higher ([Download](https://nodejs.org/))
-- **pnpm** 8.0.0 or higher ([Installation](https://pnpm.io/installation))
-- **Git** 2.0 or higher
-
-### Verify Installation
-
-```bash
-node --version  # Should be v18.0.0 or higher
-pnpm --version  # Should be 8.0.0 or higher
-git --version   # Should be 2.0 or higher
-```
-
-### Installing pnpm
-
-If you don't have pnpm installed:
-
-```bash
-npm install -g pnpm
-```
-
----
-
-## Getting Started
-
-### 1. Clone the Repository
+## Build and load
 
 ```bash
 git clone https://github.com/markview-app/markview.git
 cd markview
-```
-
-### 2. Install Dependencies
-
-```bash
 pnpm install
-```
-
-This will install all required packages listed in `package.json`.
-
-### 3. Build the Extension
-
-```bash
-# Development build (with source maps)
-pnpm run dev
-
-# Production build (minified)
 pnpm run build
 ```
 
-The extension will be built to the `dist/` directory.
+`pnpm run build` cleans, copies the version from `package.json` into the manifest, bundles with webpack in production
+mode into `extension/`, and zips that folder into `dist/markview-<version>.zip`.
 
-### 4. Load in Browser
+Load `extension/` in the browser:
 
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable **"Developer mode"** (toggle in top-right)
-3. Click **"Load unpacked"**
-4. Select the `dist/` folder from the project directory
-5. Enable **"Allow access to file URLs"** in extension details
+1. Open `chrome://extensions/` (or `edge://extensions/`) and turn on **Developer mode**
+2. Click **Load unpacked** and select the `extension/` folder
+3. For local files, open the extension's **Details** and turn on **Allow access to file URLs**
 
----
-
-## Project Structure
+## Day-to-day work
 
 ```bash
-markview/
-├── src/                          # Source code
-│   ├── core/                     # Core rendering engine
-│   │   ├── markdown.ts          # Markdown-it configuration
-│   │   ├── document-renderer.ts # Document rendering logic
-│   │   ├── lifecycle.ts         # Extension lifecycle
-│   │   └── plugins/             # Markdown-it plugins
-│   ├── components/              # UI components
-│   │   ├── theme-toggle.ts     # Theme switcher
-│   │   └── toc-sidebar.ts      # Table of contents
-│   ├── utils/                   # Utility functions
-│   │   ├── dom.ts              # DOM manipulation
-│   │   ├── logger.ts           # Logging utility
-│   │   └── i18n.ts             # Internationalization
-│   ├── styles/                  # CSS stylesheets
-│   │   ├── main.css            # Main styles
-│   │   ├── themes.css          # Theme definitions
-│   │   └── syntax-highlighting.css
-│   ├── manifest.json            # Extension manifest
-│   └── main.ts                  # Entry point
-├── build/                       # Build configuration
-│   ├── webpack.common.js       # Shared webpack config
-│   ├── webpack.dev.js          # Development config
-│   └── webpack.prod.js         # Production config
-├── docs/                        # Documentation
-├── examples/                    # Sample markdown files
-├── tests/                       # Unit tests
-├── dist/                        # Build output (generated)
-├── package.json                 # Dependencies
-├── tsconfig.json               # TypeScript config
-└── README.md                    # This file
+pnpm run dev          # development build into extension/, rebuilt on every change (inline source maps)
 ```
 
----
+After a rebuild, click the reload icon on the extension's card in `chrome://extensions/`, then reload the markdown
+tab. The content script is only injected on page load.
 
-## Build System
+| Script                   | Does                                                          |
+| ------------------------ | ------------------------------------------------------------- |
+| `pnpm run dev`           | Development build in watch mode                               |
+| `pnpm run dev:clean`     | `clean`, then `dev`                                           |
+| `pnpm run build`         | Clean production build into `extension/` and a zip in `dist/` |
+| `pnpm run clean`         | Remove `extension/` and `dist/`                               |
+| `pnpm run test`          | Vitest in watch mode                                          |
+| `pnpm run test:run`      | Vitest, single run (what CI runs)                             |
+| `pnpm run test:coverage` | Coverage report (v8) for `src/core` and `src/utils`           |
+| `pnpm run test:ui`       | Vitest UI                                                     |
+| `pnpm run lint`          | ESLint on `src/`                                              |
+| `pnpm run lint:fix`      | ESLint with auto-fix                                          |
+| `pnpm run format`        | Prettier on `src/`                                            |
+| `pnpm run format:check`  | Prettier check on `src/`                                      |
+| `pnpm run type-check`    | `tsc --noEmit` over `src/` and `tests/`                       |
 
-### Available Scripts
+CI (`.github/workflows/ci.yml`) runs lint, format check, type check, tests and the build on every push and pull
+request.
 
-```bash
-# Development
-pnpm run dev              # Build with watch mode (auto-rebuild on changes)
-pnpm run dev:clean        # Clean build + watch mode
+## Project layout
 
-# Production
-pnpm run build            # Production build (minified)
-pnpm run build:clean      # Clean + production build
-
-# Utilities
-pnpm run clean            # Remove dist/ folder
-pnpm run lint             # Run ESLint
-pnpm run lint:fix         # Fix ESLint issues
-pnpm run format           # Format code with Prettier
-pnpm run format:check     # Check code formatting
-pnpm run type-check       # TypeScript type checking
-
-# Testing
-pnpm run test             # Run tests with watch mode
-pnpm run test:run         # Run tests once
-pnpm run test:coverage    # Generate coverage report
-pnpm run test:ui          # Open Vitest UI
+```text
+src/
+├── main.ts                 # Content script entry: validates the page, then starts the lifecycle
+├── background.ts           # Service worker: fetches for auto-refresh and blocked images, opens tabs
+├── manifest.json           # Extension manifest (version is filled in from package.json at build)
+├── core/
+│   ├── lifecycle.ts        # Builds the ExtensionState and runs startup
+│   ├── document-renderer.ts# Markdown source → rendered page
+│   ├── markdown.ts         # markdown-it setup and post-processing
+│   ├── component-manager.ts# Mounts and unmounts UI components
+│   ├── event-handlers.ts   # Wires UI events
+│   ├── settings-manager.ts # Applies and reacts to settings
+│   ├── storage.ts          # chrome.storage access
+│   └── plugins/            # Plugin registry, manager and one definition file per plugin
+├── components/             # UI components (TOC sidebar, theme toggle, code copy, image viewer, …)
+├── popup/                  # Toolbar popup: recent documents and settings tabs
+├── plugins/                # Custom markdown-it plugin for Mermaid
+├── utils/                  # DOM helpers, i18n, logger, auto-refresh, fonts, source extraction, …
+├── styles/                 # CSS, one file per area; tokens.css holds the design tokens
+├── _locales/               # Interface strings, one messages.json per language
+├── assets/icons/           # Extension icons
+└── types/                  # Type declarations for untyped markdown-it plugins
+build/                      # webpack.common.cjs, webpack.dev.cjs, webpack.prod.cjs
+scripts/                    # clean, manifest version sync, zip
+tests/                      # Vitest suites, mirroring src/ (tests/core, tests/utils)
+examples/                   # Sample documents for trying the renderer
 ```
 
-### Build Modes
+## Conventions
 
-**Development Mode** (`pnpm run dev`):
+- **No UI framework.** Components are TypeScript classes that build and manage their own DOM.
+- **No global state.** The `ExtensionState` created in `core/lifecycle.ts` is passed to the functions that need it.
+- **No bundle splitting.** Webpack emits one file per entry (`content.js`, `background.js`, `popup.js`), because a
+  content script cannot load extra chunks at run time under extension CSP.
+- **Interface strings** come from `src/_locales/<language>/messages.json` through `getMessage()` in
+  `src/utils/i18n.ts`, collected in `src/utils/messages.ts`. A new string needs an entry in every locale; use the
+  English text where you cannot translate it.
+- **Logging** goes through `logger` from `src/utils/logger.ts`, not `console.log` (ESLint warns on it).
 
-- Source maps enabled for debugging
-- No minification (faster builds)
-- Watch mode for auto-rebuild
-- Detailed error messages
+## Code style
 
-**Production Mode** (`pnpm run build`):
+Prettier (`.prettierrc`): 2-space indentation, single quotes, semicolons, trailing commas where valid in ES5, 100
+character lines, LF line endings.
 
-- Minified code
-- Optimized bundle size
-- Source maps disabled
-- Ready for distribution
+ESLint (`.eslintrc.cjs`) highlights:
 
----
+- `prefer-const` and `no-var` are errors; unused variables are errors unless prefixed with `_`
+- `any` is a warning: prefer a real type or `unknown`
+- `console.log` is a warning; `console.warn` and `console.error` are allowed
 
-## Development Workflow
+## Tests
 
-### Making Changes
-
-1. **Create a feature branch**:
-
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. **Start development server**:
-
-   ```bash
-   pnpm run dev
-   ```
-
-3. **Make your changes** in `src/`
-
-4. **Test in browser**:
-   - Changes auto-rebuild with watch mode
-   - Refresh the extension: `chrome://extensions/` → Click reload icon
-   - Or use `Ctrl+R` on the markdown page
-
-5. **Lint and format**:
-
-   ```bash
-   pnpm run lint:fix
-   pnpm run format
-   ```
-
-6. **Run tests**:
-
-   ```bash
-   pnpm run test
-   ```
-
-7. **Commit changes**:
-
-   ```bash
-   git add .
-   git commit -m "feat: add your feature description"
-   ```
-
-### Commit Message Convention
-
-We follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-- `feat:` - New feature
-- `fix:` - Bug fix
-- `docs:` - Documentation changes
-- `style:` - Code style changes (formatting, no logic change)
-- `refactor:` - Code refactoring
-- `perf:` - Performance improvements
-- `test:` - Test additions or changes
-- `chore:` - Build process or tooling changes
-
-**Examples**:
-
-```bash
-git commit -m "feat: add KaTeX math rendering support"
-git commit -m "fix: resolve TOC scroll sync issue"
-git commit -m "docs: update README with new features"
-```
-
----
-
-## Testing
-
-### Running Tests
-
-```bash
-# Watch mode (recommended during development)
-pnpm run test
-
-# Single run (for CI)
-pnpm run test:run
-
-# Coverage report
-pnpm run test:coverage
-
-# Interactive UI
-pnpm run test:ui
-```
-
-### Writing Tests
-
-We use **Vitest** for testing. Create test files adjacent to source files:
-
-```bash
-src/utils/dom.ts
-src/utils/dom.test.ts
-```
-
-**Example test**:
+Vitest with the happy-dom environment and Chrome API mocks from `tests/setup.ts`. Tests live in `tests/`, mirroring
+`src/`: a test for `src/utils/dom.ts` goes in `tests/utils/dom.test.ts`.
 
 ```typescript
 import { describe, it, expect } from 'vitest';
-import { stripMarkdownSyntax } from './dom';
+import { extractFileNameFromUrl } from '@core/document-renderer';
 
-describe('stripMarkdownSyntax', () => {
-  it('should remove heading markers', () => {
-    expect(stripMarkdownSyntax('### Hello World')).toBe('Hello World');
-  });
-
-  it('should remove bold syntax', () => {
-    expect(stripMarkdownSyntax('**bold text**')).toBe('bold text');
+describe('extractFileNameFromUrl', () => {
+  it('should decode a URL-encoded filename', () => {
+    expect(extractFileNameFromUrl('https://example.com/docs/My%20Document.md')).toBe(
+      'My Document.md'
+    );
   });
 });
 ```
 
-### Test Coverage
+Path aliases (`@core`, `@utils`, `@components`, …) work in tests as in source. Coverage is reported for `src/core`
+and `src/utils`; no minimum is enforced.
 
-Aim for:
+## Common tasks
 
-- **80%+ coverage** for core utilities
-- **100% coverage** for critical rendering logic
-- **Unit tests** for pure functions
-- **Integration tests** for component interactions
+### Add a markdown-it plugin
 
----
-
-## Code Style
-
-### TypeScript Guidelines
-
-- **Use TypeScript** for all new code
-- **Enable strict mode** (already configured)
-- **Avoid `any` type** - use specific types or `unknown`
-- **Use interfaces** for object shapes
-- **Export types** from dedicated type files
-
-**Example**:
-
-```typescript
-// Good
-interface MarkdownOptions {
-  theme: 'light' | 'dark';
-  plugins: string[];
-}
-
-function renderMarkdown(options: MarkdownOptions): string {
-  // Implementation
-}
-
-// Avoid
-function renderMarkdown(options: any): any {
-  // Implementation
-}
-```
-
-### Code Formatting
-
-We use **Prettier** for automatic formatting:
-
-```bash
-# Format all files
-pnpm run format
-
-# Check formatting
-pnpm run format:check
-```
-
-**Prettier settings** (`.prettierrc`):
-
-- 2 spaces indentation
-- Single quotes
-- Semicolons
-- 100 character line length
-
-### ESLint Rules
-
-We use **ESLint** for code quality:
-
-```bash
-# Check for issues
-pnpm run lint
-
-# Auto-fix issues
-pnpm run lint:fix
-```
-
-**Key rules**:
-
-- No unused variables
-- No console.log in production code (use logger utility)
-- Prefer `const` over `let`
-- Always use `===` instead of `==`
-
----
-
-## Architecture Overview
-
-### Core Concepts
-
-**1. Pure TypeScript Architecture**
-
-- No UI frameworks (React, Vue, Angular)
-- Direct DOM manipulation
-- TypeScript classes for components
-- Event-driven communication
-
-**2. Modular Design**
-
-- Core rendering engine (`src/core/`)
-- Reusable components (`src/components/`)
-- Utility functions (`src/utils/`)
-- Clear separation of concerns
-
-**3. Plugin System**
-
-- Markdown-it plugins for extended syntax
-- Centralized plugin registry
-- Priority-based installation
-
-**4. State Management**
-
-- State passed as function parameters (no globals)
-- Type-safe state objects
-- Explicit data flow
-
-### Key Files
-
-- **`src/main.ts`** - Entry point, initializes extension
-- **`src/core/markdown.ts`** - Markdown rendering configuration
-- **`src/core/document-renderer.ts`** - Document rendering pipeline
-- **`src/manifest.json`** - Extension configuration
-
-For detailed architecture documentation, see the main MarkView repository's [TECH_STACK_AND_ARCHITECTURE.md](https://github.com/markview-app/markview).
-
----
-
-## Common Tasks
-
-### Adding a New Markdown Plugin
-
-1. Install the plugin:
-
-   ```bash
-   pnpm add markdown-it-plugin-name
-   ```
-
-2. Add to `src/core/plugins/registry.ts`:
+1. `pnpm add markdown-it-example`
+2. Create `src/core/plugins/definitions/example.plugin.ts`:
 
    ```typescript
-   import pluginName from 'markdown-it-plugin-name';
+   import markdownItExample from 'markdown-it-example';
+   import type { MarkdownPlugin } from '../types';
 
-   export const PLUGINS = {
-     // ... existing plugins
-     pluginName: [pluginName /* options */],
+   export const examplePlugin: MarkdownPlugin = {
+     id: 'example',
+     name: 'Example',
+     version: '1.0.0',
+     description: 'What the syntax does',
+     category: 'formatting',
+     priority: 50, // lower installs earlier; ranges are documented in ../types.ts
+     enabledByDefault: true,
+     requiresPro: false,
+
+     install(md) {
+       md.use(markdownItExample);
+     },
    };
    ```
 
-3. Update manifest and rebuild:
+3. Export it from `src/core/plugins/definitions/index.ts` and add it to `PLUGIN_REGISTRY` in
+   `src/core/plugins/registry.ts`
+4. If the package has no types, declare it in `src/types/markdown-it-plugins.d.ts`
+5. Add a test in `tests/core/plugins/` and a sample to `examples/features-demo.md`
 
-   ```bash
-   pnpm run build
-   ```
+### Add a UI component
 
-### Adding a New Component
-
-1. Create component file:
-
-   ```bash
-   touch src/components/my-component.ts
-   touch src/styles/my-component.css
-   ```
-
-2. Implement component class:
-
-   ```typescript
-   export class MyComponent {
-     private container: HTMLElement;
-
-     constructor() {
-       this.container = this.createContainer();
-     }
-
-     private createContainer(): HTMLElement {
-       const div = document.createElement('div');
-       div.className = 'my-component';
-       return div;
-     }
-
-     public render(): void {
-       document.body.appendChild(this.container);
-     }
-
-     public destroy(): void {
-       this.container.remove();
-     }
-   }
-   ```
-
-3. Import CSS in `src/main.ts`:
-
-   ```typescript
-   import './styles/my-component.css';
-   ```
-
-### Updating Dependencies
-
-```bash
-# Update all dependencies
-pnpm update
-
-# Update specific package
-pnpm update package-name
-
-# Check for outdated packages
-pnpm outdated
-```
-
----
+Create a class in `src/components/` that builds its element, mounts it and cleans up after itself, add its CSS in
+`src/styles/`, and register it where the other components are mounted (`src/core/component-manager.ts`).
 
 ## Troubleshooting
 
-### Build Errors
+- **The extension does not appear after Load unpacked:** make sure you selected `extension/` (not `dist/`) and that
+  it contains `manifest.json`. Run `pnpm run build` again if not.
+- **Local files are not rendered:** turn on **Allow access to file URLs** in the extension's Details.
+- **Changes do not show up:** reload the extension in `chrome://extensions/`, then reload the markdown tab.
+- **`pnpm install` fails with "Use pnpm":** the project only installs with pnpm.
 
-**Error**: `Cannot find module 'xyz'`
-**Solution**:
+## Getting help
 
-```bash
-pnpm install
-```
-
-**Error**: TypeScript compilation errors
-**Solution**:
-
-```bash
-pnpm run type-check
-# Fix reported type errors
-```
-
-### Extension Not Loading
-
-**Problem**: Extension doesn't appear in browser
-**Solution**:
-
-1. Check `dist/` folder exists
-2. Ensure `manifest.json` is in `dist/`
-3. Check browser console for errors
-4. Try rebuilding: `pnpm run build:clean`
-
-### Watch Mode Not Working
-
-**Problem**: Changes don't trigger rebuild
-**Solution**:
-
-1. Stop watch mode (`Ctrl+C`)
-2. Run `pnpm run clean`
-3. Restart: `pnpm run dev`
-
-### Tests Failing
-
-**Problem**: Tests fail after changes
-**Solution**:
-
-1. Check test file matches implementation
-2. Run `pnpm run test:coverage` to see coverage
-3. Clear test cache: `pnpm run test -- --clearCache`
-
----
-
-## Performance Tips
-
-### Faster Builds
-
-- Use `pnpm run dev` for development (faster than production builds)
-- Enable webpack caching (already configured)
-- Close unnecessary applications to free up system resources
-
-### Bundle Size Optimization
-
-- Avoid large dependencies
-- Use tree-shaking (import only what you need)
-- Check bundle analysis: Add `webpack-bundle-analyzer` if needed
-
----
-
-## Getting Help
-
-### Resources
-
-- **Documentation**: [docs/](./docs/)
-- **GitHub Issues**: [Report bugs](https://github.com/markview-app/markview/issues)
-- **GitHub Discussions**: [Ask questions](https://github.com/markview-app/support/discussions)
-
-### Before Asking
-
-1. Check existing documentation
-2. Search closed GitHub issues
-3. Try debugging with browser DevTools (F12)
-4. Check browser console for errors
-
----
-
-**Happy coding! 🚀**
-
----
-
-**Last Updated**: January 2026
+- Questions: [Discussions](https://github.com/markview-app/markview/discussions)
+- Bugs: [Issues](https://github.com/markview-app/markview/issues)
