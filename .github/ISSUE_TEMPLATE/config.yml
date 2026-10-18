@@ -1,8 +1,11 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Question or Discussion
+  - name: MarkView from the Chrome Web Store or Edge Add-ons
+    url: https://github.com/markview-app/support/issues
+    about: The store version is a separate code base. Report its issues here instead.
+  - name: Question or discussion
     url: https://github.com/markview-app/markview/discussions
-    about: Ask questions or discuss ideas with the community
-  - name: Documentation
-    url: https://github.com/markview-app/markview#readme
-    about: Read the documentation for help and guides
+    about: Ask questions or discuss the open-source edition with the community
+  - name: Security vulnerability
+    url: https://github.com/markview-app/markview/blob/main/SECURITY.md
+    about: Please report vulnerabilities privately, as described in SECURITY.md

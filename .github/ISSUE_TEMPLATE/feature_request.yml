@@ -1,12 +1,15 @@
 name: Feature Request
-description: Suggest an idea or enhancement for MarkView
-title: "[Feature]: "
-labels: ["enhancement"]
+description: Suggest an improvement to the open-source edition
+title: '[Feature]: '
+labels: ['enhancement']
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a new feature!
+        Thanks for the suggestion. Please note the scope first: this edition is kept to a small, stable core, and
+        new features beyond core markdown rendering are usually declined. Improvements to rendering correctness,
+        accessibility and translations are the most likely to be accepted. See
+        [Contributing](https://github.com/markview-app/markview/blob/main/docs/CONTRIBUTING.md#what-fits).
 
   - type: textarea
     id: feature
