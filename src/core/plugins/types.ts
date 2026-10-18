@@ -12,8 +12,7 @@ export type PluginCategory =
   | 'core' // Essential rendering (tables, task lists)
   | 'formatting' // Text formatting (subscript, superscript, mark)
   | 'content' // Content types (math, diagrams, code)
-  | 'extensions' // Extended features (footnotes, abbreviations)
-  | 'advanced'; // Advanced/PRO features
+  | 'extensions'; // Extended features (footnotes, abbreviations)
 
 /**
  * Plugin configuration interface
@@ -50,9 +49,6 @@ export interface MarkdownPlugin {
 
   /** Whether plugin is enabled by default */
   enabledByDefault: boolean;
-
-  /** Whether this plugin requires PRO license */
-  requiresPro: boolean;
 
   /**
    * Install the plugin into markdown-it instance

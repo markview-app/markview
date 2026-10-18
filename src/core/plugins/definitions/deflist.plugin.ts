@@ -14,7 +14,6 @@ export const deflistPlugin: MarkdownPlugin = {
   category: 'extensions',
   priority: 66,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItDeflist);

@@ -14,7 +14,6 @@ export const tablesPlugin: MarkdownPlugin = {
   category: 'core',
   priority: 10,
   enabledByDefault: true,
-  requiresPro: false,
   settingsKey: 'tables', // Maps to existing setting
 
   install(md) {

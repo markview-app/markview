@@ -14,7 +14,6 @@ export const katexPlugin: MarkdownPlugin = {
   category: 'content',
   priority: 20,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItKatex, {

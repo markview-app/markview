@@ -15,7 +15,6 @@ export const mermaidPlugin: MarkdownPlugin = {
   category: 'content',
   priority: 25,
   enabledByDefault: true,
-  requiresPro: false, // First diagram is FREE, additional diagrams may require PRO
 
   install(md) {
     // @ts-ignore - Type mismatch between markdown-it versions

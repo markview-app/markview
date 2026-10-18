@@ -146,7 +146,6 @@ and `src/utils`; no minimum is enforced.
      category: 'formatting',
      priority: 50, // lower installs earlier; ranges are documented in ../types.ts
      enabledByDefault: true,
-     requiresPro: false,
 
      install(md) {
        md.use(markdownItExample);

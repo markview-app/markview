@@ -14,7 +14,6 @@ export const containerPlugin: MarkdownPlugin = {
   category: 'extensions',
   priority: 67,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     // Register common container types

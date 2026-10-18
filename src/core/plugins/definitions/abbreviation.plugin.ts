@@ -14,7 +14,6 @@ export const abbreviationPlugin: MarkdownPlugin = {
   category: 'extensions',
   priority: 65,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItAbbr);

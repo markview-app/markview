@@ -23,9 +23,6 @@ export class PluginManager {
    * @param disabledPluginIds - Array of plugin IDs to explicitly disable
    */
   installPlugins(enabledPluginIds?: string[], disabledPluginIds?: string[]): void {
-    // All plugins available in open source version
-    const isPro = true;
-
     // Determine which plugins to install
     const pluginsToInstall = PLUGIN_REGISTRY.filter(plugin => {
       // Check explicit disable list first
@@ -47,7 +44,7 @@ export class PluginManager {
 
     // Install each plugin
     for (const plugin of pluginsToInstall) {
-      this.installPlugin(plugin, isPro);
+      this.installPlugin(plugin);
     }
 
     logger.log(
@@ -59,19 +56,7 @@ export class PluginManager {
   /**
    * Install a single plugin
    */
-  private installPlugin(plugin: MarkdownPlugin, isPro: boolean): void {
-    // Check PRO requirement
-    if (plugin.requiresPro && !isPro) {
-      this.pluginStates.set(plugin.id, {
-        plugin,
-        installed: false,
-        enabled: false,
-        error: 'Requires PRO license',
-      });
-      logger.log(`[PluginManager] Skipped PRO plugin: ${plugin.id}`);
-      return;
-    }
-
+  private installPlugin(plugin: MarkdownPlugin): void {
     try {
       plugin.install(this.md);
 

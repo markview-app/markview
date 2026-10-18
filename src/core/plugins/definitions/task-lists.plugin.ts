@@ -14,7 +14,6 @@ export const taskListsPlugin: MarkdownPlugin = {
   category: 'core',
   priority: 15,
   enabledByDefault: true,
-  requiresPro: false,
   settingsKey: 'taskLists',
 
   install(md) {

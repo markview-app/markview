@@ -14,7 +14,6 @@ export const superscriptPlugin: MarkdownPlugin = {
   category: 'formatting',
   priority: 46,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItSup);

@@ -14,7 +14,6 @@ export const alertsPlugin: MarkdownPlugin = {
   category: 'content',
   priority: 30,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(alert, {

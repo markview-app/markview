@@ -67,13 +67,6 @@ export function getDefaultPlugins(): MarkdownPlugin[] {
 }
 
 /**
- * Get all PRO-only plugins
- */
-export function getProPlugins(): MarkdownPlugin[] {
-  return PLUGIN_REGISTRY.filter(p => p.requiresPro);
-}
-
-/**
  * Get list of all plugin IDs
  */
 export function getAllPluginIds(): string[] {

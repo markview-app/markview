@@ -14,7 +14,6 @@ export const markPlugin: MarkdownPlugin = {
   category: 'formatting',
   priority: 48,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItMark);

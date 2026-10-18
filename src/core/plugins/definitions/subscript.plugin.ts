@@ -14,7 +14,6 @@ export const subscriptPlugin: MarkdownPlugin = {
   category: 'formatting',
   priority: 45,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItSub);

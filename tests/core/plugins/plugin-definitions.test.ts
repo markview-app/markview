@@ -26,7 +26,6 @@ describe('Plugin Definitions', () => {
       expect(tablesPlugin.name).toBe('Advanced Tables');
       expect(tablesPlugin.category).toBe('core');
       expect(tablesPlugin.enabledByDefault).toBe(true);
-      expect(tablesPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -44,7 +43,6 @@ describe('Plugin Definitions', () => {
       expect(taskListsPlugin.name).toBe('Task Lists');
       expect(taskListsPlugin.category).toBe('core');
       expect(taskListsPlugin.enabledByDefault).toBe(true);
-      expect(taskListsPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -62,7 +60,6 @@ describe('Plugin Definitions', () => {
       expect(katexPlugin.name).toBe('Math Equations');
       expect(katexPlugin.category).toBe('content');
       expect(katexPlugin.enabledByDefault).toBe(true);
-      expect(katexPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -76,7 +73,6 @@ describe('Plugin Definitions', () => {
       expect(mermaidPlugin.name).toBe('Mermaid Diagrams');
       expect(mermaidPlugin.category).toBe('content');
       expect(mermaidPlugin.enabledByDefault).toBe(true);
-      expect(mermaidPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -90,7 +86,6 @@ describe('Plugin Definitions', () => {
       expect(emojiPlugin.name).toBe('Emoji');
       expect(emojiPlugin.category).toBe('formatting');
       expect(emojiPlugin.enabledByDefault).toBe(true);
-      expect(emojiPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -104,7 +99,6 @@ describe('Plugin Definitions', () => {
       expect(alertsPlugin.name).toBe('GitHub Alerts');
       expect(alertsPlugin.category).toBe('content');
       expect(alertsPlugin.enabledByDefault).toBe(true);
-      expect(alertsPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -118,7 +112,6 @@ describe('Plugin Definitions', () => {
       expect(footnotePlugin.name).toBe('Footnotes');
       expect(footnotePlugin.category).toBe('extensions');
       expect(footnotePlugin.enabledByDefault).toBe(true);
-      expect(footnotePlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -132,7 +125,6 @@ describe('Plugin Definitions', () => {
       expect(subscriptPlugin.name).toBe('Subscript');
       expect(subscriptPlugin.category).toBe('formatting');
       expect(subscriptPlugin.enabledByDefault).toBe(true);
-      expect(subscriptPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -146,7 +138,6 @@ describe('Plugin Definitions', () => {
       expect(superscriptPlugin.name).toBe('Superscript');
       expect(superscriptPlugin.category).toBe('formatting');
       expect(superscriptPlugin.enabledByDefault).toBe(true);
-      expect(superscriptPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -160,7 +151,6 @@ describe('Plugin Definitions', () => {
       expect(abbreviationPlugin.name).toBe('Abbreviations');
       expect(abbreviationPlugin.category).toBe('extensions');
       expect(abbreviationPlugin.enabledByDefault).toBe(true);
-      expect(abbreviationPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -174,7 +164,6 @@ describe('Plugin Definitions', () => {
       expect(insertionPlugin.name).toBe('Insertion');
       expect(insertionPlugin.category).toBe('formatting');
       expect(insertionPlugin.enabledByDefault).toBe(true);
-      expect(insertionPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -188,7 +177,6 @@ describe('Plugin Definitions', () => {
       expect(markPlugin.name).toBe('Highlight');
       expect(markPlugin.category).toBe('formatting');
       expect(markPlugin.enabledByDefault).toBe(true);
-      expect(markPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -290,7 +278,6 @@ describe('Plugin Definitions', () => {
       expect(deflistPlugin.category).toBe('extensions');
       expect(deflistPlugin.priority).toBe(66);
       expect(deflistPlugin.enabledByDefault).toBe(true);
-      expect(deflistPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {
@@ -305,7 +292,6 @@ describe('Plugin Definitions', () => {
       expect(containerPlugin.category).toBe('extensions');
       expect(containerPlugin.priority).toBe(67);
       expect(containerPlugin.enabledByDefault).toBe(true);
-      expect(containerPlugin.requiresPro).toBe(false);
     });
 
     it('should have install function', () => {

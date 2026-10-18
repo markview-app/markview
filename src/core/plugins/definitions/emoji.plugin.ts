@@ -14,7 +14,6 @@ export const emojiPlugin: MarkdownPlugin = {
   category: 'formatting',
   priority: 50,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     // @ts-ignore - Type mismatch

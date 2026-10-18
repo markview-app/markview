@@ -14,7 +14,6 @@ export const footnotePlugin: MarkdownPlugin = {
   category: 'extensions',
   priority: 60,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItFootnote);

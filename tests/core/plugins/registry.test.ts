@@ -9,7 +9,6 @@ import {
   getPlugin,
   getPluginsByCategory,
   getDefaultPlugins,
-  getProPlugins,
   getAllPluginIds,
 } from '@core/plugins/registry';
 
@@ -42,7 +41,6 @@ describe('Plugin Registry', () => {
         expect(plugin.category).toBeTruthy();
         expect(typeof plugin.priority).toBe('number');
         expect(typeof plugin.enabledByDefault).toBe('boolean');
-        expect(typeof plugin.requiresPro).toBe('boolean');
         expect(typeof plugin.install).toBe('function');
       });
     });
@@ -140,20 +138,6 @@ describe('Plugin Registry', () => {
       const ids = defaultPlugins.map(p => p.id);
       expect(ids).toContain('tables');
       expect(ids).toContain('taskLists');
-    });
-  });
-
-  describe('getProPlugins', () => {
-    it('should return all PRO-only plugins', () => {
-      const proPlugins = getProPlugins();
-      proPlugins.forEach(plugin => {
-        expect(plugin.requiresPro).toBe(true);
-      });
-    });
-
-    it('should return empty array since no plugins require PRO', () => {
-      const proPlugins = getProPlugins();
-      expect(proPlugins).toHaveLength(0);
     });
   });
 

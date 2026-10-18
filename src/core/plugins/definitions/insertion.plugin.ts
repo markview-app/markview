@@ -14,7 +14,6 @@ export const insertionPlugin: MarkdownPlugin = {
   category: 'formatting',
   priority: 47,
   enabledByDefault: true,
-  requiresPro: false,
 
   install(md) {
     md.use(markdownItIns);
