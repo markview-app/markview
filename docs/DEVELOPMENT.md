@@ -416,7 +416,7 @@ For detailed architecture documentation, see the main MarkView repository's [TEC
 
    export const PLUGINS = {
      // ... existing plugins
-     pluginName: [pluginName, /* options */]
+     pluginName: [pluginName /* options */],
    };
    ```
 

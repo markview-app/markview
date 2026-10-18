@@ -172,16 +172,20 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed setup instructions.
 
 ```markdown
 ## Problem
+
 Code blocks with long lines require horizontal scrolling, which is hard on mobile.
 
 ## Proposed Solution
+
 Add word-wrap option for code blocks with a toggle button.
 
 ## Alternatives Considered
+
 - Automatic word-wrap (breaks formatting for some languages)
 - Virtual scrolling (too complex for this use case)
 
 ## Additional Context
+
 - Screenshot of current behavior
 - Example of desired behavior
 ```
@@ -276,16 +280,20 @@ Then create a pull request on GitHub with:
 
 ```markdown
 ## What does this PR do?
+
 Brief description of changes
 
 ## Why is this needed?
+
 Problem this solves
 
 ## How to test
+
 1. Step-by-step testing instructions
 2. Expected results
 
 ## Checklist
+
 - [ ] Tests added/updated
 - [ ] Documentation updated
 - [ ] No breaking changes
@@ -412,9 +420,12 @@ export { helper } from './helper';
 
 ```css
 /* Use BEM naming convention */
-.markview { }
-.markview__header { }
-.markview__header--active { }
+.markview {
+}
+.markview__header {
+}
+.markview__header--active {
+}
 
 /* Group related properties */
 .element {

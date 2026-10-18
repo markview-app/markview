@@ -344,11 +344,13 @@ function render(): void {
   "name": "MarkView (Open-Source)",
   "permissions": ["storage", "activeTab"],
   "host_permissions": ["file:///*", "*://*/*"],
-  "content_scripts": [{
-    "matches": ["*://*/*.md", "file://*/*.md"],
-    "js": ["js/content.js"],
-    "css": ["css/content.css"]
-  }]
+  "content_scripts": [
+    {
+      "matches": ["*://*/*.md", "file://*/*.md"],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"]
+    }
+  ]
 }
 ```
 
