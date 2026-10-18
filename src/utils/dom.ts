@@ -228,7 +228,7 @@ export function applyLayoutSettings(settings: {
     const tocSidebar = document.querySelector('.markview-toc-sidebar') as HTMLElement;
     const actionMenu = document.querySelector('.markview-actions-menu') as HTMLElement;
     const keyboardShortcutsModal = document.querySelector(
-      '.markview-keyboard-shortcuts-modal'
+      '.markview-keyboard-help-modal'
     ) as HTMLElement;
 
     if (tocSidebar) {
