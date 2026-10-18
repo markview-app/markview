@@ -65,6 +65,7 @@ src/
 │   ├── lifecycle.ts        # Builds the ExtensionState and runs startup
 │   ├── document-renderer.ts# Markdown source → rendered page
 │   ├── markdown.ts         # markdown-it setup and post-processing
+│   ├── sanitize-document-html.ts # DOMPurify sanitizer for the rendered document
 │   ├── component-manager.ts# Mounts and unmounts UI components
 │   ├── event-handlers.ts   # Wires UI events
 │   ├── settings-manager.ts # Applies and reacts to settings
@@ -94,6 +95,12 @@ examples/                   # Sample documents for trying the renderer
   `src/utils/i18n.ts`, collected in `src/utils/messages.ts`. A new string needs an entry in every locale; use the
   English text where you cannot translate it.
 - **Logging** goes through `logger` from `src/utils/logger.ts`, not `console.log` (ESLint warns on it).
+- **Document HTML reaches the page only through the sanitizer.** HTML derived from a document (rendered markdown, raw
+  HTML) is inserted with `setDocumentHTML()` from `src/core/sanitize-document-html.ts`, or passed through
+  `sanitizeDocumentHTML()`, never with `innerHTML`. HTML that is only read is parsed with `DOMParser`. Never move
+  parser-created nodes into the page from the content script: Chrome binds `on*` handlers to the page's main world at
+  parse time, and removing the attribute from the isolated world leaves them alive. See "Security notes" in
+  [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Code style
 
@@ -123,6 +130,9 @@ describe('extractFileNameFromUrl', () => {
   });
 });
 ```
+
+Tests that check DOMPurify's output run in jsdom instead, with a `// @vitest-environment jsdom` first line: under
+happy-dom, DOMPurify keeps handlers and URLs that a browser's parser lets it remove, so a pass there proves nothing.
 
 Path aliases (`@core`, `@utils`, `@components`, …) work in tests as in source. Coverage is reported for `src/core`
 and `src/utils`; no minimum is enforced.

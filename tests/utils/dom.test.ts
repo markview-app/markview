@@ -1,6 +1,10 @@
+// @vitest-environment jsdom
 /**
- * Tests for extractMarkdownSource in dom.ts: the source every reader uses, recovered to UTF-8 when the browser
- * decoded a UTF-8 file with its legacy fallback (markview-app/support#59).
+ * Tests for dom.ts:
+ * - extractMarkdownSource: the source every reader uses, recovered to UTF-8 when the browser decoded a UTF-8 file
+ *   with its legacy fallback (markview-app/support#59).
+ * - injectRenderedHTML: the rendered document reaches the page through the sanitizer. Runs in jsdom because
+ *   DOMPurify under happy-dom keeps handlers a browser removes (see tests/core/sanitize-document-html.test.ts).
  */
 
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
@@ -9,7 +13,7 @@ vi.mock('@utils/logger', () => ({
   logger: { log: vi.fn(), error: vi.fn(), warn: vi.fn() },
 }));
 
-import { extractMarkdownSource } from '@utils/dom';
+import { extractMarkdownSource, injectRenderedHTML } from '@utils/dom';
 
 describe('extractMarkdownSource', () => {
   // windows-1258 (Vietnamese) rather than windows-1252: Node decodes windows-1252 as latin1, unlike the browser
@@ -60,5 +64,35 @@ describe('extractMarkdownSource', () => {
     document.body.innerHTML = '<pre>Cà phê sữa đá</pre>';
 
     expect(extractMarkdownSource()).toBe('Cà phê sữa đá');
+  });
+});
+
+describe('injectRenderedHTML', () => {
+  afterEach(() => {
+    document.body.innerHTML = '';
+  });
+
+  it('should insert the rendered HTML without script-capable attributes (raw HTML XSS regression)', () => {
+    const container = injectRenderedHTML(
+      '<h2 id="images">Images</h2>' +
+        '<img src="x.png" onerror="window.__mv=1"><span onmouseover="window.__mv=2">hover</span>' +
+        '<iframe srcdoc="&lt;script&gt;parent.__mv=3&lt;/script&gt;"></iframe>'
+    );
+
+    const attributeNames = Array.from(container.querySelectorAll('*')).flatMap(element =>
+      Array.from(element.attributes, attribute => attribute.name)
+    );
+    expect(attributeNames.filter(name => name.startsWith('on') || name === 'srcdoc')).toEqual([]);
+    expect(container.querySelector('h2')?.id).toBe('images');
+    expect(container.querySelector('span')?.textContent).toBe('hover');
+  });
+
+  it('should replace the previous content of an existing container', () => {
+    injectRenderedHTML('<p>first</p>');
+    const container = injectRenderedHTML('<p>second</p>');
+
+    expect(container.id).toBe('markview-container');
+    expect(container.textContent).toBe('second');
+    expect(document.querySelectorAll('#markview-container')).toHaveLength(1);
   });
 });

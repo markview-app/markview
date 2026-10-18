@@ -58,6 +58,7 @@
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "^4.0.1",
     "@mdit/plugin-alert": "^0.22.3",
+    "dompurify": "^3.3.0",
     "highlight.js": "^11.6.0",
     "katex": "^0.16.25",
     "lodash.throttle": "^4.1.1",

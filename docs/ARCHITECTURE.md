@@ -46,7 +46,7 @@ document-renderer.ts ── renderMarkdownContent()
 2. **Preload** the highlight.js languages the document uses.
 3. **Theme** for code blocks.
 4. **Render to HTML** with markdown-it and the registered plugins (`src/core/markdown.ts`).
-5. **Inject** the HTML into the page.
+5. **Inject** the HTML into the page, through the document HTML sanitizer (see [Security notes](#security-notes)).
 6. **Metadata**: the page title.
 7. **Layout**: font and layout settings; a non-default font is loaded from Google Fonts here.
 8. **Lazy-load images**, resolving relative paths against the document URL.
@@ -116,8 +116,25 @@ There is no analytics, telemetry, crash reporting or remote configuration.
 
 - **Isolation.** The content script runs in the extension's isolated world. The service worker fetches a URL only when
   the content script asks it to, and the content script asks only for the open document and its images.
-- **Raw HTML.** markdown-it runs with `html: true`, so HTML written in a document is rendered as HTML. MarkView does
-  not sanitize it.
+- **Raw HTML.** markdown-it runs with `html: true`, so HTML written in a document is rendered as HTML, but only after
+  DOMPurify sanitizes it (`src/core/sanitize-document-html.ts`). The rendered document reaches the page through
+  `setDocumentHTML()`, which removes everything that can run script:
+  - event handler attributes (`onerror`, `onmouseover`, …) and `srcdoc`
+  - `javascript:` and other script URLs, and `data:` URLs outside images and media
+  - `script`, `object`, `embed`, `base`, `meta` and `link` elements, and SVG `animate` and `set`
+
+  Everything else a document uses is kept, which a corpus test checks node for node
+  (`tests/core/sanitize-document-html-corpus.test.ts`): heading ids, `dir`, `details`, task-list checkboxes, KaTeX's
+  MathML, links with app schemes such as `vscode:`, and elements the parser does not know (MDX `<Note>`). An `<iframe>`
+  keeps its `src` only when it is an `https:` URL, so video and page embeds still work. A raw `target="_blank"` link
+  always gets `rel="noopener noreferrer"`.
+
+  The sanitized nodes are inserted as `document.importNode()` clones. Chrome creates the page's own event handler
+  for an `on*` attribute as soon as it parses it, even in DOMPurify's inert document, and the content script, which
+  runs in the isolated world, cannot remove that handler by removing the attribute. A clone is built from the
+  remaining attributes only. Unit tests cannot show this, since their DOMs have no separate worlds: a change here
+  has to be checked in the built extension.
+
 - **Sandboxed pages.** Some servers deliver plain-text documents in a sandboxed or CSP-restricted context, which blocks
   dialogs such as print and external resources. MarkView detects this (`src/utils/sandbox-detection.ts`) and loads
   external images through the service worker instead.

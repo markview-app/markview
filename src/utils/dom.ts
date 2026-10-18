@@ -1,6 +1,7 @@
 // MarkView DOM Utilities
 // Helper functions for DOM manipulation
 import { logger } from '@utils/logger';
+import { setDocumentHTML } from '@core/sanitize-document-html';
 import { getFontFamily } from './fonts';
 import { recoverUtf8FromLegacyDecode } from './source-encoding';
 
@@ -64,7 +65,8 @@ export function createMarkdownContainer(): HTMLElement {
 }
 
 /**
- * Inject rendered HTML into the markdown container
+ * Inject rendered HTML into the markdown container, through the document HTML sanitizer: raw HTML in the document
+ * must not run script (src/core/sanitize-document-html.ts).
  */
 export function injectRenderedHTML(html: string): HTMLElement {
   let container = document.getElementById('markview-container');
@@ -73,7 +75,7 @@ export function injectRenderedHTML(html: string): HTMLElement {
     container = createMarkdownContainer();
   }
 
-  container.innerHTML = html;
+  setDocumentHTML(container, html);
   logger.log('MarkView: HTML injected into container');
 
   // Process table cells to parse HTML content

@@ -38,4 +38,8 @@ The first public version, to be released as 1.0.0.
   - TypeScript, webpack, Vitest, ESLint and Prettier
   - MIT License
 
+### Security
+
+- HTML embedded in a document can no longer run script; it is sanitized before rendering.
+
 [Unreleased]: https://github.com/markview-app/markview/commits/main
