@@ -1,193 +1,115 @@
-# MarkView
+# MarkView (Open-Source Edition)
 
-## 📖 What is MarkView?
-
-A **lightweight, open-source markdown viewer** for Chrome, Edge & Chromium Browsers. This repository provides the core rendering engine with essential features, designed for transparency, security auditing, and self-hosted deployments.
-
-> **Note**: This is the **open-source version** of MarkView. For the full-featured extension with advanced productivity tools, visit [MarkView on Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien) or [MarkView on Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed).
+A lightweight, open-source markdown viewer for Chrome, Edge and other Chromium browsers. It is the core rendering
+engine of [MarkView](https://getmarkview.com/), released under the MIT License for auditing, self-hosting and
+restricted environments.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-red?logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien)
-[![Edge Add-on](https://img.shields.io/badge/Edge-Add--on-blue?logo=microsoft-edge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/CONTRIBUTING.md)
+[![CI](https://github.com/markview-app/markview/actions/workflows/ci.yml/badge.svg)](https://github.com/markview-app/markview/actions/workflows/ci.yml)
 
-### ✨ Features Included
+Open a `.md` file in the browser, from disk or from a link, and MarkView renders it as a formatted document in place
+of the raw text.
 
-- ✅ **Full GFM Support** - GitHub Flavored Markdown (tables, task lists, strikethrough, footnotes)
-- ✅ **Syntax Highlighting** - Code blocks with basic theme (180+ languages supported)
-- ✅ **Mermaid Diagrams** - Flowcharts, sequence diagrams, class diagrams, and more
-- ✅ **KaTeX Math Rendering** - Beautiful LaTeX equations (inline and display)
-- ✅ **Dark/Light Themes** - Eye-friendly theme toggle
-- ✅ **Basic Table of Contents** - Auto-generated TOC for H1-H2 headings
-- ✅ **GitHub-Style Alerts** - Note, Tip, Important, Warning, Caution callouts
-- ✅ **Extended Markdown** - Superscript, subscript, insert, mark, abbreviations, definition lists
-- ✅ **Local & Remote Files** - View markdown from file:// and https:// URLs
-- ✅ **Privacy-First** - All processing happens locally, no data collection
+## Features
 
----
+**Rendering**
 
-## 🚀 Quick Start
+- GitHub Flavored Markdown: tables, task lists, strikethrough, footnotes, autolinks
+- GitHub-style alerts: Note, Tip, Important, Warning, Caution
+- Extended syntax: subscript, superscript, inserted and highlighted text, abbreviations, definition lists, custom
+  containers, emoji shortcodes
+- Syntax highlighting with highlight.js (its common language set), a copy button and 14 color themes
+- Mermaid diagrams, with zoom and download
+- KaTeX math, inline and display
 
-### Option 1: Install Full Extension (Recommended)
+**Reading**
 
-Get the complete MarkView experience with all productivity features:
+- Light and dark themes
+- Table of contents for H1–H3 headings, in a resizable sidebar
+- Raw markdown view, print styles, image viewer, font selection
+- Auto-refresh when the file changes
+- Recent documents and settings in the toolbar popup
+- Keyboard shortcuts
+- Interface in 12 languages
 
-- **[Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien)** - For Chrome & Chromium-based browsers
-- **[Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed)** - For Edge browser
-- **[Official Website](https://getmarkview.com/)** - Learn more about features
+**Files**
 
-### Option 2: Build from Source (This Repository)
+- `.md`, `.markdown`, `.mkd` and `.mdx`, on `file://` and `http(s)://` URLs
 
-For developers, security auditing, or restricted environments:
+## Install from source
+
+Requirements: Node.js 20 or later, pnpm 8 or later.
 
 ```bash
-# Clone the repository
 git clone https://github.com/markview-app/markview.git
 cd markview
-
-# Install dependencies (requires pnpm)
-# npm install -g pnpm
 pnpm install
-
-# Build the extension
 pnpm run build
-
-# Load the unpacked extension
-# 1. Open chrome://extensions/
-# 2. Enable "Developer mode"
-# 3. Click "Load unpacked"
-# 4. Select the `extension/` folder
 ```
 
-**Requirements**: Node.js 18+, pnpm 8+
+Then load the unpacked extension:
 
----
+1. Open `chrome://extensions/` (or `edge://extensions/`)
+2. Turn on **Developer mode**
+3. Click **Load unpacked** and select the `extension/` folder
+4. To view local files, open the extension's **Details** and turn on **Allow access to file URLs**
 
-## 💡 Which Version Should You Choose?
+`pnpm run build` also writes a zip of the same build to `dist/`.
 
-**Choose Open-Source Edition if you:**
+## Privacy
 
-- Need to audit the code for security/privacy
-- Work in a corporate environment requiring open-source software
-- Want a lightweight viewer for basic markdown files
-- Need to self-host or modify the extension
-- Are in a region where Chrome Web Store is blocked
+All rendering happens in the browser tab. MarkView has no analytics, telemetry or crash reporting, and it never sends
+your documents anywhere. The only network requests it makes are:
 
-**Choose Full Extension if you:**
+| Request                                       | When                                                                                      |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| The document's own URL and images it links to | Opening a document; auto-refresh polls the document URL                                   |
+| Google Fonts (`fonts.googleapis.com`)         | Only after you choose a font other than the default; the font name is part of the request |
 
-- Want productivity features like folder navigation and folder bookmarks
-- Want presentation mode for markdown slides
-- Need export to HTML and Word documents
-- Need advanced features like Mermaid fullscreen zoom, image viewer with gallery navigation
-- Prefer automatic updates from Chrome Web Store
-- And many more!
+**Permissions**
 
----
+- `storage`: saves your settings and the recent-documents list in the browser
+- Host access to `file:///*` and `*://*/*`: lets the extension render markdown files at any address, and lets its
+  background worker fetch the open document (auto-refresh) and its images when the page itself is not allowed to
 
-## 📚 Documentation
+## Scope
 
-- **[Upgrade Guide](docs/UPGRADE.md)** - How to migrate to the full extension
-- **[Development Guide](docs/DEVELOPMENT.md)** - Build, test, and contribute
-- **[Contributing Guidelines](docs/CONTRIBUTING.md)** - How to contribute
-- **[Architecture Overview](docs/ARCHITECTURE.md)** - Technical documentation
+This edition keeps to a small, stable core. Bug fixes, security fixes, documentation, translations and accessibility
+improvements are welcome. New features outside core markdown rendering are generally not accepted, and the project
+does not publish a roadmap. See [Contributing](docs/CONTRIBUTING.md) before opening a pull request.
 
----
+## Documentation
 
-## 🛠️ Technical Stack
+- [Development guide](docs/DEVELOPMENT.md): build, test and project layout
+- [Architecture](docs/ARCHITECTURE.md): how a document goes from raw text to rendered page
+- [Contributing](docs/CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
+- [Changelog](CHANGELOG.md)
 
-- **TypeScript 5.0+** - Type-safe development
-- **Webpack 5** - Module bundling with esbuild-loader
-- **markdown-it 14.1.0** - Markdown parser with plugin ecosystem
-- **highlight.js 11.6.0** - Syntax highlighting
-- **Mermaid 11.4.0** - Diagram rendering
-- **KaTeX 0.16.25** - Math equation rendering
-- **Chrome Extension Manifest V3** - Modern extension platform
+## Support
 
-See [package.json](package.json) for complete dependencies.
+- Bugs in this edition: [open an issue](https://github.com/markview-app/markview/issues/new/choose)
+- Questions: [Discussions](https://github.com/markview-app/markview/discussions)
+- Security vulnerabilities: see [SECURITY.md](SECURITY.md), not public issues
 
----
+## License
 
-## 🤝 Contributing
+[MIT](LICENSE). Third-party libraries keep their own licenses; see `package.json` for the list.
 
-We welcome contributions to the **core rendering features**! Please read our [Contributing Guidelines](docs/CONTRIBUTING.md) before submitting a pull request.
+## MarkView for Chrome & Edge
 
-### What Can You Contribute?
+This repository is the open-source core. MarkView is also available from the
+[Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien) and
+[Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed) as a
+separately developed extension that adds folder navigation, presentation mode, and HTML and Word export. Its code is
+not part of this repository, and this repository does not track its features.
 
-✅ **Welcome Contributions:**
-
-- Bug fixes in core rendering
-- Performance improvements
-- New markdown-it plugins (if useful for everyone)
-- Documentation improvements
-- Translation improvements
-- Accessibility enhancements
-- Security fixes
-
-❌ **Not Accepting:**
-
-- PRO-tier features (maintained separately)
-- Features that significantly increase bundle size
-- Breaking changes to existing APIs
-
----
-
-## 🐛 Issues & Support
-
-- **Bug Reports**: [GitHub Issues](https://github.com/markview-app/markview/issues/new?template=bug_report.yml)
-- **Feature Requests**: [GitHub Issues](https://github.com/markview-app/markview/issues/new?template=feature_request.yml)
-- **Questions**: [GitHub Discussions](https://github.com/markview-app/support/discussions)
-- **Full Extension Support**: [MarkView Support](https://github.com/markview-app/support)
-
----
-
-## 📄 License
-
-This open-source edition is released under the **MIT License**. See [LICENSE](LICENSE) for details.
-
-> **Note**: This is the **open-source version** of MarkView. For the full-featured extension with advanced productivity tools, visit [MarkView on Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien) or [MarkView on Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed).
-
----
-
-## 🔗 Related Links
-
-### MarkView Full Extension
-
-- **Website**: [https://getmarkview.com/](https://getmarkview.com/)
-- **Chrome Web Store**: [Install Extension](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien)
-- **Edge Add-ons**: [Install Extension](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed)
-- **Support & FAQ**: [https://getmarkview.com/support](https://getmarkview.com/support)
-- **Privacy Policy**: [https://getmarkview.com/privacy-policy](https://getmarkview.com/privacy-policy)
-
-### Community
-
-- **Main Support Repository**: [markview-app/support](https://github.com/markview-app/support)
-- **Sample Markdown Files**: [markview-app/sample-markdown](https://github.com/markview-app/sample-markdown)
-- **Organization Profile**: [markview-app](https://github.com/markview-app)
-
----
-
-## ⭐ Show Your Support
-
-If you find this project useful:
-
-- ⭐ **Star this repository** on GitHub
-- 🐦 **Share it** on social media
-- 📝 **Write a review** on [Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien)
-- 💬 **Join discussions** in [GitHub Discussions](https://github.com/markview-app/support/discussions)
-- 🚀 **Upgrade to PRO** to support continued development
-
----
-
-## 📜 Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for release history.
+Issues with the store version go to [markview-app/support](https://github.com/markview-app/support).
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the MarkView Team**
-
-[Website](https://getmarkview.com/) • [Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien) • [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed) • [Support](https://github.com/markview-app/support)
+[Website](https://getmarkview.com/) • [Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien) • [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed)
 
 </div>

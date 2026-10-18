@@ -62,13 +62,13 @@ Welcome to the **MarkView (Open-Source Edition)**! This document demonstrates th
 
 ## Tables
 
-| Feature | Open-Source | Full (FREE) | Full (PRO) |
-|---------|-------------|-------------|------------|
-| Core Rendering | ✅ | ✅ | ✅ |
-| Syntax Themes | 1 | 14 | 14 |
-| TOC Levels | H1-H2 | H1-H3 | H1-H6 |
-| HTML Export | 500 words | Unlimited | Unlimited |
-| DOCX Export | ❌ | 800 words | Unlimited |
+| Syntax | Renders as | Plugin |
+|--------|:----------:|-------:|
+| `**bold**` | **bold** | core |
+| `~~strike~~` | ~~strike~~ | core |
+| `==mark==` | ==mark== | markdown-it-mark |
+| `H~2~O` | H~2~O | markdown-it-sub |
+| `x^2^` | x^2^ | markdown-it-sup |
 
 ---
 
@@ -250,43 +250,8 @@ Term 2
 
 ---
 
-## What's Next?
+## About This File
 
-### Upgrade to Full Extension
-
-Want more features? Check out the full MarkView extension:
-
-- 🚀 **Auto-refresh** - Live preview while editing
-- 📁 **Folder browser** - Navigate entire project structures
-- 🔍 **Folder search** - Search across all markdown files
-- 📊 **Advanced TOC** - Up to H6 headings with collapsible sections
-- 💾 **DOCX export** - Convert to Microsoft Word format
-- 📽️ **Presentation mode** - Turn markdown into slideshows
-- 🌐 **12 languages** - Multi-language interface
-- 🎨 **14 themes** - Syntax highlighting customization
-
-**Install from**:
-
-- [Chrome Web Store](https://chromewebstore.google.com/detail/cfopbpknalachedpcddhgbgjoigklien)
-- [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/kpobglkjeapfinbaecjidahlnnohcaed)
-- [Official Website](https://getmarkview.com/)
-
----
-
-## Contribute
-
-This open-source edition welcomes contributions!
-
-- **GitHub**: [markview](https://github.com/markview-app/markview)
-- **Issues**: [Report bugs](https://github.com/markview-app/markview/issues)
-- **Discussions**: [Ask questions](https://github.com/markview-app/support/discussions)
-
----
-
-<div align="center">
-
-**Made with ❤️ by the MarkView Team**
-
-[GitHub](https://github.com/markview-app) • [Website](https://getmarkview.com/) • [Support](https://github.com/markview-app/support)
-
-</div>
+This is a sample document for trying the renderer. Source and issues:
+[markview-app/markview](https://github.com/markview-app/markview). More sample documents:
+[markview-app/sample-markdown](https://github.com/markview-app/sample-markdown).
