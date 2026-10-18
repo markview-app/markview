@@ -7,13 +7,20 @@ separately.
 
 ## Reporting a vulnerability
 
-Please do not open a public issue for a security problem. Email **support@getmarkview.com** with:
+Please do not open a public issue for a security problem. Report it privately instead:
+
+- **Preferred:** use [Report a vulnerability](https://github.com/markview-app/markview/security/advisories/new) in
+  this repository's Security tab. Only the maintainers can see the report, and the discussion and fix happen in a
+  private security advisory.
+- **Without a GitHub account:** email **support@getmarkview.com**.
+
+Include:
 
 - what the problem is and what an attacker could do with it
 - the steps or a sample markdown file that reproduce it
 - the browser and version, and the MarkView commit or release you tested
 
-You will get a reply by email. Please keep the details private until a fix is available.
+You will get a reply through the advisory or by email. Please keep the details private until a fix is available.
 
 ## Scope
 
