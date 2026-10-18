@@ -7,15 +7,6 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import MarkdownIt from 'markdown-it';
 import { PluginManager } from '@core/plugins/plugin-manager';
 
-// Mock LicenseManager
-vi.mock('@core/license-manager', () => ({
-  LicenseManager: {
-    getInstance: () => ({
-      getTier: () => 'free',
-    }),
-  },
-}));
-
 // Mock logger
 vi.mock('@utils/logger', () => ({
   logger: {
@@ -71,7 +62,7 @@ describe('PluginManager', () => {
       expect(activeIds).not.toContain('tables');
     });
 
-    it('should install mermaid on free tier', () => {
+    it('should install mermaid', () => {
       pluginManager.installPlugins(['mermaid']);
       const state = pluginManager.getPluginState('mermaid');
       expect(state?.installed).toBe(true);
@@ -279,8 +270,8 @@ describe('PluginManager', () => {
     });
   });
 
-  describe('PRO License Gating', () => {
-    it('should install all plugins on free tier since none require PRO', () => {
+  describe('Installation', () => {
+    it('should install the default plugins', () => {
       pluginManager.installPlugins();
       const installedCount = Array.from(pluginManager['pluginStates'].values()).filter(
         s => s.installed
@@ -288,7 +279,7 @@ describe('PluginManager', () => {
       expect(installedCount).toBeGreaterThan(0);
     });
 
-    it('should allow all plugins on free tier', () => {
+    it('should install an explicitly enabled set of plugins', () => {
       pluginManager.installPlugins(['tables', 'mermaid']);
       expect(pluginManager.isPluginActive('tables')).toBe(true);
       expect(pluginManager.isPluginActive('mermaid')).toBe(true);

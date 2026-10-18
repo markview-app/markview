@@ -11,15 +11,6 @@ import {
   clearRendererCache,
 } from '@core/markdown';
 
-// Mock LicenseManager
-vi.mock('@core/license-manager', () => ({
-  LicenseManager: {
-    getInstance: () => ({
-      getTier: () => 'free',
-    }),
-  },
-}));
-
 // Mock logger
 vi.mock('@utils/logger', () => ({
   logger: {

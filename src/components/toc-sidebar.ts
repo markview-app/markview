@@ -303,8 +303,6 @@ export class TocSidebar {
 
     header.appendChild(topRow);
 
-    // Add info banner for FREE tier heading level limitation
-    // No PRO banner needed in open source version
     return header;
   }
 
@@ -835,9 +833,6 @@ export class TocSidebar {
     if (rawMessage) {
       rawMessage.textContent = MESSAGES.toc.rawModeMessage;
     }
-
-    // Update info banner if visible
-    // No PRO banner in open source version
   }
 
   /**

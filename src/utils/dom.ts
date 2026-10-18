@@ -226,38 +226,21 @@ export function applyLayoutSettings(settings: {
 
     // Also apply font to sidebars and other UI elements
     const tocSidebar = document.querySelector('.markview-toc-sidebar') as HTMLElement;
-    const bookmarkMenu = document.querySelector('.markview-bookmark-menu') as HTMLElement;
     const actionMenu = document.querySelector('.markview-actions-menu') as HTMLElement;
-    const proModal = document.querySelector('.markview-pro-modal') as HTMLElement;
     const keyboardShortcutsModal = document.querySelector(
       '.markview-keyboard-shortcuts-modal'
-    ) as HTMLElement;
-    const pluginConfigModal = document.querySelector(
-      '.markview-plugin-config-modal'
     ) as HTMLElement;
 
     if (tocSidebar) {
       tocSidebar.style.fontFamily = getFontFamily(settings.fontFamily);
     }
 
-    if (bookmarkMenu) {
-      bookmarkMenu.style.fontFamily = getFontFamily(settings.fontFamily);
-    }
-
     if (actionMenu) {
       actionMenu.style.fontFamily = getFontFamily(settings.fontFamily);
     }
 
-    if (proModal) {
-      proModal.style.fontFamily = getFontFamily(settings.fontFamily);
-    }
-
     if (keyboardShortcutsModal) {
       keyboardShortcutsModal.style.fontFamily = getFontFamily(settings.fontFamily);
-    }
-
-    if (pluginConfigModal) {
-      pluginConfigModal.style.fontFamily = getFontFamily(settings.fontFamily);
     }
 
     const extensionInfoModal = document.querySelector(
@@ -265,11 +248,6 @@ export function applyLayoutSettings(settings: {
     ) as HTMLElement;
     if (extensionInfoModal) {
       extensionInfoModal.style.fontFamily = getFontFamily(settings.fontFamily);
-    }
-
-    const licenseInfoModal = document.querySelector('.markview-license-info-modal') as HTMLElement;
-    if (licenseInfoModal) {
-      licenseInfoModal.style.fontFamily = getFontFamily(settings.fontFamily);
     }
 
     // Quick Settings modal

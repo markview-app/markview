@@ -37,12 +37,6 @@
   border-radius: var(--radius-lg);
 }
 
-/* Monospace input (for license keys) */
-.popup-input-mono {
-  font-family: 'Courier New', monospace;
-  letter-spacing: 0.5px;
-}
-
 /* Search input */
 .popup-search {
   width: 100%;
@@ -224,89 +218,6 @@
   background: var(--brand-gradient);
   color: white;
   border: none;
-}
-
-/* ============================================
-   PRO FEATURES LINK
-   ============================================ */
-
-.popup-pro-link-container {
-  padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
-  background: var(--color-bg-primary);
-}
-
-.popup-pro-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 20px;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-  border: 2px solid transparent;
-  border-radius: 12px;
-  color: #667eea;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.popup-pro-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
-}
-
-.popup-pro-link:hover {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
-  border-color: rgba(102, 126, 234, 0.3);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-}
-
-.popup-pro-link:hover::before {
-  left: 100%;
-}
-
-.popup-pro-link:active {
-  transform: translateY(0);
-}
-
-.popup-pro-link svg:first-child {
-  flex-shrink: 0;
-  color: #fbbf24;
-  animation: starPulse 2s ease-in-out infinite;
-}
-
-.popup-pro-link svg:last-child {
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: transform 0.25s ease;
-}
-
-.popup-pro-link:hover svg:last-child {
-  transform: translateX(3px);
-  opacity: 1;
-}
-
-@keyframes starPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
 }
 
 /* ============================================

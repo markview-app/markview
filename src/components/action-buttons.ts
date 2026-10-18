@@ -4,6 +4,18 @@ import { MESSAGES } from '@utils/messages';
 import { showKeyboardShortcutsHelp } from './keyboard-shortcuts-help';
 import { isSandboxed } from '@utils/sandbox-detection';
 
+/** One entry in the actions menu. */
+interface ActionMenuItem {
+  id: string;
+  label: string;
+  icon: string;
+  action: () => void;
+  /** Disabled when the page is sandboxed (e.g. print needs allow-modals) */
+  isSandboxRestricted?: boolean;
+  /** Disabled while the raw markdown view is shown */
+  isRawModeRestricted?: boolean;
+}
+
 export class ActionButtons {
   private container: HTMLDivElement | null = null;
   private mainButton: HTMLButtonElement | null = null;
@@ -81,7 +93,7 @@ export class ActionButtons {
     const isInSandbox = isSandboxed();
 
     // Available menu items
-    const otherMenuItems = [
+    const menuItems: ActionMenuItem[] = [
       {
         id: 'print',
         label: MESSAGES.actions.print,
@@ -89,7 +101,6 @@ export class ActionButtons {
           <path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
         </svg>`,
         action: () => this.print(),
-        isPro: false,
         isSandboxRestricted: isInSandbox, // Disable in sandbox
       },
       {
@@ -100,7 +111,6 @@ export class ActionButtons {
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>`,
         action: () => this.toggleRawView(),
-        isPro: false,
       },
       {
         id: 'quick-settings',
@@ -110,7 +120,6 @@ export class ActionButtons {
           <circle cx="12" cy="12" r="3"></circle>
         </svg>`,
         action: () => this.showQuickSettings(),
-        isPro: false,
       },
       {
         id: 'keyboard-shortcuts',
@@ -120,7 +129,6 @@ export class ActionButtons {
           <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"></path>
         </svg>`,
         action: () => this.showKeyboardHelp(),
-        isPro: false,
       },
       {
         id: 'extension-info',
@@ -131,42 +139,28 @@ export class ActionButtons {
           <path d="M12 8h.01"></path>
         </svg>`,
         action: () => this.showExtensionInfo(),
-        isPro: false,
       },
     ];
-
-    // Menu items
-    const menuItems = otherMenuItems;
 
     menuItems.forEach(item => {
       const menuItem = document.createElement('button');
       menuItem.className = 'markview-menu-item';
 
-      // All items are accessible in open source version
-      const isProItemAccessible = true;
-
       // Check if item is restricted due to sandbox
-      const isSandboxRestricted = (item as any).isSandboxRestricted || false;
+      const isSandboxRestricted = item.isSandboxRestricted ?? false;
 
       // Check if item should be disabled in RAW mode
-      const isRawModeRestricted = (item as any).isRawModeRestricted && this.isRawMode;
+      const isRawModeRestricted = (item.isRawModeRestricted ?? false) && this.isRawMode;
 
-      // Use data-disabled for PRO items, sandbox-restricted items, or raw mode restricted items
-      if ((item.isPro && !isProItemAccessible) || isSandboxRestricted || isRawModeRestricted) {
+      // Use data-disabled for sandbox-restricted items or raw mode restricted items
+      if (isSandboxRestricted || isRawModeRestricted) {
         menuItem.setAttribute('data-disabled', 'true');
-        if (item.isPro && !isProItemAccessible) {
-          menuItem.title = 'This feature is available in PRO tier';
-        } else if (isSandboxRestricted) {
-          menuItem.title = MESSAGES.notification.sandboxRestriction;
-        } else if (isRawModeRestricted) {
-          menuItem.title = MESSAGES.ui.notAvailableInRawMode;
-        }
+        menuItem.title = isSandboxRestricted
+          ? MESSAGES.notification.sandboxRestriction
+          : MESSAGES.ui.notAvailableInRawMode;
       }
 
-      // Add PRO badge only to locked PRO-tier items
-      const proBadge =
-        item.isPro && !isProItemAccessible ? ' <span class="pro-badge">PRO</span>' : '';
-      menuItem.innerHTML = `${item.icon}<span class="markview-menu-item-label">${item.label}${proBadge}</span>`;
+      menuItem.innerHTML = `${item.icon}<span class="markview-menu-item-label">${item.label}</span>`;
 
       menuItem.addEventListener('click', async e => {
         e.preventDefault();
@@ -280,7 +274,7 @@ export class ActionButtons {
 
   /**
    * Update language for button and menu items
-   * Recreates menu to ensure all labels (including PRO badges) are updated
+   * Recreates menu to ensure all labels are updated
    */
   private async updateLanguage(): Promise<void> {
     logger.log('[ActionButtons] Updating language');

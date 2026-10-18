@@ -361,25 +361,23 @@ function showResetConfirmDialog(parentElement: HTMLElement): Promise<boolean> {
 }
 
 /**
- * Reset all settings to defaults while preserving history and license
+ * Reset all settings to defaults while preserving history
  */
 async function resetToDefaults(modalElement: HTMLElement): Promise<void> {
   try {
     const { DEFAULT_SETTINGS } = await import('@core/storage');
 
-    // Get current history and license before resetting
-    const result = await chrome.storage.local.get(['markviewHistory', 'licenseInfo']);
+    // Get current history before resetting
+    const result = await chrome.storage.local.get(['markviewHistory']);
     const history = result.markviewHistory || [];
-    const licenseInfo = result.licenseInfo;
 
-    // Reset settings and preserve history + license
+    // Reset settings and preserve history
     await chrome.storage.local.set({
       ...DEFAULT_SETTINGS,
       markviewHistory: history,
-      ...(licenseInfo && { licenseInfo }), // Preserve license if it exists
     });
 
-    logger.log('[QuickSettings] Settings reset to defaults (history and license preserved)');
+    logger.log('[QuickSettings] Settings reset to defaults (history preserved)');
 
     // Show success notification
     showNotification(MESSAGES.popup.settingsSaved, {
