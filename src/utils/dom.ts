@@ -2,25 +2,40 @@
 // Helper functions for DOM manipulation
 import { logger } from '@utils/logger';
 import { getFontFamily } from './fonts';
+import { recoverUtf8FromLegacyDecode } from './source-encoding';
 
 /**
  * Extract markdown source from the page
  * Chrome displays raw markdown in a <pre> tag
+ *
+ * Every reader of the document source (renderer, raw view, auto-refresh baseline) comes through here, so this is
+ * where a UTF-8 file the browser decoded with its legacy fallback is recovered (markview-app/support#59).
  */
 export function extractMarkdownSource(): string | null {
   // Chrome wraps raw text files in <pre> tags
   const preElement = document.querySelector('body > pre');
   if (preElement) {
-    return preElement.textContent || '';
+    return asUtf8Source(preElement.textContent || '');
   }
 
   // Fallback: try to get from body if no <pre> tag
   const bodyText = document.body.textContent;
   if (bodyText && bodyText.trim()) {
-    return bodyText.trim();
+    return asUtf8Source(bodyText.trim());
   }
 
   return null;
+}
+
+/** The source as UTF-8: recovered when the browser decoded UTF-8 bytes with a legacy encoding, otherwise as-is. */
+function asUtf8Source(browserDecoded: string): string {
+  const characterSet = document.characterSet;
+  const recovered = recoverUtf8FromLegacyDecode(browserDecoded, characterSet);
+  if (recovered === null) {
+    return browserDecoded;
+  }
+  logger.log(`MarkView: Recovered UTF-8 source the browser decoded as ${characterSet}`);
+  return recovered;
 }
 
 /**

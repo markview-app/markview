@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Core markdown rendering
 - Basic UI components
 
+### Fixed
+
+- Emoji and other non-ASCII text no longer render as garbled symbols (such as `ðŸ›‘` for `🛑`) when a server sends a
+  UTF-8 markdown file as `text/plain` without a charset. The browser decodes such a file with the locale's legacy
+  encoding; MarkView now reverses that decode when it can do so losslessly ([markview-app/support#59](https://github.com/markview-app/support/issues/59)).
+
 ## [1.0.0] - TBD
 
 ### Added

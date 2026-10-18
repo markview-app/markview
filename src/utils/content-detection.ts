@@ -32,20 +32,6 @@ export function getRawContainer(): HTMLElement | null {
 }
 
 /**
- * Extract markdown content from the page
- * Works with both browser-loaded files (<pre> tag) and normal HTML pages
- *
- * @returns The raw markdown text content, or null if not found
- */
-export function extractMarkdownSource(): string | null {
-  const rawContainer = getRawContainer();
-  if (rawContainer) {
-    return rawContainer.textContent || null;
-  }
-  return null;
-}
-
-/**
  * Check if we're viewing an external markdown file (not a local file)
  *
  * @returns true if the protocol is http or https

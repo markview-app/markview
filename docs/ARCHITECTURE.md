@@ -70,7 +70,11 @@ This document provides a high-level overview of the MarkView architecture.
 **Responsibilities**:
 
 - Detect markdown files by URL pattern
-- Extract raw markdown from `<pre>` tag
+- Extract raw markdown from `<pre>` tag (`extractMarkdownSource()` in `src/utils/dom.ts`)
+- Recover UTF-8 text the browser decoded with its legacy fallback encoding, which happens when a server sends the file
+  as `text/plain` without a charset (`recoverUtf8FromLegacyDecode()` in `src/utils/source-encoding.ts`). Only
+  single-byte encodings that map the 256 bytes to 256 distinct characters are reversed, and only when the result is
+  valid UTF-8; anything else is kept as the browser decoded it
 - Initialize extension lifecycle
 - Render content
 
